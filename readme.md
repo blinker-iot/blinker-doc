@@ -7,10 +7,10 @@ blinker是一个物联网接入方案，旨在让大家可以轻松畅快地DIY�
 - 设备端可以使用蓝牙、WiFi、MQTT等方式接入  
 - 通过界面布局器，用户可自己拖拽布局设备控制界面，自由打造你的物联网设备  
   
-Blinker官方网站：https://blinker-iot.com  
+Blinker官方网站：https://blinker.app  
 github：https://github.com/blinker-iot  
 QQ群：301438087  
 社区支持：https://www.arduino.cn/forum-132-1.html  
 
 # 中文文档已转移到：  
-**https://doc.blinker-iot.com**  
+**https://doc.blinker.app**  
