@@ -12,5 +12,9 @@ github：https://github.com/blinker-iot
 QQ群：301438087  
 社区支持：https://www.arduino.cn/forum-132-1.html  
 
-# 中文文档已转移到：  
+# 中文文档：  
 **https://doc.blinker.app**  
+
+
+
+本文档使用[amWiki](https://github.com/TevinLi/amWiki)构建
