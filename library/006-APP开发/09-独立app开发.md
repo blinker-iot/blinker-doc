@@ -1,5 +1,9 @@
 # 独立app开发（beta）
 
+
+## 历史版本
+[blinker 2.1.0](https://github.com/coloz/blinker-app)  
+
 ## 免费版  
 ==由于ionic/cordova开发框架调整，该项目暂不可用==  
 ==当前独立app为测试版本，正式版本预计2019年推出==  
