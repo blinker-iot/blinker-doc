@@ -1053,11 +1053,24 @@ Blinker.configUpdate("Hello blinker!");
 > *限制 1次/分钟  
 
 #### Blinker.configGet()
+##### Blinker.attachConfigGet()
+注册回调函数，当设备查询到配置信息时会调用对应的回调函数  
+
+回调函数：
+```c++
+void configData(const String & data)
+{
+    BLINKER_LOG("configData: ", data);
+}
+```
+注册回调函数：
+```
+Blinker.attachConfigGet(configData);
+```
+
 拉取云端的配置信息
 ```
-String config_data = Blinker.configGet();
-
-BLINKER_LOG("Blinker.configGet(): ", config_data);
+Blinker.configGet();
 ```
 > *限制 1次/分钟  
 
@@ -1105,11 +1118,24 @@ Blinker.dataStorage("key","value");
 ~~*限制 1次/小时~~  
 
 #### Blinker.dataGet()
+##### Blinker.attachDataGet()
+注册回调函数，当设备查询到云端信息时会调用对应的回调函数  
+
+回调函数：
+```c++
+void getData(const String & data)
+{
+    BLINKER_LOG("getData: ", data);
+}
+```
+注册回调函数：
+```
+Blinker.attachDataGet(getData);
+```
+
 拉取云端储存的数据信息
 ```
-String data = Blinker.dataGet();
-
-BLINKER_LOG("Blinker.dataGet(): ", data);
+Blinker.dataGet();
 ```
 > *限制 1次/分钟  
 
