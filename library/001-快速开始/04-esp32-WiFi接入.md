@@ -24,6 +24,7 @@ esp32开发板([查看支持的设备](?file=003-硬件开发/01-设备端支持
 
 ### 软件准备  
 #### Arduino IDE需安装好esp32扩展  
+[Arduino IDE](https://www.arduino.cc/en/Main/Software) 1.8.7或更新版本  
 ==使用IDE板卡管理器安装 1.0.2 及以上版本的 ESP32 package==  
 [esp32扩展安装方法](https://github.com/espressif/arduino-esp32)  
 

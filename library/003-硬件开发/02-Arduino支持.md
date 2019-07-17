@@ -63,7 +63,7 @@ github：https://github.com/blinker-iot/blinker-library
   
 ## 准备工作
 使用前你需要做好如下准备:
-* [Arduino IDE](https://www.arduino.cc/en/Main/Software) 1.6.12或更新版本  
+* [Arduino IDE](https://www.arduino.cc/en/Main/Software) 1.8.7或更新版本  
 * 使用 Arduino IDE 的开发板管理器安装 [esp8266/arduino](https://github.com/esp8266/arduino)  
 * 按照 [安装说明](https://github.com/espressif/arduino-esp32#installation-instructions) 安装 [espressif/arduino-esp32](https://github.com/espressif/arduino-esp32)  
   
@@ -1179,13 +1179,28 @@ Blinker.wechat("hello blinker");
 >- 如出现违法违规或者损害到相关他人权益的,平台将保留最终追究的权利！请各会员严格遵守规范要求，加强自身业务安全，健康发送短信  
 
 ### 天气查询
+#### Blinker.attachWeather()
+注册回调函数，当设备查询到天气数据时会调用对应的回调函数  
+
+回调函数：
+```c++
+void weatherData(const String & data)
+{
+    BLINKER_LOG("weather: ", data);
+}
+```
+注册回调函数：
+```
+Blinker.attachWeather(weatherData);
+```
+
 设备通过 **WiFi** 接入时可以使用 **Blinker.weather()** 查询天气情况.
 ```
-String weather_default = Blinker.weather();//默认查询设备ip所属地区的当前时刻的天气情况
+Blinker.weather();//默认查询设备ip所属地区的当前时刻的天气情况
 
-String weather_chengdu = Blinker.weather("chengdu");//查询成都市当前时刻的天气情况
+Blinker.weather("chengdu");//查询成都市当前时刻的天气情况
 
-String weather_beijing = Blinker.weather("beijing");//查询北京市当前时刻的天气情况
+Blinker.weather("beijing");//查询北京市当前时刻的天气情况
 ```
 > *限制 1次/分钟  
 
@@ -1284,19 +1299,34 @@ String weather = Blinker.weather(location);
 | 999 | 未知 | Unknown |
 
 ### AQI查询
+#### Blinker.attachAQI()
+注册回调函数，当设备查询到AQI数据时会调用对应的回调函数  
+
+回调函数：
+```c++
+void aqiData(const String & data)
+{
+    BLINKER_LOG("AQI: ", data);
+}
+```
+注册回调函数：
+```
+Blinker.attachAQI(aqiData);
+```
+
 设备通过 **WiFi** 接入时可以使用 **Blinker.aqi()** 查询空气质量情况.
 ```
-String aqi_default = Blinker.aqi();//默认查询设备ip所属地区的当前时刻的空气质量情况
+Blinker.aqi();//默认查询设备ip所属地区的当前时刻的空气质量情况
 
-String aqi_chengdu = Blinker.aqi("chengdu");//查询成都市当前时刻的空气质量情况
+Blinker.aqi("chengdu");//查询成都市当前时刻的空气质量情况
 
-String aqi_beijing = Blinker.aqi("beijing");//查询北京市当前时刻的空气质量情况
+Blinker.aqi("beijing");//查询北京市当前时刻的空气质量情况
 ```
 > *限制 1次/分钟  
 
 ```
 String location = "chengdu";//传入参数为对应城市拼音/英文
-String aqi = Blinker.aqi(location);
+aqi = Blinker.aqi(location);
 ```
 **返回信息中字段及信息说明**  
 

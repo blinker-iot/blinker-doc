@@ -24,6 +24,7 @@ esp8266开发板([查看支持的设备](?file=003-硬件开发/01-设备端支�
 
 ### 软件准备  
 #### Arduino IDE需安装好esp8266扩展  
+[Arduino IDE](https://www.arduino.cc/en/Main/Software) 1.8.7或更新版本  
 务必使用 **2.5.0** 及以上release版本的 ESP8266 Arduino package  
 [常规安装方法](https://github.com/esp8266/Arduino)  
 [中国大陆安装方法(windows)](https://www.arduino.cn/thread-76029-1-1.html)  
