@@ -959,7 +959,7 @@ Blinker.delay(500);
 - attach()  
     *BlinkerBridge.attach()*  
     注册bridge的回调函数, 当收到指令时会调用该回调函数  
-- print()
+- print()  
     *BlinkerBridge.print()*    
     发送消息到对应的bridge设备  
 
