@@ -31,7 +31,7 @@
 ### 设备配置  
 #### Blinker.begin()  
 使用 **Blinker.begin()** 来配置 Blinker:  
-```arduino
+```cpp
 #define BLINKER_PRO
 #define BLINKER_BUTTON
 #define BLINKER_BUTTON_PIN 7
@@ -80,7 +80,7 @@ void setup() {
 
 #### Blinker.attachClick()
 按键单次点击时的回调函数
-```arduino
+```cpp
 /* 
  * Add your code in this function
  * 
@@ -92,13 +92,13 @@ void singalClick()
 }
 ```
 注册按键单次按下时的回调函数, 当设备检测到按键单击时将调用该函数
-```arduino
+```cpp
 Blinker.attachClick(singalClick);
 ```  
 
 #### Blinker.attachDoubleClick()
 按键双击时的回调函数
-```arduino
+```cpp
 /* 
  * Add your code in this function
  * 
@@ -110,13 +110,13 @@ void doubleClick()
 }
 ```
 注册按键双击时的回调函数, 当设备检测到按键双击时将调用该函数
-```arduino
+```cpp
 Blinker.attachDoubleClick(singalClick);
 ```
 
 #### Blinker.attachLongPressStart()
 按键长按开始时的回调函数
-```arduino
+```cpp
 /* 
  * Add your code in this function
  * 
@@ -128,13 +128,13 @@ void longPressStart()
 }
 ```
 注册按键长按开始时的回调函数, 当设备检测到按键长按开始时将调用该函数
-```arduino
+```cpp
 Blinker.attachLongPressStart(longPressStart);
 ```
 
 #### Blinker.attachDuringLongPress()
 按键长按过程中的回调函数
-```arduino
+```cpp
 /* 
  * Add your code in this function
  * 
@@ -146,13 +146,13 @@ void duringLongPress()
 }
 ```
 注册按键长按过程中的回调函数, 当设备检测到按键长按执行中时将调用该函数
-```arduino
+```cpp
 Blinker.attachDuringLongPress(duringLongPress);
 ```
 
 #### Blinker.attachLongPressStop()
 按键长按释放时的回调函数
-```arduino
+```cpp
 /* 
  * Add your code in this function
  * 
@@ -164,7 +164,7 @@ void longPressStop()
 }
 ```
 注册按键长按释放时的回调函数, 当设备检测到按键长按结束时将调用该函数
-```arduino
+```cpp
 Blinker.attachLongPressStop(longPressStop);
 ```
 > 注: 默认长按释放后将清除设备配置信息, 重置设备  
@@ -176,7 +176,7 @@ Blinker.attachLongPressStop(longPressStop);
 
 #### BLINKER_BUTTON_LONGPRESS_POWERDOWN
 启用长按关机/重置功能
-```arduino
+```cpp
 #define BLINKER_BUTTON
 #define BLINKER_BUTTON_PULLDOWN
 #define BLINKER_BUTTON_LONGPRESS_POWERDOWN
@@ -186,7 +186,7 @@ Blinker.attachLongPressStop(longPressStop);
 
 ***Blinker.attachLongPressPowerdown()***  
 按键长按释放时关机的回调函数
-```arduino
+```cpp
 /* 
  * Add your code in this function
  * 
@@ -200,12 +200,12 @@ void longPressPowerdown()
 }
 ```
 注册按键长按释放时关机的回调函数, 当设备检测到按键长按结束并触发关机动作时将调用该函数
-```arduino
+```cpp
 Blinker.attachLongPressReset(longPressPowerdown);
 ```
 ***Blinker.attachLongPressReset()***  
 按键长按释放时重置的回调函数
-```arduino
+```cpp
 /* 
  * Add your code in this function
  * 
@@ -217,19 +217,19 @@ void longPressReset()
 }
 ```
 注册按键长按释放时重置的回调函数, 当设备检测到按键长按结束并触发重置动作时将调用该函数
-```arduino
+```cpp
 Blinker.attachLongPressReset(longPressReset);
 ```
 ***Blinker.pressedTime()***
 在长按执行过程中可以返回长按已持续时间, 单位ms, 最大值为10000 ms
-```arduino
+```cpp
 uint16_t pressed_time = Blinker.pressedTime();
 ```
 
 #### Blinker.tick()
 检测按键状态, 用户一般情况下可以不调用。
 如果用户对按键实时性要求较高, 可以使用外部中断:
-```arduino
+```cpp
 /* 
  * Blinker provide a button parse function for user if you defined BLINKER_BUTTON
  * 
@@ -243,7 +243,7 @@ void buttonTick()
 }
 ```
 使用跳变沿中断:
-```arduino
+```cpp
 attachInterrupt(BLINKER_BUTTON_PIN, buttonTick, CHANGE);
 ```
 
@@ -256,21 +256,21 @@ attachInterrupt(BLINKER_BUTTON_PIN, buttonTick, CHANGE);
 
 #### Blinker.attachNoButtonReset()
 无按键重置回调函数
-```arduino
+```cpp
 void noButtonReset()
 {
     BLINKER_LOG("no button reset trigged!");
 }
 ```
 注册按键无按键回调函数, 当设备检测到无按键重置时将调用该函数
-```arduino
+```cpp
 Blinker.attachNoButtonReset(noButtonReset);
 ```
 
 ### 数据解析
 设备在收到数据时将调用数据解析的回调函数。  
 数据解析的回调函数:
-```arduino
+```cpp
 /* 
  * Add your command parse code in this function
  * 
@@ -294,7 +294,7 @@ bool dataParse(const JsonObject & data)
 }
 ```
 注册数据解析的回调函数:
-```arduino
+```cpp
 Blinker.attachParse(dataParse);
 ```
 

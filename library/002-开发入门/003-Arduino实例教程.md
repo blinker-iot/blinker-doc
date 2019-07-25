@@ -16,13 +16,13 @@
 ```
 其中class内容即是我们设备端程序需要的参数。  
 arduino程序中调用方法如下：  
-```c++
+```cpp
 Button1.icon("far fa-lightbulb");
 ```
 
 ####开关LED(开关按键)，并改变APP UI:  
 
-```c++
+```cpp
 #define BLINKER_WIFI
 
 #include <Blinker.h>

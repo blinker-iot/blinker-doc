@@ -55,7 +55,7 @@ esp8266开发板([查看支持的设备](?file=003-硬件开发/01-设备端支�
 ## 编译并上传示例程序 
 打开Arduino IDE，通过 **文件>示例>Blinker>Blinker_Hello/Hello_WiFi** 打开例程  
 在程序中找到如下变量，填入你申请到的Secret Key(auth)和要连接的WiFi热点名(ssid)、密码(pswd)，如： 
-```c++
+```cpp
 char auth[] = "abcdefghijkl"; //上一步中在app中获取到的Secret Key
 char ssid[] = "abcdefg"; //你的WiFi热点名称
 char pswd[] = "123456789"; //你的WiFi密码
@@ -81,7 +81,7 @@ char pswd[] = "123456789"; //你的WiFi密码
 
 
 ## 完整示例程序
-```c++
+```cpp
 
 #define BLINKER_PRINT Serial
 #define BLINKER_WIFI

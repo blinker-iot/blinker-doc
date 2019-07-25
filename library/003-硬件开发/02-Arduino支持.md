@@ -71,14 +71,14 @@ github：https://github.com/blinker-iot/blinker-library
 ### 设备配置  
 #### Blinker.begin()  
 使用 **Blinker.begin()** 来配置 Blinker:  
-```c++
+```cpp
 Blinker.begin(...);
 ```
 根据你使用的连接方式选择不同的参数用于配置Blinker  
   
 
 BLE:
-```c++
+```cpp
 #define BLINKER_BLE  
 #include <Blinker.h>  
   
@@ -103,7 +103,7 @@ void setup() {
 >使用Arduino Leonardo时以下IO可以设置为RX: 8, 9, 10, 11, 14, 15, 16  
   
 WiFi:
-```c++
+```cpp
 #define BLINKER_WIFI  
 #include <Blinker.h>  
   
@@ -124,7 +124,7 @@ void setup() {
 > WiFi 支持的硬件: WiFiduino, WiFiduino32, ESP8266, ESP32  
 
 GPRS:
-```c++
+```cpp
 #define BLINKER_GPRS_AIR202  
 #include <Blinker.h>  
   
@@ -149,7 +149,7 @@ void setup() {
 >使用Arduino Leonardo时以下IO可以设置为RX: 8, 9, 10, 11, 14, 15, 16  
   
 NBIoT:
-```c++
+```cpp
 #define BLINKER_NBIOT_SIM7020  
 #include <Blinker.h>  
   
@@ -180,7 +180,7 @@ void setup() {
 ### 连接管理
 #### Blinker.connect()
 建立 **Blinker** 设备间连接并返回连接状态, 默认超时时间为10秒
-```c++
+```cpp
 bool result = Blinker.connect();  
   
 
@@ -189,17 +189,17 @@ bool result = Blinker.connect(timeout);
 ```
 #### Blinker.disconnect()
 断开 **Blinker** 设备间连接
-```c++
+```cpp
 Blinker.disconnect();
 ```
 #### Blinker.connected()
 返回 **Blinker** 设备间连接状态
-```c++
+```cpp
 bool result = Blinker.connected();
 ```
 #### Blinker.run()
 此函数需要频繁调用以保持设备间连接及处理收到的数据, 建议放在 **loop()** 函数中
-```c++
+```cpp
 void loop() {
     Blinker.run();
 }
@@ -207,12 +207,12 @@ void loop() {
 ### 数据管理
 ~~#### Blinker.available()~~  
 ~~检测是否有接收到数据~~  
-<!-- ```c++ -->
+<!-- ```cpp -->
 ~~bool result = Blinker.available();~~  
 <!-- ``` -->
 ~~#### Blinker.readString()~~  
 ~~读取接收到的数据~~
-<!-- ```c++ -->
+<!-- ```cpp -->
 ~~String data = Blinker.readString();~~  
 <!-- ``` -->
 <!-- `*读取数据最大为 256 字节`   -->
@@ -222,7 +222,7 @@ void loop() {
 注册回调函数，当有设备收到APP发来的数据时会调用对应的回调函数  
 
 回调函数:
-```c++
+```cpp
 void dataRead(const String & data)
 {
     BLINKER_LOG("Blinker readString: ", data);
@@ -241,20 +241,20 @@ Blinker.attachData(dataRead);
 
 #### Blinker.print()
 发送数据
-```c++
+```cpp
 Blinker.print(data);
 ```
 发送一个Json数据, 如 {text1:data}
-```c++
+```cpp
 Blinker.print(text1, data);
 ```  
 发送一个带单位的Json数据, eg: {"temp":"30.2 °C"}
-```c++
+```cpp
 Blinker.print("temp", 30.2, "°C");
 ```
 <!-- >发送的Json数据可以在 Blinker APP 的 TEXT 组件中显示   -->
 ==连续发送时, 间隔100ms内发送的数据都会自动格式化后发送(同beginFormat), 若100ms后没有数据发送将把该数据发送出去。==
-```c++
+```cpp
 Blinker.print("halo","blinker");  
 Blinker.print("hello","world");  
 Blinker.delay(1000);  
@@ -263,7 +263,7 @@ Blinker.print("hello","print");
 > 发送的 Json 数据: {"halo":"blinker","hello":"world"} 与 {"hello":"print"}  
 > WiFi 需间隔1s才能继续下一次发送  
 
-<!-- ```c++
+<!-- ```cpp
 *发送数据最大为 128 字节  
 *MQTT方式接入时, print需间隔1s以上  
 例:  
@@ -290,11 +290,11 @@ Blinker.print("world);
 使用 **notify** 时, 发送数据以感叹号开始, 将会发送消息通知到app, 否则将会发送正常Json数据到app  
 
 发送通知
-```c++
+```cpp
 Blinker.notify("!notify");
 ```
 发送Json数据, 如 {"notice":"notify"}
-```c++
+```cpp
 Blinker.notify("notify");
 ```
 
@@ -305,7 +305,7 @@ Blinker.notify("notify");
 
 #### 设备配置  
 BLE:
-```c++
+```cpp
 #define BLINKER_BLE  
 #define BLINKER_ESP_TASK
 
@@ -320,7 +320,7 @@ void loop() {}
 ```
 
 WiFi:
-```c++
+```cpp
 #define BLINKER_WIFI  
 #define BLINKER_ESP_TASK
 
@@ -437,13 +437,13 @@ uint8_t result_Y = Blinker.joystick(J_Yaxis);
     发送按键当前的状态(多用于开关模式下反馈开关状态), 并将以上设置一并发送到APP
   
 初始化, 创建对象
-```c++
+```cpp
 #define BUTTON_1 "ButtonKey"
 
 BlinkerButton Button1(BUTTON_1);
 ```
 用于处理 **button** 收到数据的回调函数
-```c++
+```cpp
 void button1_callback(const String & state)
 {
     digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
@@ -457,7 +457,7 @@ void button1_callback(const String & state)
 ```
 
 在 **setup()** 中注册回调函数
-```c++
+```cpp
 Button1.attach(button1_callback);
 ```
 
@@ -503,13 +503,13 @@ Button1.attach(button1_callback);
     发送RGB及亮度值
 
 初始化, 创建对象
-```c++
+```cpp
 #define RGB_1 "RGBKey"
 
 BlinkerRGB RGB1(RGB_1);
 ```
 用于处理 **RGB** 收到数据的回调函数
-```c++
+```cpp
 void rgb1_callback(uint8_t r_value, uint8_t g_value, 
                     uint8_t b_value, uint8_t bright_value)
 {
@@ -522,7 +522,7 @@ void rgb1_callback(uint8_t r_value, uint8_t g_value,
 ```
 
 在 **setup()** 中注册回调函数
-```c++
+```cpp
 RGB1.attach(rgb1_callback);
 ```
 > *也可以在创建对象时注册回调函数:
@@ -554,13 +554,13 @@ BlinkerRGB.print()
     发送用户需要的滑动条数值及设置的颜色到APP
 
 初始化, 创建对象
-```c++
+```cpp
 #define Slider_1 "SliderKey"
 
 BlinkerSlider Slider1(Slider_1);
 ```
 用于处理 **Slider** 收到数据的回调函数
-```c++
+```cpp
 void slider1_callback(int32_t value)
 {
     digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
@@ -569,7 +569,7 @@ void slider1_callback(int32_t value)
 ```
 
 在 **setup()** 中注册回调函数
-```c++
+```cpp
 Slider1.attach(slider1_callback);
 ```
 > *也可以在创建对象时注册回调函数:
@@ -603,7 +603,7 @@ BlinkerSlider.print()
     发送数字组件当前的数值, 并将以上设置一并发送到APP  
 
 初始化, 创建对象
-```c++
+```cpp
 #define NUM_1 "NUMKey"
 
 BlinkerNumber NUM1(NUM_1);
@@ -637,7 +637,7 @@ BlinkerNumber.print()
     发送两段文字  
 
 初始化, 创建对象
-```c++
+```cpp
 #define TEXTE_1 "TextKey"
 
 BlinkerText Text1(TEXTE_1);
@@ -657,14 +657,14 @@ BlinkerText Text1(TEXTE_1);
     设置摇杆组件的回调函数, 当收到指令时会调用该回调函数  
 
 初始化, 创建对象
-```c++
+```cpp
 #define JOY_1 "JOYKey"
 
 BlinkerJoystick JOY1(JOY_1);
 ```  
 
 用于处理 **BlinkerJoystick** 收到数据的回调函数
-```c++
+```cpp
 void joystick1_callback(uint8_t xAxis, uint8_t yAxis)
 {
     BLINKER_LOG("Joystick1 X axis: ", xAxis);
@@ -673,7 +673,7 @@ void joystick1_callback(uint8_t xAxis, uint8_t yAxis)
 ```
 
 在 **setup()** 中注册回调函数
-```c++
+```cpp
 JOY1.attach(joystick1_callback);
 ```
 > *也可以在创建对象时注册回调函数:
@@ -694,7 +694,7 @@ JOY1.attach(joystick1_callback);
     发送开关当前的状态(多用于反馈开关状态)到APP  
 
 用于处理 **BUILTIN_SWITCH** 收到数据的回调函数
-```c++
+```cpp
 void switch_callback(const String & state)
 {
     digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
@@ -705,7 +705,7 @@ void switch_callback(const String & state)
 ```
 
 在 **setup()** 中注册回调函数
-```c++
+```cpp
 BUILTIN_SWITCH.attach(switch_callback);
 ```
 
@@ -803,13 +803,13 @@ bool state = Blinker.countdownState();
     发送选项卡当前的状态到APP  
 
 初始化, 创建对象
-```c++
+```cpp
 #define Tab_1 "TabKey"
 
 BlinkerTab Tab1(Tab_1);
 ```
 用于处理 **tab** 收到数据的回调函数
-```c++
+```cpp
 void tab1_callback(uint8_t tab_set)
 {
     BLINKER_LOG("get tab set: ", tab_set);
@@ -842,7 +842,7 @@ void tab1_callback(uint8_t tab_set)
 }
 ```
 **tab** 反馈时的回调函数
-```c++
+```cpp
 void tab1_feedback()
 {
     for(uint8_t num = 0; num < 5; num++)
@@ -858,7 +858,7 @@ void tab1_feedback()
 ```
 
 在 **setup()** 中注册回调函数
-```c++
+```cpp
 Tab1.attach(tab1_callback, tab1_feedback);
 ```
 
@@ -964,13 +964,13 @@ Blinker.delay(500);
     发送消息到对应的bridge设备  
 
 初始化, 创建对象
-```c++
+```cpp
 #define BRIDGE_1 "Your Device Secret Key of bridge to device"
 
 BlinkerBridge BridgeDevice1(BRIDGE_1);
 ```
 用于处理 **BlinkerBridge** 收到数据的回调函数
-```c++
+```cpp
 void bridge1Read(const String & data)
 {
     BLINKER_LOG("BridgeDevice1 readString: ", data);
@@ -981,7 +981,7 @@ void bridge1Read(const String & data)
 ```
 
 在 **setup()** 中注册回调函数
-```c++
+```cpp
 BridgeDevice1.attach(bridge1Read);
 ```
 
@@ -1057,7 +1057,7 @@ Blinker.configUpdate("Hello blinker!");
 注册回调函数，当设备查询到配置信息时会调用对应的回调函数  
 
 回调函数：
-```c++
+```cpp
 void configData(const String & data)
 {
     BLINKER_LOG("configData: ", data);
@@ -1085,7 +1085,7 @@ bool delete = Blinker.configDelete();
 注册回调函数，当设备需要上传数据到云端时会调用对应的回调函数  
 
 回调函数：
-```c++
+```cpp
 void dataStorage()
 {
     Blinker.dataStorage("data1", random(0,120));
@@ -1122,7 +1122,7 @@ Blinker.dataStorage("key","value");
 注册回调函数，当设备查询到云端信息时会调用对应的回调函数  
 
 回调函数：
-```c++
+```cpp
 void getData(const String & data)
 {
     BLINKER_LOG("getData: ", data);
@@ -1209,7 +1209,7 @@ Blinker.wechat("hello blinker");
 注册回调函数，当设备查询到天气数据时会调用对应的回调函数  
 
 回调函数：
-```c++
+```cpp
 void weatherData(const String & data)
 {
     BLINKER_LOG("weather: ", data);
@@ -1329,7 +1329,7 @@ String weather = Blinker.weather(location);
 注册回调函数，当设备查询到AQI数据时会调用对应的回调函数  
 
 回调函数：
-```c++
+```cpp
 void aqiData(const String & data)
 {
     BLINKER_LOG("AQI: ", data);

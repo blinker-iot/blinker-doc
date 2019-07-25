@@ -55,7 +55,7 @@ JDY18/JDY09 （默认波特率9600）
 编译并上传程序到Arduino中  
 
 **注意** 如果你使用的蓝牙模块波特率不是9600（JDY08、JDY10默认波特率115200），或者你不想使用2、3引脚接蓝牙模块，可以使用如下语句初始化蓝牙模块：  
-```arduino
+```cpp
 Blinker.begin(); // 默认设置: 数字IO 2(RX) 3(TX), 波特率 9600 bps  
 Blinker.begin(4, 5); // 设置数字IO 4(RX) 5(TX), 默认波特率 9600 bps  
 Blinker.begin(4, 5, 115200); // 设置数字IO 4(RX) 5(TX) 及波特率 115200 bps  
@@ -78,7 +78,7 @@ Blinker.begin(4, 5, 115200); // 设置数字IO 4(RX) 5(TX) 及波特率 115200 b
 看看[自定义界面](?file=005-App使用/02-自定义布局 "自定义布局") 和 [Arduino 支持库](?file=003-硬件开发/02-Arduino支持 "Arduino支持")  
 
 ## 完整示例程序
-```c++
+```cpp
 /*
 教程请见
 https://doc.blinker.app/

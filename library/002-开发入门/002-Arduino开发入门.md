@@ -17,7 +17,7 @@
 
 ## 接入示例  
 这里以ESP8266/ESP32 WiFi接入为例  
-```c++
+```cpp
 #define BLINKER_WIFI
 
 #include <Blinker.h>
@@ -67,12 +67,12 @@ void loop() {
 ```
 
 ## blinker初始化/选择连接方式  
-```arduino
+```cpp
 #define BLINKER_WIFI
 ```
 用于指定设备接入方式，你还可以使用 **BLINKER_BLE**，不同的接入方式对应的Blinker初始化函数也不同：
 ### 蓝牙接入
-```arduino
+```cpp
 #define BLINKER_BLE  
 #include <Blinker.h>  
 
@@ -81,7 +81,7 @@ void setup() {
 }
 ```
 ### WiFi接入  
-```arduino
+```cpp
 #define BLINKER_WIFI  
 #include <Blinker.h>  
 
@@ -91,7 +91,7 @@ void setup() {
 ```
 
 ## 新建组件对象/绑定组件  
-```arduino
+```cpp
 BlinkerButton Button1("btn-abc");
 BlinkerNumber Number1("num-abc");
 ```
@@ -101,20 +101,20 @@ blinker库定义了多种组件类型，如 **BlinkerSlider BlinkerRGB BlinkerNu
 
 ## 注册组件回调
 回调函数
-```arduino
+```cpp
 void button1_callback(const String & state) {
     BLINKER_LOG("get button state: ", state);
     digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
 }
 ```
 注册回调函数
-```arduino
+```cpp
 Button1.attach(button1_callback);
 ```
 当app中组件触发并发送到设备端时将触发该组件注册的回调函数  
 
 **使用方法：**
-```arduino
+```cpp
 BlinkerSlider Slider1("Slider_1");  //绑定滑动条  
 BlinkerRGB RGB1("RGB_1");           //绑定取色器  
 BlinkerNumber NUM1("NUM_1");        //绑定数字组件  
@@ -122,13 +122,13 @@ BlinkerText Text1("TEXTE_1");       //绑定文字组件
 ```
 
 ## 开启调试信息
-```arduino
+```cpp
 BLINKER_DEBUG.stream(Serial);
 ```
 用于指定调试信息输出的串口，设备开发时调试使用，项目或产品成型后，可以删除不用  
 
 ## Blinker运行时  
-```arduino
+```cpp
 void loop() {
     Blinker.run();
 }

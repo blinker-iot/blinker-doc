@@ -239,7 +239,7 @@ Blinker.attachHeartbeat(heartbeat_callback)
 BlinkerButton Button1("ButtonKey")
 ```
 用于处理 **button** 收到数据的回调函数
-```c++
+```cpp
 void button1_callback(state)
 {
     BLINKER_LOG("get button state: ", state)

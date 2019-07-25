@@ -58,12 +58,12 @@ ESP_AT模块 ->MCU主控: +BLINKER_WIFI:deviceName,uuid
 ### 设备配置  
 #### Blinker.begin()  
 使用 **Blinker.begin()** 来配置 Blinker:  
-```arduino
+```cpp
 Blinker.begin(...);
 ```
 
 WiFi:
-```arduino
+```cpp
 #define BLINKER_WIFI  
 #include <Blinker.h>  
   
@@ -95,7 +95,7 @@ void setup() {
 ### GPIO配置
 #### Blinker.pinMode()
 设置 ESP_AT 模块上 GPIO 的工作模式
-```arduino
+```cpp
 Blinker.pinMode(4, INPUT);
 Blinker.pinMode(5, INPUT_PULLUP);
 Blinker.pinMode(6, OUTPUT);
@@ -106,7 +106,7 @@ Blinker.pinMode(6, OUTPUT);
 
 #### Blinker.digitalWrite()
 设置 ESP_AT 模块上 GPIO 的输出电平
-```arduino
+```cpp
 Blinker.digitalWrite(6, HIGH);
 Blinker.delay(1000);
 Blinker.digitalWrite(6, LOW);
@@ -115,19 +115,19 @@ Blinker.digitalWrite(6, LOW);
 
 #### Blinker.digitalRead()
 读取 ESP_AT 模块上 GPIO 的输入电平
-```arduino
+```cpp
 uint8_t d5_read = Blinker.digitalRead(5);
 ```
 
 #### Blinker.analogRead()
 读取 ESP_AT 模块上 GPIO A0 的 ADC 值
-```arduino
+```cpp
 int adc_read = Blinker.analogRead();
 ```
 
 ### RESET
 发送重启指令并重启 ESP_AT 模块
-```arduino
+```cpp
 Blinker.reset();
 ```
 
@@ -268,7 +268,7 @@ Blinker.reset();
 > *注: 需在设置 BLINKER_WIFI 前进行天猫精灵接入设备类型的设置。  
 
 示例:
-```arduino
+```cpp
 AT+BLINKER_ALIGENIE=0
 AT+BLINKER_WIFI=1,authKey
 ```
@@ -281,7 +281,7 @@ AT+BLINKER_WIFI=1,authKey
 > *注: 需在设置 BLINKER_WIFI 前进行小度音箱接入设备类型的设置。  
 
 示例:
-```arduino
+```cpp
 AT+BLINKER_DUEROS=0
 AT+BLINKER_WIFI=1,authKey
 ```
