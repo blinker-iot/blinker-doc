@@ -1,15 +1,5 @@
 # blinker PRO Arduino支持库
 针对嵌入式设备的blinker库，需配合arduino sdk使用。 
-
->1. [支持的硬件](#支持的硬件 "支持的硬件")
->1. [支持的接入方式](#支持的接入方式 "支持的接入方式")
->1. [准备工作](#准备工作 "准备工作")
->1. [Blinker PRO 接口函数](#Blinker PRO 接口函数 "Blinker PRO 接口函数")  
->    1. [设备配置](#设备配置 "设备配置")
->    1. [BLINKER_BUTTON](#BLINKER_BUTTON "BLINKER_BUTTON")
->    1. [BLINKER_NO_BUTTON](#BLINKER_NO_BUTTON "BLINKER_NO_BUTTON")
->    1. [数据解析](#数据管理 "数据解析")
->1. [感谢](#感谢 "感谢")  
   
 ## 支持的硬件
 * 使用 [esp8266/arduino](https://github.com/esp8266/arduino) 的ESP8266  
