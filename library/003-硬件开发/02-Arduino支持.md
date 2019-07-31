@@ -34,7 +34,6 @@ github：https://github.com/blinker-iot/blinker-library
 ## 支持的接入方式
 * Bluetooth4.x (BLE)  
 * WiFi  
-<!-- * MQTT   -->
   
 ## 准备工作
 使用前你需要做好如下准备:
@@ -86,15 +85,6 @@ void setup() {
     Blinker.begin(auth, ssid, pswd);  
 }
 ```  
-  
-<!-- MQTT:
-
-#define BLINKER_MQTT  
-#include <Blinker.h>  
-  
-void setup() {  
-    Blinker.begin(auth, ssid, pswd);  
-} -->
 
 > WiFi 支持的硬件: WiFiduino, WiFiduino32, ESP8266, ESP32  
 
@@ -180,19 +170,6 @@ void loop() {
 }
 ```
 ### 数据管理
-~~#### Blinker.available()~~  
-~~检测是否有接收到数据~~  
-<!-- ```cpp -->
-~~bool result = Blinker.available();~~  
-<!-- ``` -->
-~~#### Blinker.readString()~~  
-~~读取接收到的数据~~
-<!-- ```cpp -->
-~~String data = Blinker.readString();~~  
-<!-- ``` -->
-<!-- `*读取数据最大为 256 字节`   -->
-<!-- `调用该函数后, 缓存将清空, 再次读取则为空` -->
-
 #### Blinker.attachData()
 注册回调函数，当有设备收到APP发来的数据时会调用对应的回调函数  
 
@@ -227,7 +204,7 @@ Blinker.print(text1, data);
 ```cpp
 Blinker.print("temp", 30.2, "°C");
 ```
-<!-- >发送的Json数据可以在 Blinker APP 的 TEXT 组件中显示   -->
+
 ==连续发送时, 间隔100ms内发送的数据都会自动格式化后发送(同beginFormat), 若100ms后没有数据发送将把该数据发送出去。==
 ```cpp
 Blinker.print("halo","blinker");  
@@ -238,14 +215,6 @@ Blinker.print("hello","print");
 > 发送的 Json 数据: {"halo":"blinker","hello":"world"} 与 {"hello":"print"}  
 > WiFi 需间隔1s才能继续下一次发送  
 
-<!-- ```cpp
-*发送数据最大为 128 字节  
-*MQTT方式接入时, print需间隔1s以上  
-例:  
-Blinker.print("hello");  
-Blinker.delay(1000);  
-Blinker.print("world);  
-```   -->
 
 ~~#### Blinker.beginFormat()&&Blinker.endFormat()~~  
 
@@ -348,42 +317,7 @@ Blinker.attachSummary(summary);
 ```
 
 ### App组件
-<!-- #### Blinker.wInit()
-组件初始化, 建议在使用前初始化 **Button** 、**Slider** 、 **Toggle** 及 **RGB**
-```
-Blinker.wInit("ButtonName", W_BUTTON);  
-Blinker.wInit("SliderName", W_SLIDER);  
-Blinker.wInit("ToggleName", W_TOGGLE);  
-Blinker.wInit("RGBName", W_RGB);//键词, 类型  
-```
->类型:  
->W_BUTTON 按键  
->W_SLIDER 滑动条  
->W_TOGGLE 开关  
->W_RGB RGB调色板  
->以上四种组件数量限制为 16个/种
 
-#### Blinker.button() 
-读取开关/按键数据, 按下(Pressed)时返回true, 松开(Released)时返回false
-```
-bool result = Blinker.button("Button1");
-```
-#### Blinker.slider()
-读取滑动条数据
-```
-uint8_t result = Blinker.slider("Slider1");
-```
-#### Blinker.toggle() 
-读取拨动开关数据, 打开(ON)时返回true, 关闭(OFF)时返回false
-```
-bool result = Blinker.toggle("Toggle1");
-```
-#### Blinker.joystick()
-读取摇杆数据
-```
-uint8_t result_X = Blinker.joystick(J_Xaxis);
-uint8_t result_Y = Blinker.joystick(J_Yaxis);
-``` -->
 #### BlinkerButton  
 按键组件在App中可以设置 按键/开关/自定义 三种模式:  
 - **按键** 模式下支持 点按/长按/释放(tap/pre/pup) 三个动作  
@@ -444,20 +378,6 @@ Button1.attach(button1_callback);
 > *也可以在创建对象时注册回调函数:
 >> BlinkerButton Button1(BUTTON_1, button1_callback);  
 
-<!-- ##### BlinkerButton.attach()
-> 注册按键的回调函数, 当收到指令时会调用该回调函数  
-
-##### BlinkerButton.icon()
-> 设置按键中显示的图标(icon), 图标列表及对应图标名称见:  
-
-##### BlinkerButton.color()
-> 设置按键中显示图标的颜色, [HTML颜色表](http://www.w3school.com.cn/tags/html_ref_colornames.asp)  
-
-##### BlinkerButton.text()
-> 设置按键中显示的名字或者描述  
-
-##### BlinkerButton.print()
-> 发送按键当前的状态(多用于开关模式下反馈开关状态), 并将以上设置一并发送到APP   -->
 
 #### BlinkerRGB  
 颜色组件, 用于读取/设置RGB及亮度值  
@@ -503,16 +423,6 @@ RGB1.attach(rgb1_callback);
 > *也可以在创建对象时注册回调函数:
 >> BlinkerRGB RGB1(RGB_1, rgb1_callback);  
 
-<!-- BlinkerRGB.attach()
-> 设置颜色组件的回调函数, 当收到指令时会调用该回调函数   
-
-BlinkerRGB.brightness()
-> 设置颜色组件的亮度值     
-
-BlinkerRGB.print()
-> 发送用户需要的RGB数值及亮度值到APP  
->> BlinkerRGB.print(R, G, B)  //发送RGB及前一次设置的亮度值  
->> BlinkerRGB.print(R, G, B, Brightness)  //发送RGB及亮度值   -->
 
 #### BlinkerSlider
 滑动条组件, 用于读取/设置滑动条  
@@ -550,15 +460,6 @@ Slider1.attach(slider1_callback);
 > *也可以在创建对象时注册回调函数:
 >> Slider1(Slider_1, slider1_callback); 
 
-<!-- BlinkerSlider.attach()
-> 设置滑动条组件的回调函数, 当收到指令时会调用该回调函数  
-
-BlinkerSlider.color()
-> 设置滑动条组件的颜色     
-
-BlinkerSlider.print()
-> 发送用户需要的滑动条数值及设置的颜色到APP   -->
- 
 
 #### BlinkerNumber
 数字组件, 用于发送数据到APP, 显示数字数据  
@@ -584,17 +485,6 @@ BlinkerSlider.print()
 BlinkerNumber NUM1(NUM_1);
 ```
 
-<!-- BlinkerNumber.icon()
-> 设置数字组件中显示的图标(icon), 图标列表及对应图标名称见:  
-
-BlinkerNumber.color()
-> 设置数字组件的颜色, [HTML颜色表](http://www.w3school.com.cn/tags/html_ref_colornames.asp)  
-
-BlinkerNumber.unit()
-> 设置数字组件中显示的数值的单位  
-
-BlinkerNumber.print()
-> 发送数字组件当前的数值, 并将以上设置一并发送到APP   -->
 
 #### BlinkerText
 文字组件, 用于发送数据到APP, 显示文字数据  
@@ -617,11 +507,6 @@ BlinkerNumber.print()
 
 BlinkerText Text1(TEXTE_1);
 ```
-
-<!-- BlinkerText.print()
-> 发送文字到APP
->> BlinkerText.print(text1)  //发送一段文字  
->> BlinkerText.print(text1, text2)  //发送两段文字  -->
 
 #### BlinkerJoystick
 摇杆组件, 读取摇杆X Y 轴的数据  
@@ -654,9 +539,6 @@ JOY1.attach(joystick1_callback);
 > *也可以在创建对象时注册回调函数:
 >> BlinkerJoystick JOY1(JOY_1, joystick1_callback);  
 
-<!-- Joystick.attach()
-> 设置摇杆组件的回调函数, 当收到指令时会调用该回调函数   -->
-
 #### BUILTIN_SWITCH
 开关组件, 读取/设置默认开关的状态
 
@@ -684,11 +566,6 @@ void switch_callback(const String & state)
 BUILTIN_SWITCH.attach(switch_callback);
 ```
 
-<!-- > **BUILTIN_SWITCH.attach()**  
-> 设置开关的回调函数, 当收到指令时会调用该回调函数  
-> **BUILTIN_SWITCH.print()**
-> 发送开关当前的状态(多用于反馈开关状态)到APP   -->
-
 #### Blinker.ahrs()
 开启手机 **AHRS** 功能
 ```
@@ -705,10 +582,6 @@ int16_t result_Pitch = Blinker.ahrs(Pitch);
 Blinker.detachAhrs();
 ```
 #### Blinker.gps()
-<!-- 刷新手机 **GPS** 功能
-```
-Blinker.freshAhrs();
-``` -->
 读取 **GPS** 数据
 ```
 String result_LONG = Blinker.gps(LONG);  
@@ -717,13 +590,7 @@ String result_LAT = Blinker.gps(LAT);
 > LONG 经度  
 > LAT 维度  
 
-<!-- #### Blinker.rgb()
-读取 **RGB** 数据
-```
-uint8_t result_R = Blinker.rgb("RGBKEY", R);
-uint8_t result_G = Blinker.rgb("RGBKEY", G);
-uint8_t result_B = Blinker.rgb("RGBKEY", B);
-``` -->
+
 #### Blinker.vibrate()
 发送手机振动指令, 震动时间, 单位ms 毫秒, 数值范围0-1000, 默认为500
 ```
@@ -837,33 +704,6 @@ void tab1_feedback()
 Tab1.attach(tab1_callback, tab1_feedback);
 ```
 
-<!-- ### SWITCH
-APP中默认 **SWITCH** 组件
-#### Blinker.switchAvailable()
-是否收到APP发来 **SWITCH** 控制指令
-```
-bool result = Blinker.switchAvailable();
-```
-#### Blinker.switchGet()
-读取 **SWITCH** 状态, 打开(ON)时返回true, 关闭(OFF)时返回false
-```
-bool state = Blinker.switchGet();
-```
-#### Blinker.switchUpdate()
-发送 **SWITCH** 最新状态, 用户务必在执行完控制动作后返回
-```
-Blinker.switchUpdate();
-```
-#### Blinker.switchOn()
-设置 **SWITCH** 状态为打开, 会触发 **Blinker.switchAvailable()**
-```
-Blinker.switchOn();
-```
-#### Blinker.switchOff()
-设置 **SWITCH** 状态为关闭, 会触发 **Blinker.switchAvailable()**
-```
-Blinker.switchOff();
-``` -->
 ### NTP时间  
 > NTP 目前仅试用于WiFi接入  
 
@@ -960,64 +800,6 @@ void bridge1Read(const String & data)
 BridgeDevice1.attach(bridge1Read);
 ```
 
-~~#### Blinker.bridge()~~  
-~~填入需要 **Bridge** 桥接通信设备的 **authKey** 建立桥接功能, 桥接成功将返回 true, 桥接失败返回 false.~~
-
-~~char bridgeKey[] = "Your Device Secret Key of bridge to device";~~  
-
-~~bool state = Blinker.bridge(bridgeKey);~~  
-
-~~> 建立桥接通信的设备务必属于同一个用户的设备, 一个Diy设备最多可以与4个Diy设备建立桥接通信~~  
-
-~~#### Blinker.bridgeAvailable()~~  
-~~检测是否有接收到桥接设备发来的数据~~  
-~~char bridgeKey[] = "Your Device Secret Key of bridge to device";~~  
-
-~~bool result = Blinker.bridgeAvailable(bridgeKey);~~  
-
-~~#### Blinker.bridgeRead()~~  
-~~读取接收到的数据~~  
-
-~~char bridgeKey[] = "Your Device Secret Key of bridge to device";~~  
-
-~~String data = Blinker.bridgeRead(bridgeKey);~~  
-~~`*读取数据最大为 256 字节`~~  
-~~`调用该函数后, 缓存将清空, 再次读取则为空`~~  
-~~#### Blinker.bridgePrint()~~  
-
-~~发送一个Json数据, 如 {text1:data}~~  
-
-~~char bridgeKey[] = "Your Device Secret Key of bridge to device";~~  
-
-~~Blinker.bridgePrint(bridgeKey, text1, data);~~  
-
-~~发送一个带单位的Json数据, eg: {"temp":"30.2 °C"}~~  
-
-~~char bridgeKey[] = "Your Device Secret Key of bridge to device";~~  
-
-~~Blinker.bridgePrint(bridgeKey, "temp", 30.2, "°C");~~  
-
-
-~~*发送数据最大为 128 字节~~    
-~~*MQTT方式接入时, bridgePrint需间隔1min以上~~    
-~~例:~~  
-~~Blinker.bridgePrint(bridgeKey, "hello");~~  
-~~Blinker.delay(60000);~~    
-
-
-~~#### Blinker.bridgeBeginFormat()&&Blinker.bridgeEndFormat()~~
-~~当使用 **beginFormat** 时, **bridgePrint** 发送出的数据都将以 Json 格式存入发送数据中。 这个发送数据将在使用 **endFormat** 时发送出去。~~  
-
-~~Blinker.bridgeBeginFormat();~~   
-~~Blinker.bridgePrint(bridgeKey, "Hello","Blinker");~~  
-~~Blinker.bridgePrint(bridgeKey,"start","end");~~  
-~~Blinker.bridgePrint(bridgeKey, "number",123);~~  
-~~Blinker.bridgeEndFormat();~~  
-
-~~>使用 endFormat 后, 发送的 Json 数据: {"Hello":"Blinker","start":"end","number":123}~~  
-~~>*MQTT方式接入时, 除间隔1min外建议使用 beginFormat/endFormat 进行数据发送~~    
-
-
 ### 图表-历史数据
 #### Blinker.configUpdate()
 上传配置信息到云端
@@ -1084,13 +866,6 @@ Blinker.dataStorage("key","value");
 > 缓存数据最大为 256 字节  
 > 最多可以同时缓存 6 个不同的key  
 
-~~#### Blinker.dataUpdate()~~
-~~将缓存数据推送到云端~~
-<!-- ``` -->
-~~Blinker.dataUpdate();~~
-<!-- ``` -->
-~~将缓存数据推送到云端~~    
-~~*限制 1次/小时~~  
 
 #### Blinker.dataGet()
 ##### Blinker.attachDataGet()

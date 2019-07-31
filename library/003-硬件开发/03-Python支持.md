@@ -12,7 +12,6 @@ Linux开发板、树莓派(Raspberry Pi)、香蕉派
 ## 连接类型
 * Bluetooth 4.x(BLE)  
 * WiFi  
-* MQTT  
   
 ## 准备工作
 开始使用前你需要做好如下准备:
@@ -25,32 +24,6 @@ Linux开发板、树莓派(Raspberry Pi)、香蕉派
 `cd blinker-py`  
 `sudo python3 setup.py install`  
 `sudo pip3 install -r requirements.txt`  
-
-<!-- * Install the [simple-websocket-server](https://github.com/dpallot/simple-websocket-server)  
-`pip3 install SimpleWebSocketServer`  
-
-* Install the [python-zeroconf](https://github.com/jstasiak/python-zeroconf)  
-`pip3 install zeroconf`   
-
-* Install the [paho.mqtt.python](https://github.com/eclipse/paho.mqtt.python)  
-`pip3 install paho-mqtt`
-
-* Install the [requests](https://github.com/requests/requests)  
-`pip3 install requests`  
-
-* Install the [bluez](http://www.bluez.org/) 5.49 or newer  
-[Adafruit install-bluez-on-the-raspberry-pi](https://learn.adafruit.com/install-bluez-on-the-raspberry-pi/installation)  
-
-* Install the [dbus-python](https://pypi.org/project/dbus-python/#description)  
-`pip3 install dbus-python`  
-
-* Install the [PyGobject](https://pygobject.readthedocs.io/en/latest/)  
-`pip3 install pygobject`  
-
-* Install the [blinker-py](https://github.com/blinker-iot/blinker-py)  
-`git clone https://github.com/blinker-iot/blinker-py`  
-`cd blinker-py`  
-`sudo python3 setup.py install`     -->
 
 >注:
 >- 务必安装的模块 [blinker-py](https://github.com/blinker-iot/blinker-py)
