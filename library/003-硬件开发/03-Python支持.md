@@ -60,8 +60,6 @@ Blinker.mode("BLINKER_WIFI")
 Blinker.begin(auth)
 ```  
 
-<!-- > MQTT 支持的硬件: WiFiduino, WiFiduino32, ESP8266, ESP32   -->
-
 **begin()** 主要完成以下配置:  
 1.初始化硬件设置;  
 2.连接网络并广播设备信息等待app连接;
