@@ -76,14 +76,14 @@ void setup() {
  * 
  * When button clicked, device will call this function
  */
-void singalClick()
+void singleClick()
 {
     BLINKER_LOG("Button clicked!");
 }
 ```
 注册按键单次按下时的回调函数, 当设备检测到按键单击时将调用该函数
 ```cpp
-Blinker.attachClick(singalClick);
+Blinker.attachClick(singleClick);
 ```  
 
 #### Blinker.attachDoubleClick()
@@ -101,7 +101,7 @@ void doubleClick()
 ```
 注册按键双击时的回调函数, 当设备检测到按键双击时将调用该函数
 ```cpp
-Blinker.attachDoubleClick(singalClick);
+Blinker.attachDoubleClick(singleClick);
 ```
 
 #### Blinker.attachLongPressStart()
@@ -223,7 +223,7 @@ uint16_t pressed_time = Blinker.pressedTime();
 /* 
  * Blinker provide a button parse function for user if you defined BLINKER_BUTTON
  * 
- * Blinker button can detect singal click/ double click/ long press
+ * Blinker button can detect single click/ double click/ long press
  * 
  * Blinker.tick() will run by default, use interrupt will be better
  */
