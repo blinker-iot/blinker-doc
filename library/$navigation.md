@@ -11,6 +11,7 @@
 - [esp8266模块&WiFi接入](?file=001-快速开始/10-esp8266模块&WiFi接入 "esp8266模块&WiFi接入")
 - [GPRS模块接入](?file=001-快速开始/11-GPRS模块接入 "GPRS模块接入")
 - [NBIoT模块接入](?file=001-快速开始/12-NBIoT模块接入 "NBIoT模块接入")
+- [MicroPython设备接入](?file=001-快速开始/13-MicroPython设备接入 "MicroPython设备接入")
 - [提问指南](?file=001-快速开始/20-提问指南 "提问指南")
 
 ##### 开发入门
