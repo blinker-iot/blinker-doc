@@ -50,13 +50,6 @@ Blinker.begin();
 ```  
 > Node.js暂不支持BLE  
   
-<!-- >串口蓝牙模块:  
->**Blinker.begin()** 将使用默认设置配置 SoftWareSerial   
->  
->Blinker.begin();// 默认设置: 数字IO 2(RX) 3(TX), 波特率 9600 bps  
->Blinker.begin(4, 5);// 设置数字IO 4(RX) 5(TX), 默认波特率 9600 bps  
->Blinker.begin(4, 5, 115200);// 设置数字IO 4(RX) 5(TX) 及波特率 115200 bps   -->
-  
 WiFi:
 ```
 const blinker = require('/usr/lib/node_modules/blinker');
@@ -72,26 +65,10 @@ const Blinker = new blinker('BLINKER_MQTT');
 
 Blinker.begin();
 ```
-<!-- > MQTT 支持的硬件: WiFiduino, WiFiduino32, ESP8266, ESP32   -->
-
 **begin()** 主要完成以下配置:  
 1.初始化硬件设置;  
 2.连接网络并广播设备信息等待app连接;
 ### 连接管理
-<!-- ### Blinker.connect()
-建立 **Blinker** 设备间连接并返回连接状态, 默认超时时间为10秒
-```
-result = Blinker.connect()  
-  
-
-timeout = 30000 # ms  
-result = Blinker.connect(timeout)
-```
-### Blinker.disconnect()
-断开 **Blinker** 设备间连接
-```
-Blinker.disconnect()
-``` -->
 #### Blinker.connected()
 返回 **Blinker** 设备间连接状态
 ```
@@ -99,22 +76,7 @@ Blinker.on('connected', function() {
     console.log('device connected!');
 });
 ```  
-<!-- ### Blinker.run()
-此函数需要频繁调用以保持设备间连接及处理收到的数据, 建议放在 **main** 函数中
-```
-if __name__ == '__main__':  
-    while True:  
-        Blinker.run()
-``` -->
 ### 数据管理
-<!-- ### Blinker.available()
-检测是否有接收到数据
-```
-if Blinker.available():  
-    print('data available')  
-else:  
-    print('none data')
-``` -->
 #### Blinker.read()
 读取接收到的数据
 ```
@@ -128,14 +90,6 @@ Blinker.read(function(data){
 ```
 Blinker.print(data)
 ```
-<!-- 发送一个Json数据, 如 {text1:data}
-```
-Blinker.print(text1, data)
-```  
-发送一个带单位的Json数据, eg: {"temp":"30.2 °C"}
-```
-Blinker.print("temp", 30.2, "°C")
-``` -->
 >发送的Json数据可以在 Blinker APP 的 TEXT 组件中显示  
 
 ```
@@ -171,20 +125,6 @@ Blinker.notify("notify");
 ```
 
 ### App Widgets
-<!-- ### Blinker.wInit()
-组件初始化, 建议在使用前初始化 **Button** 、**Slider** 、 **Toggle** 及 **RGB**
-```
-Blinker.wInit("ButtonName", W_BUTTON)  
-Blinker.wInit("SliderName", W_SLIDER)  
-Blinker.wInit("ToggleName", W_TOGGLE)
-Blinker.wInit("RGBName", W_RGB)//键词, 类型  
-```
->类型:  
->W_BUTTON 按键  
->W_SLIDER 滑动条  
->W_TOGGLE 开关  
->W_RGB    RGB调色板   -->
-
 
 #### Blinker.button() 
 读取开关/按键数据, 按下(Pressed)时返回true, 松开(Released)时返回false
@@ -243,10 +183,6 @@ Blinker.ahrs(function(msg) {
 Blinker.dettachAhrs();
 ```
 #### Blinker.gps()
-<!-- 刷新手机 **GPS** 功能
-```
-Blinker.freshAhrs();
-``` -->
 读取 **GPS** 数据
 ```
 Blinker.gps(function(msg) {
@@ -274,14 +210,6 @@ Blinker.rgb("RGBKEY",function rgb1(msg) {
 Blinker.vibrate();
 Blinker.vibrate(255);  
 ```
-<!-- ## 设备延时
-### Blinker.delay()
-延时函数, 在延时过程中仍保持设备间连接及数据接收处理
-```
-Blinker.delay(500)
-```
->*为了连接设备成功, 需要延时时务必使用该函数;  
->使用此函数可以在延时期间连接设备及接收数据并处理数据, 延时完成后才能执行后面的程序;   -->
 ### Debug
 如果你想调试输出更多细节信息 :
 ```

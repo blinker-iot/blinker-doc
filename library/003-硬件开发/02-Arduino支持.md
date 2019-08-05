@@ -1119,13 +1119,6 @@ aqi = Blinker.aqi(location);
 | co | 一氧化碳 | 15 |
 | o3 | 臭氧 | 20 |  
 
-
-<!-- | Name | Academy | score | 
-| - | :-: | -: | 
-| Harry Potter | Gryffindor| 90 | 
-| Hermione Granger | Gryffindor | 100 | 
-| Draco Malfoy | Slytherin | 90 | -->
-
 ### Debug
 将这行代码添加到你的工程文件第一行, 以启用串口调试输出功能:
 ```

@@ -215,21 +215,6 @@ Button1.attach(button1_callback)
 > *也可以在创建对象时注册回调函数:
 >> Button1 = BlinkerButton(BUTTON_1, button1_callback)  
 
-<!-- ##### BlinkerButton.attach()
-> 注册按键的回调函数, 当收到指令时会调用该回调函数  
-
-##### BlinkerButton.icon()
-> 设置按键中显示的图标(icon), 图标列表及对应图标名称见:  
-
-##### BlinkerButton.color()
-> 设置按键中显示图标的颜色, [HTML颜色表](http://www.w3school.com.cn/tags/html_ref_colornames.asp)  
-
-##### BlinkerButton.text()
-> 设置按键中显示的名字或者描述  
-
-##### BlinkerButton.print()
-> 发送按键当前的状态(多用于开关模式下反馈开关状态), 并将以上设置一并发送到APP   -->
-
 #### BlinkerRGB  
 颜色组件, 用于读取/设置RGB及亮度值  
 
@@ -270,17 +255,6 @@ RGB1.attach(rgb1_callback)
 > *也可以在创建对象时注册回调函数:
 >> RGB1 = BlinkerRGB(RGB_1, rgb1_callback)   
 
-<!-- BlinkerRGB.attach()
-> 设置颜色组件的回调函数, 当收到指令时会调用该回调函数   
-
-BlinkerRGB.brightness()
-> 设置颜色组件的亮度值     
-
-BlinkerRGB.print()
-> 发送用户需要的RGB数值及亮度值到APP  
->> BlinkerRGB.print(R, G, B)  //发送RGB及前一次设置的亮度值  
->> BlinkerRGB.print(R, G, B, Brightness)  //发送RGB及亮度值   -->
-
 #### BlinkerSlider
 滑动条组件, 用于读取/设置滑动条  
 
@@ -314,16 +288,6 @@ Slider1.attach(slider1_callback)
 > *也可以在创建对象时注册回调函数:
 >> Slider1 = BlinkerSlider(Slider_1, slider1_callback) 
 
-<!-- BlinkerSlider.attach()
-> 设置滑动条组件的回调函数, 当收到指令时会调用该回调函数  
-
-BlinkerSlider.color()
-> 设置滑动条组件的颜色     
-
-BlinkerSlider.print()
-> 发送用户需要的滑动条数值及设置的颜色到APP   -->
- 
-
 #### BlinkerNumber
 数字组件, 用于发送数据到APP, 显示数字数据  
 
@@ -346,18 +310,6 @@ BlinkerSlider.print()
 BlinkerNumber NUM1("NUMKey")
 ```
 
-<!-- BlinkerNumber.icon()
-> 设置数字组件中显示的图标(icon), 图标列表及对应图标名称见:  
-
-BlinkerNumber.color()
-> 设置数字组件的颜色, [HTML颜色表](http://www.w3school.com.cn/tags/html_ref_colornames.asp)  
-
-BlinkerNumber.unit()
-> 设置数字组件中显示的数值的单位  
-
-BlinkerNumber.print()
-> 发送数字组件当前的数值, 并将以上设置一并发送到APP   -->
-
 #### BlinkerText
 文字组件, 用于发送数据到APP, 显示文字数据  
 
@@ -374,11 +326,6 @@ BlinkerNumber.print()
 ```
 BlinkerText Text1("TextKey")
 ```
-
-<!-- BlinkerText.print()
-> 发送文字到APP
->> BlinkerText.print(text1)  //发送一段文字  
->> BlinkerText.print(text1, text2)  //发送两段文字  -->
 
 #### BlinkerJoystick
 摇杆组件, 读取摇杆X Y 轴的数据  
@@ -408,9 +355,6 @@ JOY1.attach(joystick1_callback)
 ```
 > *也可以在创建对象时注册回调函数:
 >> JOY1 = BlinkerJoystick(JOY_1, joystick1_callback)  
-
-<!-- Joystick.attach()
-> 设置摇杆组件的回调函数, 当收到指令时会调用该回调函数   -->
 
 #### BUILTIN_SWITCH
 开关组件, 读取/设置默认开关的状态
@@ -454,10 +398,6 @@ result_Pitch = Blinker.ahrs(Pitch)
 Blinker.dettachAhrs()
 ```
 #### Blinker.gps()
-<!-- 刷新手机 **GPS** 功能
-```
-Blinker.freshAhrs();
-``` -->
 读取 **GPS** 数据
 ```
 result_LONG = Blinker.gps(LONG)  
@@ -714,16 +654,6 @@ aqi = Blinker.aqi(location)
 
 
 ### Debug
-<!-- 将这行代码添加到你的工程文件第一行, 以启用串口调试输出功能:
-```
-#define BLINKER_PRINTER Serial
-```
-在 `void setup()` 中初始化串口Serial :
-```
-Serial.begin(115200);
-```
-你可以用额外的硬件串口 (HardWareSerial) 或者软串口 (SoftWareSerial) 来调试输出 (你需要额外的适配器将该串口连接到你的电脑上).  
-   -->
 如果你想调试输出更多细节信息 :
 ```
 from Blinker import *
