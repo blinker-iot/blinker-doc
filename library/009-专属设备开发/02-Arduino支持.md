@@ -257,6 +257,9 @@ void noButtonReset()
 Blinker.attachNoButtonReset(noButtonReset);
 ```
 
+#### Blinker.reset()
+设备重置API, 调用该接口后设备将立即重置。  
+
 ### 数据解析
 设备在收到数据时将调用数据解析的回调函数。  
 数据解析的回调函数:
