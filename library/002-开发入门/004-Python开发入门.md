@@ -127,7 +127,7 @@ def button1_callback(state):
     button1.print(state)
 ```
 触发该组件注册的回调函数时将返回该组件对应的状态值  
-其他组件操作可见 [Python支持](?file=003-硬件开发/03-Python支持)  
+其他组件操作可见 [Python支持](?file=003-硬件开发/04-Python支持)  
 
 
 ## 数据管理  

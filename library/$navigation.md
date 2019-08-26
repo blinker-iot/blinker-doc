@@ -24,13 +24,14 @@
 ##### 硬件开发
 - [设备端支持](?file=003-硬件开发/01-设备端支持 "设备端支持")
 - [Arduino支持](?file=003-硬件开发/02-Arduino支持 "Arduino支持")
-- [Python支持](?file=003-硬件开发/03-Python支持 "Python支持")
-- [microPython支持](?file=003-硬件开发/04-microPython支持 "microPython支持")
-- [ESP_AT模块支持](?file=003-硬件开发/05-ESP_AT模块支持 "ESP_AT模块支持")
-- [JavaScript支持](?file=003-硬件开发/06-JavaScript支持 "JavaScript支持")
-- [通信指令](?file=003-硬件开发/08-通信指令 "通信指令")
-- [接入其他设备](?file=003-硬件开发/09-接入其他设备 "接入其他设备")
-- [开发工具](?file=003-硬件开发/10-开发工具 "开发工具")
+- [freeRTOS支持](?file=003-硬件开发/03-freeRTOS支持 "freeRTOS支持")
+- [Python支持](?file=003-硬件开发/04-Python支持 "Python支持")
+- [microPython支持](?file=003-硬件开发/05-microPython支持 "microPython支持")
+- [ESP_AT模块支持](?file=003-硬件开发/06-ESP_AT模块支持 "ESP_AT模块支持")
+- [JavaScript支持](?file=003-硬件开发/07-JavaScript支持 "JavaScript支持")
+- [通信指令](?file=003-硬件开发/18-通信指令 "通信指令")
+- [接入其他设备](?file=003-硬件开发/19-接入其他设备 "接入其他设备")
+- [开发工具](?file=003-硬件开发/20-开发工具 "开发工具")
 
 ##### 特有功能
 - [界面布局器](?file=004-特有功能/00-界面布局器 "界面布局器")
