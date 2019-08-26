@@ -141,26 +141,26 @@ blinker_button_init(&button1, button1_callback);
 
 **blinker_button_config_t**:
 - state  
-    *const char *state*  
+    *const char \*state*  
     设置按键的状态  
 - icon  
-    *const char *icon*  
+    *const char \*icon*  
     设置按键中显示的图标(icon), [图标列表及对应图标名称见](https://fontawesome.com/)  
 - color  
-    *const char *color*  
+    *const char \*color*  
     设置按键中显示图标的颜色, [HTML颜色表](http://www.w3school.com.cn/tags/html_ref_colornames.asp)  
 - content  
-    *const char *content*  
+    *const char \*content*  
     设置按键中显示图标的内容  
 - text  
-    *const char *text1*  
-    设置按键中显示的名字或者描述  
-    *const char *text1*  
+    *const char \*text1*  
+    设置按键中显示的名字或者描述   
+    *const char \*text1*  
     一段描述文字  
-    *const char *text1*  
-    *const char *text2*  
+    *const char \*text1*  
+    *const char \*text2*  
     两段描述文字  
 - text_color  
-    *const char *text_color*  
+    *const char \*text_color*  
     设置按键中显示文字的颜色, [HTML颜色表](http://www.w3school.com.cn/tags/html_ref_colornames.asp)  
 
