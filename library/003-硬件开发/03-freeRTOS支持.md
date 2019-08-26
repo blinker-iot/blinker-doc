@@ -34,6 +34,7 @@ void setup() {
     blinker_config_t init_conf = {
         .type = BLINKER_WIFI,
         .wifi = BLINKER_DEFAULT_CONFIG,
+        .aligenie = BLINKER_ALIGENIE_LIGHT,
     };
     blinker_init(&init_conf);
 
@@ -44,3 +45,122 @@ void setup() {
 **begin()** 主要完成以下配置:  
 1.初始化硬件设置;  
 2.连接网络并广播设备信息等待app连接;  
+
+#### blinker_init()
+完成设备功能初始化函数  
+```cpp
+enum blinker_device_type_t
+{
+    BLINKER_WIFI,
+    BLINKER_PRO_ESP
+};
+
+enum blinker_wifi_type_t
+{
+    BLINKER_DEFAULT_CONFIG,
+    BLINKER_ESP_SMARTCONFIG
+};
+
+typedef struct 
+{
+    enum blinker_device_type_t      type;
+    enum blinker_wifi_type_t        wifi;
+    const char *                    aligenie;
+    const char *                    dueros;
+    const char *                    miot;
+} blinker_config_t;
+```
+
+**参数** :
+- type:  
+    *blinker_device_type_t type*  
+    设置设备类型 WiFi / PRP_ESP  
+- wifi:  
+    *blinker_wifi_type_t wifi*  
+    设置 WiFi 接入类型 默认模式 / SMARTCONFIG  
+- aligenie:  
+    *const char *aligenie*  
+    设置 天猫精灵 智能设备类型  
+- dueros:  
+    *const char *dueros*  
+    设置 小度音箱 智能设备类型  
+- miot:  
+    *const char *miot*  
+    设置 小爱同学 智能设备类型  
+
+### 数据管理
+#### blinker_attach_data()
+注册回调函数，当有设备收到APP发来的数据时会调用对应的回调函数  
+
+回调函数：
+```cpp
+void data_callback(const cJSON *data)
+{
+    BLINKER_LOG(TAG, "get json data");
+}
+```
+注册回调函数：
+```cpp
+blinker_attach_data(data_callback);
+```
+
+### App组件
+#### BlinkerButton
+按键组件在App中可以设置 按键/开关/自定义 三种模式:  
+- **按键** 模式下支持 点按/长按/释放(tap/pre/pup) 三个动作  
+- **开关** 模式下支持 打开/关闭(on/off) 两个动作  
+- **自定义** 模式下支持 自定义指令 发送  
+
+初始化, 创建对象
+```cpp
+BlinkerButton button1 = {.name = "btn-abc"};
+```
+用于处理 **button** 收到数据的回调函数
+```cpp
+void button1_callback(const char *data)
+{
+    BLINKER_LOG(TAG, "get button data: %s", data);
+
+    blinker_button_config_t config = {
+        .icon = "fas fa-alicorn",
+        .color = "0xFF",
+        .text1 = "test",
+    };
+
+    blinker_button_print(&button1, &config);
+}
+```
+注册回调函数
+```cpp
+blinker_button_init(&button1, button1_callback);
+```
+> 在回调函数中, **state** 的值为:  
+> - **按键** : "tap"(点按); "pre"(长按); "pup"(释放)  
+> - **开关** : "on"(打开); "off"(关闭)  
+> - **自定义** : 用户设置的值  
+
+**blinker_button_config_t**:
+- state  
+    *const char *state*  
+    设置按键的状态  
+- icon  
+    *const char *icon*  
+    设置按键中显示的图标(icon), [图标列表及对应图标名称见](https://fontawesome.com/)  
+- color  
+    *const char *color*  
+    设置按键中显示图标的颜色, [HTML颜色表](http://www.w3school.com.cn/tags/html_ref_colornames.asp)  
+- content  
+    *const char *content*  
+    设置按键中显示图标的内容  
+- text  
+    *const char *text1*  
+    设置按键中显示的名字或者描述  
+    *const char *text1*  
+    一段描述文字  
+    *const char *text1*  
+    *const char *text2*  
+    两段描述文字  
+- text_color  
+    *const char *text_color*  
+    设置按键中显示文字的颜色, [HTML颜色表](http://www.w3school.com.cn/tags/html_ref_colornames.asp)  
+
