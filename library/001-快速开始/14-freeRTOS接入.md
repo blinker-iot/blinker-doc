@@ -1,7 +1,12 @@
 # freeRTOS接入  
 
+## 支持芯片
+esp8266、esp32
+
+## Github 
 [GITHUB](https://github.com/blinker-iot/blinker-freertos)
 
+## 示例  
 Hello blinker示例：
 ```c++
 #include <stdio.h>
