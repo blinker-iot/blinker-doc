@@ -1,6 +1,7 @@
-#MicroPython设备接入  
+# MicroPython设备接入  
 目前仅提供ESP32 MicroPython支持模块  
-使用方法见[示例程序](https://github.com/blinker-iot/blinker-mpy/tree/master/example)  
+使用方法见  
+[示例程序](https://github.com/blinker-iot/blinker-mpy/tree/master/example)  
 [函数参考](?file=003-硬件开发/05-microPython支持)  
 
 ## 准备工作
@@ -13,11 +14,22 @@ ESP32开发板
 #### 下载并安装blinker模块 
 [点击下载](https://github.com/blinker-iot/blinker-mpy/archive/master.zip)
 
-## 在app中添加设备  
+## 在app中添加设备，获取Secret Key  
+1. 进入App，点击右上角的“+”号，然后选择 **添加设备**    
+2. 点击选择==Arduino== > ==WiFi接入==  
+3. 选择要接入的服务商  
+4. 复制申请到的==Secret Key==  
 
   
 ## 上传示例程序 
-
+[示例程序](https://github.com/blinker-iot/blinker-mpy/blob/master/example/Blinker_Hello/Hello_WiFi/Hello_WiFi.py)  
+修改其中的基本参数  
+```python
+auth = 'Your Device Secret Key'
+ssid = 'Your WiFi network SSID or name'
+pswd = 'Your WiFi network WPA password or WEP key'
+```
+然后上传程序即可。
 
 ## 恭喜！一切就绪  
 在APP中点击刚才你添加的设备，即可进入控制界面，点点按钮就可以控制Arduino上的LED灯开关  
