@@ -53,7 +53,7 @@
     "亚马逊Alexa": "alexa",
     "三星Bixby": "bixby",
     "微软Cortana": "cortana",
-    "蓝牙氛围灯": "",
+    "蓝牙氛围灯": "ble-light",
     "远程报警装置": "",
     "远程环境检测仪": "",
     "语音控制灯": "speech-light",
