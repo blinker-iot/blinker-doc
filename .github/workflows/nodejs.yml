@@ -28,4 +28,4 @@ jobs:
 #         CI: true
 
     - name: push2
-      run: git push
+      run: git push origin website
