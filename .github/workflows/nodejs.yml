@@ -30,5 +30,7 @@ jobs:
 #         CI: true
 
     - name: push2
-      run: git push origin HEAD:website
+      run: |
+        git config --global user.name "coloz"
+        git push origin HEAD:website
       # git push origin doc:website
