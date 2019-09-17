@@ -27,6 +27,6 @@ jobs:
 #       env:
 #         CI: true
 
-    - name: push2
-      run: git push
+#     - name: push2
+#       run: git push
       
