@@ -16,7 +16,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    
+    # - name: git clone
+    #   run: git clone https://github.com/blinker-iot/blinker-doc.git
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
@@ -28,4 +30,4 @@ jobs:
 #         CI: true
 
     - name: push2
-      run: git push origin website
+      run: git push origin doc:website
