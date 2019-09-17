@@ -1,3 +1,2 @@
-.vscode/c_cpp_properties.json
-.vscode/arduino.json
-.vscode/launch.json
+node_modules
+package-lock.json
