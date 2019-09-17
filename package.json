@@ -1,0 +1,25 @@
+{
+  "name": "blinker-doc",
+  "version": "1.0.0",
+  "description": "![](https://github.com/blinker-iot/blinker-doc/blob/master/img/blinker-led-logo-60.png?raw=true)",
+  "main": "process.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blinker-iot/blinker-doc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blinker-iot/blinker-doc/issues"
+  },
+  "homepage": "https://github.com/blinker-iot/blinker-doc#readme",
+  "dependencies": {
+    "transliteration": "^2.1.7"
+  }
+}
