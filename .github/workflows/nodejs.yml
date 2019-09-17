@@ -30,4 +30,5 @@ jobs:
 #         CI: true
 
     - name: push2
-      run: git push origin doc:website
+      run: git checkout
+      # git push origin doc:website
