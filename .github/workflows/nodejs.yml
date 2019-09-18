@@ -31,6 +31,6 @@ jobs:
 
     - name: push2
       run: |
-        git config --global user.name "coloz"
+        # git config --global user.name "coloz"
         git push origin HEAD:website
-      # git push origin doc:website
+        # git push origin doc:website
