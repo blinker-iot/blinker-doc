@@ -32,5 +32,6 @@ jobs:
     - name: push2
       run: |
         # git config --global user.name "coloz"
+        git remote add origin https://coloz@github.com/blinker-iot/blinker-doc.git
         git push origin HEAD:website
         # git push origin doc:website
