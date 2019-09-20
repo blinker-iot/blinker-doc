@@ -162,6 +162,12 @@ Blinker.disconnect();
 ```cpp
 bool result = Blinker.connected();
 ```
+#### Blinker.init()
+返回设备初始化状态(仅限 BLINK_WIFI/BLINKER_PRO 设备)  
+初始化指设备连上WiFi并能访问外网，设备开始连接MQTT broker  
+```cpp
+bool state = Blinker.init();
+```
 #### Blinker.run()
 此函数需要频繁调用以保持设备间连接及处理收到的数据, 建议放在 **loop()** 函数中
 ```cpp
@@ -756,6 +762,16 @@ int8_t month = Blinker.month();
 获取当前时间对应年, 单位为年(y), 获取成功时值: 20xx, 获取失败时值: -1
 ```
 int16_t year = Blinker.year();
+```
+#### Blinker.startTime()
+获取设备开机NTP时间, 单位为秒(s), 获取失败时值: 0  
+```
+time_t start_time = Blinker.startTime();
+```
+#### Blinker.runTime()
+获取设备运行时间, 单位为秒(s)  
+```
+time_t run_time = Blinker.runTime();
 ```
 ### 设备延时
 #### Blinker.delay()
