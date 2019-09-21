@@ -33,7 +33,7 @@ jobs:
         eval "$(ssh-agent -s)"
         ssh-add - <<< "${DEPLOY_KEY}"
       env:
-        DEPLOY_KEY: ${{ Doc_Deploy_key }}
+        DEPLOY_KEY: ${{ secrets.Doc_Deploy_key }}
         GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
 
     - name: push2
