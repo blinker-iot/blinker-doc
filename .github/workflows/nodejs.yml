@@ -28,10 +28,17 @@ jobs:
       run: npm install && node process.js
 #       env:
 #         CI: true
+    - name: push1
+      run: |
+        eval "$(ssh-agent -s)"
+        ssh-add - <<< "${DEPLOY_KEY}"
+      env:
+        DEPLOY_KEY: ${{ Doc_Deploy_key }}
+        GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
 
     - name: push2
       run: |
         # git config --global user.name "coloz"
-        git remote add origin https://coloz@github.com/blinker-iot/blinker-doc.git
+        # git remote add origin https://coloz@github.com/blinker-iot/blinker-doc.git
         git push origin HEAD:website
         # git push origin doc:website
