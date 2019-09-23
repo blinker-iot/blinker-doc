@@ -1,7 +1,7 @@
 # App下载
 
 ## Android  
-[点击下载](http://blinker.clz.me/blinker-2.2.6-beta.apk)  
+[点击下载](http://blinker.clz.me/blinker-2.2.7-beta.apk)  
 
 ## IOS  
 [点击下载](https://itunes.apple.com/cn/app/id1357907814)  
