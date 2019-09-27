@@ -6,7 +6,9 @@
 ## IOS  
 [点击下载](https://itunes.apple.com/cn/app/id1357907814)  
 
-## 历史版本下载  
+
+# 历史版本下载  
 [Github](https://github.com/blinker-iot/app-release/releases)   
-## 开源版本  
+
+# 源代码    
 [Github](https://github.com/coloz/blinker-app)  
