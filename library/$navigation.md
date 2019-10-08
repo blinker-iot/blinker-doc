@@ -13,6 +13,7 @@
 - [NBIoT模块接入](?file=001-快速开始/12-NBIoT模块接入 "NBIoT模块接入")
 - [MicroPython设备接入](?file=001-快速开始/13-MicroPython设备接入 "MicroPython设备接入")
 - [freeRTOS接入](?file=001-快速开始/14-freeRTOS接入 "freeRTOS接入")
+- [蓝牙BLE接入](?file=001-快速开始/15-蓝牙BLE接入 "蓝牙BLE接入")
 
 ##### 开发入门
 - [基础知识](?file=002-开发入门/000-基础知识 "基础知识")
