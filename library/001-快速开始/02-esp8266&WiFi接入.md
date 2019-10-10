@@ -65,7 +65,6 @@ char pswd[] = "123456789"; //你的WiFi密码
 #### 想制作与众不同的物联网设备？  
 看看[自定义界面](?file=005-App使用/02-自定义布局 "自定义布局") 和 [Arduino 支持库](?file=003-硬件开发/02-Arduino支持 "Arduino支持")  
 
-
 ## 完整示例程序
 ```cpp
 
@@ -138,6 +137,9 @@ void loop() {
 解决办法：关闭路由器AP隔离功能 或 允许UDP通信；如果找不到相关设置，通常可重置路由器解决  
 2. mdns没有及时发现设备  
 解决办法：在首页下拉刷新，可以重新搜索局域网中的设备  
+
+## 其他  
+[esp8266 Arduino SDK文档](https://arduino-esp8266.readthedocs.io/en/latest/)
 
 ## blinker QQ群  
 blinker用户交流群   **301438087**  （初学者自行交流）  
