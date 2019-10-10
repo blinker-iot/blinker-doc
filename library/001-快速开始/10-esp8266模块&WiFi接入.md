@@ -3,6 +3,8 @@
 如果你要使用8266模块，需要先为8266模块烧写blinker ESP_AT固件  
 开发方式详见：[ESP_AT模块支持](?file=003-硬件开发/06-ESP_AT模块支持 "ESP_AT模块支持")  
 
+文档详见：[ESP固件下载-官方工具](https://www.espressif.com/sites/default/files/documentation/2a-esp8266-sdk_getting_started_guide_cn.pdf)  
+
 ## blinker QQ群  
 blinker用户交流群   **301438087**  （初学者自行交流）  
 blinker技术支持群   **775818454**  （官方技术支持，仅限github已Star的用户加群）  
