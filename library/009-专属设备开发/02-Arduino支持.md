@@ -6,8 +6,6 @@
 * 使用 [espressif/arduino-esp32](https://github.com/espressif/arduino-esp32) 的ESP32  
   
 ## 支持的接入方式
-<!-- * Bluetooth4.x (BLE)  
-* WiFi   -->
 * WiFi  
   
 ## 准备工作
@@ -43,6 +41,24 @@ void setup() {
 2.等待设备配网;  
 3.获取设备登陆信息;  
 4.设备配置成功后存储配置信息到EEPROM;
+
+### Blinker.smartconfigInit()
+设置设备为 ESPTOUCH 配网模式  
+
+### Blinker.apConfigInit()
+设置设备为 APCONFIG 配网模式  
+
+### Blinker.configType()
+获取设备配网模式  
+```
+enum b_config_t {
+    BLINKER_SMART_CONFIG,
+    BLINKER_AP_CONFIG
+};
+```
+```
+b_config_t type = Blinker.configType();
+```  
 
 ### BLINKER_BUTTON  
 专属设备内置按键, 按键具有以下功能:
