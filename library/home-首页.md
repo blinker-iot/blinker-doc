@@ -4,6 +4,10 @@
 [Blinker GitHub](https://github.com/blinker-iot/)  
 [本文档Git](https://github.com/blinker-iot/blinker-doc)  
 
+## QQ群  
+blinker用户交流群   **301438087**  （仅限github已Star的用户加群）  
+blinker技术支持群   **775818454**  （仅限blinker付费用户加群）  
+
 ## 快速开始  
 blinker支持多种主流通信方式，如：**蓝牙** 、 **WiFi** ，理论上只要是支持蓝牙或者WiFi的设备，都可以使用blinker连接  
 
