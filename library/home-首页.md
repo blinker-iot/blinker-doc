@@ -1,5 +1,5 @@
 ## 技术支持
-[讨论/建议/bug报告](https://www.arduino.cn/forum-132-1.html)  
+[求助/分享/讨论/建议/bug报告](https://www.arduino.cn/forum-132-1.html)  
 [提问引导](https://www.arduino.cn/thread-83658-1-1.html)  
 [Blinker GitHub](https://github.com/blinker-iot/)  
 [本文档Git](https://github.com/blinker-iot/blinker-doc)  
