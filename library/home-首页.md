@@ -38,12 +38,10 @@ blinker支持多种主流通信方式，如：**蓝牙** 、 **WiFi** ，理论�
 [freeRTOS设备接入](?file=001-快速开始/14-freeRTOS接入 "freeRTOS接入")
 
 ## 使用须知
-==1.你使用的是blinker开发者版本，我们会不定期更新支持库、App及服务器端程序，请确认您使用的是最新版本，才能正常使用blinker各功能==  
-==2.我们不对开发者版本做稳定性承诺==  
-==3.有商业使用、或独立部署需求，请购买企业版blinker，联系方式（QQ：183999988）==  
-==本文档适用于blinker 2.0，请确保app和设备端sdk都为2.x版本==  
-Blinker官方网站：https://blinker.app  
-github：https://github.com/blinker-iot  
+1.你使用的是blinker开发者版本，我们会不定期更新支持库、App及服务器端程序，请确认您使用的是最新版本，才能正常使用blinker各功能  
+2.我们不对开发者版本做稳定性承诺  
+3.有商业使用、或独立部署需求，请购买企业版blinker，联系方式（QQ：183999988）  
+本文档适用于blinker 2.0，请确保app和设备端sdk都为2.x版本  
 
 ## blinker是什么？  
 blinker是一套跨硬件、跨平台的物联网解决方案，提供APP端、设备端、服务器端支持，使用公有云服务进行数据传输存储。可用于智能家居、数据监测等领域，可以帮助用户更好更快地搭建物联网项目。
@@ -75,7 +73,7 @@ blinker库封装了不同硬件平台的底层代码，提供了一套物联网�
 [点击下载](https://github.com/blinker-iot/app-release/releases)  
 或在应用商店搜索“blinker”下载安装  
 已上架的android应用商店有：Google Play、腾讯应用宝、360应用商店、三星应用商店、锤子应用商店  
-==需要Android 5.0以上版本才能正常使用==  
+需要Android 5.0以上版本才能正常使用  
 ***IOS下载：***  
 [点击下载](https://itunes.apple.com/cn/app/id1357907814)  
 或在app store中搜索“blinker”下载   

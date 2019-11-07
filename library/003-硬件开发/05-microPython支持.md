@@ -441,8 +441,8 @@ Blinker.push("Hello blinker! Button pressed!")
 设备通过 **WiFi** 接入时可以使用 **Blinker.wechat()** 默认向该设备所属用户绑定的微信发送一条消息.   
 
 **绑定流程:**  
-- 1.关注 Arduino中文社区 微信公众号
-- 2.打开 Arduino中文社区 微信公众号, 点击主页右下角 Blinker  
+- 1.关注 点灯物联 微信公众号  
+- 2.打开 点灯物联 微信公众号, 点击主页右下角 Blinker  
 - 3.输入账号密码完成绑定  
 
 ==建议用户使用微信模板消息==  
