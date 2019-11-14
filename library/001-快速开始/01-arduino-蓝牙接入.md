@@ -45,9 +45,15 @@ JDY18/JDY09 （默认波特率9600）
 
 **注意** 如果你使用的蓝牙模块波特率不是9600（JDY08、JDY10默认波特率115200），或者你不想使用2、3引脚接蓝牙模块，可以使用如下语句初始化蓝牙模块：  
 ```cpp
+// 在Arduino UNO上使用软串口通信
 Blinker.begin(); // 默认设置: 数字IO 2(RX) 3(TX), 波特率 9600 bps  
 Blinker.begin(4, 5); // 设置数字IO 4(RX) 5(TX), 默认波特率 9600 bps  
 Blinker.begin(4, 5, 115200); // 设置数字IO 4(RX) 5(TX) 及波特率 115200 bps  
+
+// 在Arduino Mega/Due上将使用硬串口通信
+Blinker.begin(15, 14, 9600);   //使用Serial3  
+Blinker.begin(17, 16, 115200); //使用Serial2  
+Blinker.begin(19, 20, 115200); //使用Serial1  
 ```
 **例程中宏LED_BUILTIN为开发板厂家定义的连接板载LED的引脚，如果你选择的开发板没有定义LED_BUILTIN，可以自行修改为你要使用的引脚**  
 
