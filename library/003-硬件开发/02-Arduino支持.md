@@ -998,7 +998,7 @@ Blinker.weather("beijing");//查询北京市当前时刻的天气情况
 
 ```
 String location = "chengdu";//传入参数为对应城市拼音/英文
-String weather = Blinker.weather(location);
+Blinker.weather(location);
 ```
 **返回信息中字段及信息说明**  
 
@@ -1118,7 +1118,7 @@ Blinker.aqi("beijing");//查询北京市当前时刻的空气质量情况
 
 ```
 String location = "chengdu";//传入参数为对应城市拼音/英文
-aqi = Blinker.aqi(location);
+Blinker.aqi(location);
 ```
 **返回信息中字段及信息说明**  
 
