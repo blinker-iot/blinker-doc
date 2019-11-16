@@ -50,7 +50,7 @@ Blinker.begin(); // 默认设置: 数字IO 2(RX) 3(TX), 波特率 9600 bps
 Blinker.begin(4, 5); // 设置数字IO 4(RX) 5(TX), 默认波特率 9600 bps  
 Blinker.begin(4, 5, 115200); // 设置数字IO 4(RX) 5(TX) 及波特率 115200 bps  
 
-// 在Arduino Mega/Due上将使用硬串口通信
+// 在Arduino Mega/Due上使用硬串口通信
 Blinker.begin(15, 14, 9600);   //使用Serial3  
 Blinker.begin(17, 16, 115200); //使用Serial2  
 Blinker.begin(19, 20, 115200); //使用Serial1  
