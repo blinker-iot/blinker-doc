@@ -1,7 +1,7 @@
-# 使用Arduino & 蓝牙接入
-所有Arduino开发板都可以连接蓝牙BLE模块接入到blinker
+# 使用Arduino & 蓝牙接入  
+所有开发板都可以通过连接蓝牙BLE模块接入到blinker，这里以Arduino开发板为例  
 
-## 准备工作
+## 准备工作  
 ### 硬件准备  
 Arduino + ble蓝牙串口模块  
 推荐以下蓝牙ble模块：  
@@ -27,14 +27,14 @@ JDY18/JDY09 （默认波特率9600）
 ***IOS下载：***  
 [点击下载](https://itunes.apple.com/cn/app/id1357907814)  
 或 在app store中搜索“blinker”下载  
-#### 下载并安装blinker Arduino库 
+#### 下载并安装blinker Arduino库  
 [点击下载](https://github.com/blinker-iot/blinker-library/archive/master.zip)  
 **Windows：**将下载好的blinker库解压到 **我的电脑>文档>Arduino>libraries** 文件夹中  
 **Mac OS：**将下载好的blinker库解压到 **文稿>Arduino>libraries** 文件夹中  
 
 ## 在app中添加设备  
-1. 确保蓝牙模块已通电   
-2. 进入App，点击右上角的“+”号，然后选择 **添加设备**    
+1. 确保蓝牙模块已通电  
+2. 进入App，点击右上角的“+”号，然后选择 **添加设备**  
 3. 点击选择**Arduino** > **蓝牙接入**  
 4. 等待搜索设备  
 5. 点击选择要接入的设备  
@@ -73,13 +73,6 @@ Blinker.begin(19, 20, 115200); //使用Serial1
 
 ## 完整示例程序
 ```cpp
-/*
-教程请见
-https://doc.blinker.app/
-快速接入>Arduino BLE接入
-快速接入>esp32 BLE接入
-*/
-
 #define BLINKER_PRINT Serial
 #define BLINKER_BLE
 
@@ -133,3 +126,8 @@ void loop() {
 
 1. 使用了蓝牙2.0设备或者其他blinker不支持的蓝牙设备  
 解决办法：[点击查看blinker设备端支持](?file=003-硬件开发/01-设备端支持 "设备端支持")  
+
+## 其他注释事项  
+使用Arduino MEGA时，仅以下IO可以设置为软串口RX: 10, 11, 12, 13, 50, 51, 52, 53, 62, 63, 64, 65, 66, 67, 68, 69  
+使用Arduino Leonardo时，仅以下IO可以设置为软串口RX: 8, 9, 10, 11, 14, 15, 16  
+
