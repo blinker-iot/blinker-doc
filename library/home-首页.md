@@ -5,7 +5,7 @@
 [本文档Git](https://github.com/blinker-iot/blinker-doc)  
 
 ## QQ群  
-blinker用户交流群   **301438087**  （仅限github已Star的用户加群）  
+blinker用户交流群   **301438087**  （github star项目后，联系群主退群费）  
 blinker技术支持群   **775818454**  （仅限blinker付费用户加群）  
 
 ## 快速开始  
