@@ -131,24 +131,11 @@ void button1_callback(const String & state) {
     digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
 }
 ```
-触发该组件注册的回调函数时将返回该组件对应的状态值  
+触发该组件注册的回调函数时，可获取到该组件对应的状态值  
 其他组件操作可见 [Arduino支持](?file=003-硬件开发/02-Arduino支持)  
 
 
 ## 数据管理  
-<!-- ### 检测未解析的数据  
-```
-Blinker.available()
-```
-available()可以检测是否收到未解析的数据  
-如果app发送的数据，不是绑定过的组件数据，blinker将不会解析这些数据  
-此时你可以使用available()检测是否有未解析的数据，返回为true，则有未解析数据  
-
-### 读取数据
-```
-Blinker.readString()
-```
-使用Blinker.readString()即读取到数据，返回值即为数据内容   -->
 ### 读取数据的回调函数
 ```
 void dataRead(const String & data)
