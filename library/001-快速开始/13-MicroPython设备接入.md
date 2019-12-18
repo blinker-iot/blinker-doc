@@ -1,8 +1,5 @@
 # MicroPython设备接入  
-目前仅提供ESP32 MicroPython支持模块  
-使用方法见  
-[示例程序](https://github.com/blinker-iot/blinker-mpy/tree/master/example)  
-[函数参考](?file=003-硬件开发/05-microPython支持)  
+MicroPython解释器需要消耗大量的资源，因此在esp8266上无法很好的使用，目前blinker仅提供ESP32 MicroPython支持模块  
 
 ## 准备工作
 ### 硬件准备  
@@ -38,11 +35,68 @@ pswd = 'Your WiFi network WPA password or WEP key'
 ## 进一步使用blinker
 #### 想了解各接入方式的区别？  
 看看[添加设备](?file=002-开发入门/001-添加设备 "添加设备")  
-#### 想深入理解以上例程？  
-看看[Arduino开发入门](?file=002-开发入门/002-Arduino开发入门 "Arduino开发入门")  
-#### 更多实例？
-看看[Arduino实例教程](?file=002-开发入门/003-Arduino实例教程 "Arduino实例教程")  
-#### 想制作与众不同的物联网设备？  
-看看[自定义界面](?file=005-App使用/02-自定义布局 "自定义布局") 和 [Arduino 支持库](?file=003-硬件开发/02-Arduino支持 "Arduino支持")  
+#### 更多参考？  
+看看[microPython支持](?file=003-硬件开发/05-microPython支持 "microPython支持")  
+#### 更多示例？
+看看[microPython示例教程](https://github.com/blinker-iot/blinker-mpy/tree/master/example)  
+#### 想制作与众不同的物联网设备？
+看看[自定义界面](?file=005-App使用/02-自定义布局 "自定义布局")
 
 ## 完整示例程序
+```python
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+from machine import Pin
+
+from Blinker.Blinker import Blinker, BlinkerButton, BlinkerNumber
+from Blinker.BlinkerDebug import *
+
+auth = 'Your Device Secret Key'
+ssid = 'Your WiFi network SSID or name'
+pswd = 'Your WiFi network WPA password or WEP key'
+
+BLINKER_DEBUG.debugAll()
+
+Blinker.mode('BLINKER_WIFI')
+Blinker.begin(auth, ssid, pswd)
+
+button1 = BlinkerButton('btn-abc')
+number1 = BlinkerNumber('num-abc')
+
+counter = 0
+pinValue = 0
+
+p2 = Pin(2, Pin.OUT)
+p2.value(pinValue)
+
+def button1_callback(state):
+    ''' '''
+
+    BLINKER_LOG('get button state: ', state)
+
+    button1.icon('icon_1')
+    button1.color('#FFFFFF')
+    button1.text('Your button name or describe')
+    button1.print(state)
+
+    global pinValue
+    
+    pinValue = 1 - pinValue
+    p2.value(pinValue)
+
+def data_callback(data):
+    global counter
+    
+    BLINKER_LOG('Blinker readString: ', data)
+    counter += 1
+    number1.print(counter)
+
+button1.attach(button1_callback)
+Blinker.attachData(data_callback)
+
+if __name__ == '__main__':
+
+    while True:
+        Blinker.run()
+```
