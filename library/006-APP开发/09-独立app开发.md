@@ -7,12 +7,24 @@
 
 APP打包需要提供的资料：  
 应用名：该App名称（中文或英文）  
-包名：\<xxx\>.blinker.app  
+包名：\<xxx\>.diandeng.tech  
 桌面图标：<512 x 512  PNG格式>  
 启动页图片：<2048 x 2048  PNG格式>（请图片中包含应用或企业名称）  
 登录页logo：<不超过700 x 200 PNG格式>（务必背景透明）  
 
 打包后的apk文件未签名，用户自行签名后，可发布到应用商店。  
+
+#### android App签名方法
+1.安装jdk
+2.在jdk\bin下，运行如下命令生成密钥：
+```bash
+keytool -genkey -alias <name> -keyalg RSA -validity 10000 -keystore <name>.keystore
+```
+<name>为自定义的名称  
+3.使用如下命令进行签名：
+```bash
+jarsigner -verbose -keystore <name>.keystore -signedjar <apkfilename>_signed.apk <apkfilename>.apk <name>.keystore  
+```
 
 如用户不想自行签名发布，可使用我们提供的发布服务：  
 
