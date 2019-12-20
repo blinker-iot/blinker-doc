@@ -16,6 +16,19 @@
   
 ## Blinker PRO 接口函数  
 [Blinker PRO 专属设备常用接口函数](?file=003-硬件开发/02-Arduino支持 "Arduino支持")在此不做累述, 此文档针对 **Blinker PRO** 专属设备特有函数进行讲解。  
+### 配置服务器信息  
+当使用其他服务器部署时可使用如下代码切换服务器配置信息:  
+```cpp
+#define BLINKER_SERVER_HTTPS    "https://iot.diandeng.tech"
+
+#define BLINKER_SERVER_HOST     "iot.diandeng.tech"
+
+#include <Blinker.h>
+
+void setup() {}
+
+void loop() {}
+```
 ### 设备配置  
 #### Blinker.begin()  
 使用 **Blinker.begin()** 来配置 Blinker:  
