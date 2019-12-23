@@ -43,14 +43,11 @@ blinker支持多种主流通信方式，如：**蓝牙** 、 **WiFi** ，理论�
 3.有商业使用、或独立部署需求，请购买企业版blinker，联系方式（QQ：183999988）  
 本文档适用于blinker 2.0，请确保app和设备端sdk都为2.x版本  
 
-## blinker是什么？  
+## 一套专业且好用物联网解决方案
 blinker是一套跨硬件、跨平台的物联网解决方案，提供APP端、设备端、服务器端支持，使用公有云服务进行数据传输存储。可用于智能家居、数据监测等领域，可以帮助用户更好更快地搭建物联网项目。
 ![](assets/000/blinker-all.jpg)
 
-### 关于blinker DIY
-blinker DIY是基于blinker，面向个人开发者的物联网设备开发方案，开发者可以使用它轻松快捷的开发物联网设备。
-
-### blinker具有以下特性：  
+### blinker特性
 - 其由服务器端、app端、设备端组成，可以部署到几乎所有物联网平台  
 - app端支持ios、android  
 - 设备端可以使用蓝牙、WiFi、MQTT等方式接入，支持Arduino、freeRTOS、mbed OS、Linux等开发平台  
@@ -58,22 +55,25 @@ blinker DIY是基于blinker，面向个人开发者的物联网设备开发方�
 - 通过界面布局器，DIY用户可自己拖拽布局设备控制界面，自由打造你的物联网设备  
 - 通过专属SDK，认证用户可以使用Blinker开发自己的产品，并用于商业用途  
   
-### blinker能做啥？  
+### blinker应用场景
 - 快速开发物联网 / 智能家居 / 无线遥控项目  
 - 手机 / 语音助手 控制设备  
 - 蓝牙ble / 局域网WiFi / 远程MQTT 接入设备  
   
-## blinker APP和支持库  
+## blinker APP和支持库
 blinker库封装了不同硬件平台的底层代码，提供了一套物联网设备开发api。  
 开发者不用再考虑网络适配、不用再烦恼硬件差异，只用更好的聚焦业务逻辑，即可进行畅快的物联网开发。  
 使用blinker库，无论开发者使用何种硬件、何种开发方式、何种云平台，开发起来都大同小异。  
+
+### blinker DIY
+blinker DIY是基于blinker，面向个人开发者的物联网设备开发方案，开发者可以使用它轻松快捷的开发物联网设备。
 
 ### APP下载  
 ***Android下载：***  
 [点击下载](https://github.com/blinker-iot/app-release/releases)  
 或在应用商店搜索“blinker”下载安装  
 已上架的android应用商店有：Google Play、腾讯应用宝、360应用商店、三星应用商店、锤子应用商店  
-需要Android 5.0以上版本才能正常使用  
+需要Android 6.0以上版本才能正常使用  
 ***IOS下载：***  
 [点击下载](https://itunes.apple.com/cn/app/id1357907814)  
 或在app store中搜索“blinker”下载   
@@ -84,7 +84,6 @@ blinker库封装了不同硬件平台的底层代码，提供了一套物联网�
 - [Arduino支持](?file=003-硬件开发/02-Arduino支持 "Arduino支持")
 - [通信指令](?file=003-硬件开发/18-通信指令 "通信指令")
 - [接入其他设备](?file=003-硬件开发/19-接入其他设备 "接入其他设备")  
-
 
 ## FAQ  
 1. 什么硬件可以连接blinker？  
