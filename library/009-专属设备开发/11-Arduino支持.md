@@ -73,6 +73,31 @@ enum b_config_t {
 b_config_t type = Blinker.configType();
 ```  
 
+### Blinker.status()
+获取设备当前状态, 可获取状态如下:
+```
+enum BlinkerStatus_t
+{
+    PRO_WLAN_CONNECTING,       // 设备网络连接中
+    PRO_WLAN_CONNECTED,        // 设备已连接网络
+    PRO_WLAN_SMARTCONFIG_BEGIN,// 设备开启ESPTOUCH配网模式，等待配网
+    PRO_WLAN_SMARTCONFIG_DONE, // 设备ESPTOUCH配网完成
+    PRO_WLAN_APCONFIG_BEGIN,   // 设备开启AP配网模式，等待配网
+    PRO_WLAN_APCONFIG_DONE,    // 设备AP配网完成
+    PRO_DEV_AUTHCHECK_FAIL,    // 设备注册用户校验失败
+    PRO_DEV_AUTHCHECK_SUCCESS, // 设备注册用户校验成功
+    PRO_DEV_REGISTER_FAIL,     // 设备注册上线失败
+    PRO_DEV_REGISTER_SUCCESS,  // 设备注册上线成功
+    PRO_DEV_INIT_SUCCESS,      // 设备初始化完成
+    PRO_DEV_CONNECTING,        // 设备MQTT BROKER连接中
+    PRO_DEV_CONNECTED,         // 设备MQTT BROKER连接成功
+    PRO_DEV_DISCONNECTED       // 设备MQTT BROKER连接断开
+};
+```
+```
+BlinkerStatus_t status = Blinker.status();
+``` 
+
 ### BLINKER_BUTTON  
 专属设备内置按键, 按键具有以下功能:
 - 单击
