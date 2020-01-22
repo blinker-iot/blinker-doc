@@ -29,7 +29,7 @@ jarsigner -verbose -keystore <name>.keystore -signedjar <apkfilename>_signed.apk
 如用户不想自行签名发布，可使用我们提供的发布服务：  
 
 ### Android打包签名上架服务  
-收费标准：10000元/年（包含一年时间内对App的维护和更新）  
+收费标准：15000元/年（包含一年时间内对App的维护和更新）  
 默认上架市场：腾讯应用宝  
 上架其他市场收费：500元/次/个  
 其他说明：单次上架通常3~7个工作日，具体时间由应用商店方面决定。
@@ -39,23 +39,14 @@ jarsigner -verbose -keystore <name>.keystore -signedjar <apkfilename>_signed.apk
 收费标准：15000元/年（包含一年时间内对App的维护和更新，不包含注册开发者账号产生的相关费用）  
 其他说明：由于IOS版本发布审核上线流程严格，手续繁琐，所以版本发布通常会有滞后，具体时间由苹果公司方面决定。  
 
-
 ## 企业版  
 企业版可使用现blinker app的所有功能，可定制，亦可二次开发。  
 企业用户可联系：  
 ![](assets/099/dongbo.png)  
 
-## 版本说明  
-### 测试版  
-    alpha：在大变更或添加新功能后发布的测试版本，可用于开发者体验新功能和参与测试；
-    beta：经过初步测试或小幅调整的测试版本，用于开发者正常使用；
-### 正式版  
-    release：可交付最终用户使用的版本。
-
 ## 开源版本  
-
-### 历史版本  
-[blinker 2.1.0](https://github.com/coloz/blinker-app)  
+ 
+[历史版本](https://github.com/coloz/blinker-app)  
 
 ### 免费版  
 ==由于ionic/cordova开发框架调整，该项目暂不可用==  
