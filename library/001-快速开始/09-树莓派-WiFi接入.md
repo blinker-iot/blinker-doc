@@ -1,5 +1,5 @@
 # Linux设备/树莓派/香蕉派 MQTT接入  
-==自blinker App 2.1.1起，原WiFi接入和MQTT已经合并为新WiFi接入==  
+**自blinker App 2.1.1起，原WiFi接入和MQTT已经合并为新WiFi接入**  
 
 使用WiFi接入，当设备和手机在同一个局域网中，为局域网通信  
 其余情况，使用MQTT远程通信  
@@ -12,7 +12,7 @@ android下载：[点击下载](https://github.com/blinker-iot/app-release/releas
 IOS下载：app store中搜索“blinker”下载  
 
 ### 安装python3  
-==树莓派和其他自带python3的设备，可跳过本步==  
+**树莓派和其他自带python3的设备，可跳过本步**  
 [python3.x](https://www.python.org/downloads/)  
 
 ### 安装相关依赖：
@@ -24,9 +24,9 @@ IOS下载：app store中搜索“blinker”下载
 
 ## 在app中添加设备，获取Secret Key  
 1. 进入App，点击右上角的“+”号，然后选择 **添加设备**    
-2. 点击选择==Arduino== > ==WiFi接入==  
+2. 点击选择**Arduino > WiFi接入**  
 3. 选择要接入的服务商  
-4. 复制申请到的==Secret Key==  
+4. 复制申请到的**Secret Key**  
 
 ## DIY界面  
 1. 在设备列表页，点击设备图标，进入设备控制面板  

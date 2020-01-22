@@ -1,5 +1,5 @@
 # python开发入门  
-==2.0 python模块陆续更新中==  
+**2.0 python模块陆续更新中**  
 本文档，适用于Linux开发板、树莓派(Raspberry Pi)、香蕉派等。  
 
 

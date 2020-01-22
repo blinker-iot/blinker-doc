@@ -31,9 +31,9 @@ esp32开发板([查看支持的设备](?file=003-硬件开发/01-设备端支持
   
 ## 在app中添加设备，获取Secret Key  
 1. 进入App，点击右上角的“+”号，然后选择 **添加设备**    
-2. 点击选择==Arduino== > ==WiFi接入==  
+2. 点击选择**Arduino > WiFi接入**  
 3. 选择要接入的服务商  
-4. 复制申请到的==Secret Key==  
+4. 复制申请到的**Secret Key**  
 
 ## DIY界面  
 1. 在设备列表页，点击设备图标，进入设备控制面板  
@@ -48,7 +48,7 @@ char auth[] = "abcdefghijkl"; //上一步中在app中获取到的Secret Key
 char ssid[] = "abcdefg"; //你的WiFi热点名称
 char pswd[] = "123456789"; //你的WiFi密码
 ```
-==例程中宏LED_BUILTIN为开发板厂家定义的连接板载LED的引脚，如果你选择的开发板没有定义LED_BUILTIN，可以自行修改为你要使用的引脚==  
+**例程中宏LED_BUILTIN为开发板厂家定义的连接板载LED的引脚，如果你选择的开发板没有定义LED_BUILTIN，可以自行修改为你要使用的引脚**  
 编译并上传程序到esp32开发板，打开串口调试器  
 当看到提示“MQTT Connected!”，说明设备已经成功连接到MQTT服务器  
 

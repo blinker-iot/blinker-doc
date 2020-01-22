@@ -33,11 +33,13 @@ blinker支持多种主流通信方式，如：**蓝牙** 、 **WiFi** ，理论�
 - ***NB-IoT模块接入（AT指令）***  
 见blinker lib例程 
 - ***LoRaWAN接入（AT指令）***  
-仅企业版支持  
+受无线电新规影响，已废除  
 - ***MicroPython设备接入***  
 [MicroPython设备接入](?file=001-快速开始/13-MicroPython设备接入 "MicroPython设备接入")  
 - ***freeRTOS设备接入***  
-[freeRTOS设备接入](?file=001-快速开始/14-freeRTOS接入 "freeRTOS接入")
+[freeRTOS设备接入](?file=001-快速开始/14-freeRTOS接入 "freeRTOS接入")  
+- ***ble Mesh接入***  
+- 仅企业版支持  
 
 ## 使用须知
 1.你使用的是blinker开发者版本，我们会不定期更新支持库、App及服务器端程序，请确认您使用的是最新版本，才能正常使用blinker各功能  
