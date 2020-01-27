@@ -1,7 +1,7 @@
 # App下载
 
 ## Android  
-[点击下载](http://cdn.diandeng.tech/blinker-2.2.8.apk)  
+[点击下载](http://cdn.diandeng.tech/blinker-2.3.0-release.apk)  
 
 ## IOS  
 **暂时下架，预计春节假期后重新上线**  
