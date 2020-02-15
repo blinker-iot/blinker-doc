@@ -1,16 +1,19 @@
 # App下载
 
 ## Android  
-[点击下载](http://cdn.diandeng.tech/blinker-2.3.0-release.apk)  
+[点击下载](http://cdn.diandeng.tech/blinker-2.3.1-release.apk)  
 
 ## IOS  
 **暂时下架，预计春节假期后重新上线**  
 [点击下载](https://itunes.apple.com/cn/app/id1357907814)  
 
 ## 系统支持与测试  
-支持的系统版本，默认只测试最近的3个大版本，当前为：  
+release app发布默认只测试最近的3个大版本，当前为：  
 android 10 9 8  
+理论支持的最低android版本 android6  
 ios 13 12 11  
+理论支持的最低ios版本 ios11  
+
 ### 更低版本系统解决办法  
 低版本android用户如遇使用不正常，更新webview即可解决（国产手机系统可能更新不了）  
 低版本ios用户，推荐将更新到ios12及以上版本，可以获得更好的使用体验  
