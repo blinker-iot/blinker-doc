@@ -4,8 +4,7 @@
 [点击下载](http://cdn.diandeng.tech/blinker-2.3.1-release.apk)  
 
 ## IOS  
-**暂时下架，预计春节假期后重新上线**  
-[点击下载](https://itunes.apple.com/cn/app/id1357907814)  
+[点击下载](https://apps.apple.com/cn/app/id1498805902)  
 
 ## 系统支持与测试  
 release app发布默认只测试最近的3个大版本，当前为：  
