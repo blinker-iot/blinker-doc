@@ -1,5 +1,6 @@
 # Arduino端程序开发入门  
-本文档，适用于Arduino、esp8266、esp32等使用Arduino SDK开发的硬件  
+本文档，适用于Arduino、esp8266、esp32等使用Arduino SDK开发的硬件。  
+以下是对blinker入门程序的解读：  
 
 
 ## 接入示例  
@@ -176,5 +177,13 @@ Blinker.vibrate()
 blinker app能接收一些特定指令，但设备端调用api发送特定指令后，app会执行相应操作。  
 如使用Blinker.vibrate()即会让手机震动。  
 
+
+
+
+
 ***  
-你可以通过 [Arduino支持](?file=003-硬件开发/02-Arduino支持)了解更多blinker api用法
+#### 更多实例  
+看看[Arduino实例教程](?file=002-开发入门/003-Arduino实例教程 "Arduino实例教程")  
+
+#### blinker lib Api手册  
+你可以通过 [Arduino支持](?file=003-硬件开发/02-Arduino支持)了解更多blinker api用法  
