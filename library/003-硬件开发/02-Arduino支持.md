@@ -572,7 +572,7 @@ void switch_callback(const String & state)
 BUILTIN_SWITCH.attach(switch_callback);
 ```
 
-#### Blinker.ahrs()
+#### Blinker.ahrs() 即将废弃  
 开启手机 **AHRS** 功能
 ```
 Blinker.attachAhrs();
@@ -587,7 +587,7 @@ int16_t result_Pitch = Blinker.ahrs(Pitch);
 ```
 Blinker.detachAhrs();
 ```
-#### Blinker.gps()
+#### Blinker.gps() 即将废弃
 读取 **GPS** 数据
 ```
 String result_LONG = Blinker.gps(LONG);  

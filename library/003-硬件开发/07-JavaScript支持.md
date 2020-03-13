@@ -164,7 +164,7 @@ Blinker.joystick(function(msg) {
     console.log('Y read! ', msg[1].toString());
 });
 ```
-#### Blinker.ahrs()
+#### Blinker.ahrs() 即将废弃  
 开启手机 **AHRS** 功能
 ```
 Blinker.attachAhrs();
@@ -182,7 +182,7 @@ Blinker.ahrs(function(msg) {
 ```
 Blinker.dettachAhrs();
 ```
-#### Blinker.gps()
+#### Blinker.gps() 即将废弃
 读取 **GPS** 数据
 ```
 Blinker.gps(function(msg) {
