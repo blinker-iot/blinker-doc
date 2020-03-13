@@ -22,7 +22,6 @@ Customizer?https://diandeng.tech/customizer/hello/hello.html
 
 如果是使用html示例进行开发，你可以在vscode中安装 Live Server插件，实现一个简单的web服务器。  
 然后通过 **管理台>产品开发** 选择一个设备，点击其UI组件，将其设为该页面在局域网中的地址，如：
-
 ``` 
 Customizer?https://192.168.0.100:5500/hello.html
 ```
