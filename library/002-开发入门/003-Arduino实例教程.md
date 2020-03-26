@@ -13,8 +13,8 @@
 待写  
 
 
-### 其他
-#### 图标库使用方法  
+## 其他
+### 图标库使用方法  
 在图标库 (https://fontawesome.com) 中找到要使用的图标，点击进入该图标页面，可以看到其html调用形式，如
 ```html
 <i class="far fa-lightbulb"></i>
