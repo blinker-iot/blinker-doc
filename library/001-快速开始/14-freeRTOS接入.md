@@ -7,7 +7,7 @@ SDK已支持esp8266、esp32，其他芯片可基于本SDK适配
 [GITHUB](https://github.com/blinker-iot/blinker-freertos)  
 
 ## 更多
-可见[freeRTOS支持](/doc/support-freeRTOS)
+可见[freeRTOS支持](https://diandeng.tech/doc/freertos-support)
 
 ## 示例  
 Hello blinker示例：
