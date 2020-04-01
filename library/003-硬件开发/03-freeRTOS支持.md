@@ -30,63 +30,19 @@ WiFi:
 ```cpp  
 #include <Blinker.h>  
   
-void setup() {  
-    blinker_config_t init_conf = {
-        .type = BLINKER_WIFI,
-        .wifi = BLINKER_DEFAULT_CONFIG,
-        .aligenie = BLINKER_ALIGENIE_LIGHT,
-    };
-    blinker_init(&init_conf);
-
-    Blinker.begin(auth, ssid, pswd);  
+void setup() {
+    blinker_init(); 
 }
 ```  
 
-**begin()** 主要完成以下配置:  
+**setup()** 主要完成以下配置:  
 1.初始化硬件设置;  
 2.连接网络并广播设备信息等待app连接;  
 
 #### blinker_init()
 完成设备功能初始化函数  
-```cpp
-enum blinker_device_type_t
-{
-    BLINKER_WIFI,
-    BLINKER_PRO_ESP
-};
-
-enum blinker_wifi_type_t
-{
-    BLINKER_DEFAULT_CONFIG,
-    BLINKER_ESP_SMARTCONFIG
-};
-
-typedef struct 
-{
-    enum blinker_device_type_t      type;
-    enum blinker_wifi_type_t        wifi;
-    const char *                    aligenie;
-    const char *                    dueros;
-    const char *                    miot;
-} blinker_config_t;
-```
-
-**参数** :
-- type:  
-    *blinker_device_type_t type*  
-    设置设备类型 WiFi / PRP_ESP  
-- wifi:  
-    *blinker_wifi_type_t wifi*  
-    设置 WiFi 接入类型 默认模式 / SMARTCONFIG  
-- aligenie:  
-    *const char *aligenie*  
-    设置 天猫精灵 智能设备类型  
-- dueros:  
-    *const char *dueros*  
-    设置 小度音箱 智能设备类型  
-- miot:  
-    *const char *miot*  
-    设置 小爱同学 智能设备类型  
+**注：设备WIFI/PRO 接入类型及语音助手等设置在IDF中设置**  
+**make menuconfig->Compontent conifg->Blinker**
 
 ### 数据管理
 #### blinker_attach_data()
