@@ -4,8 +4,7 @@
 **https://diandeng.tech**  
 
 # blinker中文文档：  
+**https://diandeng.tech/doc**  
 **https://doc.blinker.app**  
-
-
 
 本文档使用[amWiki](https://github.com/TevinLi/amWiki)构建
