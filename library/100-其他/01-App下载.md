@@ -9,9 +9,9 @@
 ## 系统支持与测试  
 release app发布默认只测试最近的3个大版本，当前为：  
 android 10 9 8  
-理论支持的最低android版本 android6  
+理论支持的最低android版本 android 6  
 ios 13 12 11  
-理论支持的最低ios版本 ios11  
+理论支持的最低ios版本 ios 11  
 
 ### 测试环境  
 对于release版本，我们目前会在如下手机上进行测试：  
