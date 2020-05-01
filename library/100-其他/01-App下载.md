@@ -15,11 +15,7 @@ ios 13 12 11
 
 ### 测试环境  
 对于release版本，我们目前会在如下手机上进行测试：  
-1.三星S9  
-2.华为mate30 Pro  
-3.锤子坚果Pro 2s  
-4.iphone 6  
-5.iphone X  
+三星S9、三星S6 edge、华为mate30 Pro、锤子坚果Pro、锤子坚果Pro 2s、iphone 6、iphone X  
 以上型号以外的手机，我们无法保证功能一切正常，如有发现问题，可通过[社区](https://www.arduino.cn/thread-81133-1-1.html)向我们提交错误报告。  
 
 ### 更低版本系统解决办法  
