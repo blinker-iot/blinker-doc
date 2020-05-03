@@ -24,7 +24,7 @@ jobs:
     - name: Deploy
       uses: garygrossgarten/github-action-scp@v0.5.3
       with:
-        local: ./
+        local: doc
         remote: /home/ubuntu/www/diandeng.tech/docs
         host: ${{ secrets.HOST }}
         username: ubuntu
