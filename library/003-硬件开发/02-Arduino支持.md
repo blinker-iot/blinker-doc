@@ -923,7 +923,7 @@ Blinker.sms("Hello blinker! Button pressed!");
 >目前diy用户只能向设备所属用户注册对应的手机发送短信  
 > *限制 1次/分钟  
   
-后期将增加功能，付费用户可以在app端设置10个短信接收手机号, 对其中一个手机号发送一条信息
+后期将增加功能，专业版用户可以在app端设置10个短信接收手机号, 对其中一个手机号发送一条信息
 ```
 char phone[] = "18712345678";
 Blinker.sms("Hello blinker! Button pressed!", phone);
