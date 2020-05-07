@@ -14,10 +14,10 @@ var ShortUrl = {}
 var shouldMD = (process.argv.indexOf('--md') > -1) || (process.argv.indexOf('-md') > -1)
 
 function loadMenu(filePath = '') {
-    if (filePath == 'img') return
     let submenu = []
     let files = fs.readdirSync(DOC_PATH + filePath)
     files.forEach(file => {
+        if (file == 'img') return
         if (file == 'config.json' || file == 'custom.json') return;
         let item = loadFile(filePath, file)
         submenu.push(item)
@@ -27,8 +27,11 @@ function loadMenu(filePath = '') {
 
 function loadFile(filePath, file) {
     let item = {};
+    console.log(filePath);
+    console.log(file);
     let title = getFilename(file)
     item['title'] = title
+    
     let newFilePath = ((filePath == '' ? '' : filePath + '/') + file)
     if (path.extname(file) == '.md') {
         item['page'] = shouldMD ? newFilePath : addShortUrl(title, newFilePath)
@@ -88,7 +91,7 @@ setTimeout(() => {
     )
     fs.writeFile(
         CUSTOM_PATH,
-        JSON.stringify(CustomUrl),
+        JSON.stringify(CustomUrl).replace(/",/g, '",\n').replace('{', '{\n').replace('}', '\n}'),
         (err) => { }
     )
 }, 1000)
