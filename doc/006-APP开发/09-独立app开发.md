@@ -45,12 +45,5 @@ jarsigner -verbose -keystore <name>.keystore -signedjar <apkfilename>_signed.apk
 ![](assets/099/dongbo.png)  
 
 ## 开源版本  
- 
 [历史版本](https://github.com/coloz/blinker-app)  
-
-### 免费版  
-==由于ionic/cordova开发框架调整，该项目暂不可用==  
-==当前独立app为测试版本，正式版本预计2019年推出==  
-blinker app开源版本提供了对单设备的支持，支持WiFi、蓝牙Ble接入  
-项目托管地址：https://github.com/coloz/blinker-simple-app  
-项目基于cordova8、ionic4、angular6开发，可自行了解相关技术。  
+项目基于cordova8、ionic5、angular8开发，可自行了解相关技术。  
