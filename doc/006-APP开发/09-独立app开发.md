@@ -45,5 +45,5 @@ jarsigner -verbose -keystore <name>.keystore -signedjar <apkfilename>_signed.apk
 ![](assets/099/dongbo.png)  
 
 ## 开源版本  
-[历史版本](https://github.com/coloz/blinker-app)  
+[历史版本](https://github.com/blinker-iot/blinker-app)  
 项目基于cordova8、ionic5、angular8开发，可自行了解相关技术。  
