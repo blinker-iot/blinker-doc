@@ -33,4 +33,4 @@ ios 13 12 11
     release：可交付最终用户使用的版本。  
 
 ### 源代码    
-[Github](https://github.com/coloz/blinker-app)  
+[Github](https://github.com/blinker-iot/blinker-app)  
