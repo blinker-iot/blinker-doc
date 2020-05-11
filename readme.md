@@ -5,7 +5,5 @@
 
 # blinker中文文档：  
 **https://diandeng.tech/doc**  
-**https://doc.blinker.app**  
 
-github版本文档使用[amWiki](https://github.com/TevinLi/amWiki)构建  
 点灯官网版本文档使用[mdSDS](https://github.com/coloz/mdSDS)构建  
