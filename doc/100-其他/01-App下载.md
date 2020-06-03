@@ -1,7 +1,7 @@
 # App下载
 
 ## Android  
-[点击下载](http://cdn.diandeng.tech/blinker.2.4.6-beta.apk)  
+[点击下载](http://cdn.diandeng.tech/blinker.2.4.6-beta3.apk)  
 
 ## IOS  
 [点击下载](https://apps.apple.com/cn/app/id1498805902)  
