@@ -3,9 +3,10 @@ var path = require('path');
 var transliterate = require('transliteration')
 
 // 配置脚本
-var DOC_PATH = "doc/";
-var CONFIG_OUTPUT_PATH = "doc/config.json";
-var CUSTOM_PATH = "custom.json";
+const SITE_URL = "https://diandeng.tech/";
+const DOC_PATH = "docs/";
+const CONFIG_OUTPUT_PATH = "docs/config.json";
+const CUSTOM_PATH = "custom.json";
 
 
 var CustomUrl = {}
@@ -27,14 +28,14 @@ function loadMenu(filePath = '') {
 
 function loadFile(filePath, file) {
     let item = {};
-    console.log(filePath);
-    console.log(file);
+    // console.log(filePath);
+    // console.log(file);
     let title = getFilename(file)
     item['title'] = title
-    
+
     let newFilePath = ((filePath == '' ? '' : filePath + '/') + file)
     if (path.extname(file) == '.md') {
-        item['page'] = shouldMD ? newFilePath : addShortUrl(title, newFilePath)
+        item['page'] = shouldMD ? newFilePath : addShortUrl(title, SITE_URL + DOC_PATH + newFilePath)
     } else {
         item['submenu'] = loadMenu(newFilePath)
     }
