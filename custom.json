@@ -100,5 +100,6 @@
 "用户协议":"",
 "隐私协议":"",
 "气象数据接口":"weather-and-air",
-"图标库":"icon"
+"图标库":"icon",
+"温湿度计":"temperature-and-humidity-sensor"
 }
