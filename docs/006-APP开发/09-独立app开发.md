@@ -1,4 +1,4 @@
-# 独立app开发（beta）
+# app开发（beta）
 
 ## App打包上架服务  
 
@@ -51,3 +51,6 @@ jarsigner -verbose -keystore <name>.keystore -signedjar <apkfilename>_signed.apk
 ## 开源版本  
 [历史版本](https://github.com/blinker-iot/blinker-app)  
 项目基于cordova8、ionic5、angular8开发，可自行了解相关技术。  
+
+## blinker-Customizer  
+以嵌入web app的方式，开发独立的blinker设备页面。[了解更多](https://diandeng.tech/docs/009-专属设备开发/09-Customizer定制设备界面.md)  

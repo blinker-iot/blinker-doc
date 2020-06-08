@@ -2,7 +2,7 @@
 针对嵌入式设备的blinker库，需配合arduino sdk使用。  
 github：https://github.com/blinker-iot/blinker-library  
 
-==[开发注意事项](?file=020-Q%26A及开发常见问题/02-开发注意事项 "Arduino支持")==  
+[开发注意事项](?file=020-Q%26A及开发常见问题/02-开发注意事项 "Arduino支持")  
 
 ## 0.3.0 版本增删内容说明
 - 重写了代码结构
@@ -10,12 +10,12 @@ github：https://github.com/blinker-iot/blinker-library
 - 增加 ESP 多任务支持
 - 废弃 BlinkerJoystick 在 WiFi 接入的支持(BLE仍然支持)
 
-==blinker库更新到v0.3.0 版本，由于版本变动较大，需删除以前版本的库后安装(不可以直接覆盖)==
+**blinker库更新到v0.3.0 版本，由于版本变动较大，需删除以前版本的库后安装(不可以直接覆盖)**  
 
 ## 注意
-==务必更新为最新的ESP8266/ESP32 Arduino package==  
-==使用IDE板卡管理器安装 **2.6.x** release版本的 ESP8266 package==   
-==使用IDE板卡管理器安装 1.0.2 及以上版本的 ESP32 package==   
+**务必更新为最新的ESP8266/ESP32 Arduino package**  
+**使用IDE板卡管理器安装 **2.6.x** release版本的 ESP8266 package**  
+**使用IDE板卡管理器安装 1.0.2 及以上版本的 ESP32 package**  
 如果不能使用IDE安装，请到以下路径查询是否有老版本Arduino package，若有老版本将其删除后再安装  
 
 > %USERPROFILE%\\AppData\\Local\\Arduino15  
@@ -211,7 +211,7 @@ Blinker.print(text1, data);
 Blinker.print("temp", 30.2, "°C");
 ```
 
-==连续发送时, 间隔100ms内发送的数据都会自动格式化后发送(同beginFormat), 若100ms后没有数据发送将把该数据发送出去。==
+**连续发送时, 间隔100ms内发送的数据都会自动格式化后发送(同beginFormat), 若100ms后没有数据发送将把该数据发送出去。**
 ```cpp
 Blinker.print("halo","blinker");  
 Blinker.print("hello","world");  
@@ -251,7 +251,7 @@ Blinker.notify("notify");
 ### ESP多任务
 **ESP8266/ESP32** 中启用多任务, 将 **blinker** 相关的设备连接、数据处理等放入单独任务中, 用户代码在 **loop()** 任务中进行, 互不干涉  
 
-==目前ESP8266多任务支持还有点问题, 暂不支持使用==
+**目前ESP8266多任务支持还有点问题, 暂不支持使用**  
 
 #### 设备配置  
 BLE:
@@ -945,7 +945,7 @@ Blinker.push("Hello blinker! Button pressed!");
 - 2.打开 点灯物联 微信公众号, 点击主页右下角 Blinker  
 - 3.输入账号密码完成绑定  
 
-==建议用户使用微信模板消息==  
+**建议用户使用微信模板消息**  
 发送微信模板消息:
 ```
 Blinker.wechat("Title: button", "State: pressed", "Message: hello blinker");
