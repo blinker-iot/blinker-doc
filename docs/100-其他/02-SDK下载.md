@@ -9,8 +9,7 @@
 [下载](https://github.com/blinker-iot/blinker-py/archive/master.zip)  
 [Github](https://github.com/blinker-iot/blinker-py)  
 
-## JavaScript SDK（版本过低，暂不可用）  
-[下载](https://github.com/blinker-iot/blinker-js/archive/master.zip)  
+## JavaScript SDK  
 [Github](https://github.com/blinker-iot/blinker-js)  
 [开发中版本](https://github.com/blinker-iot/blinker-js/tree/typescript)  
 

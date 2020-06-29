@@ -7,7 +7,7 @@ https://github.com/blinker-iot/blinker-js
 
 
 ## 支持情况  
-Linux开发板、树莓派(Raspberry Pi)、香蕉派
+树莓派(Raspberry Pi)、香蕉派等Linux设备  
 
 ## 示例程序
 https://github.com/blinker-iot/blinker-js/blob/typescript/example.ts  
@@ -18,6 +18,9 @@ https://github.com/blinker-iot/blinker-js/blob/typescript/example.ts
 import { BlinkerDevice } from './blinker';
 let device = new BlinkerDevice(CONFIG.KEY);
 ```
+### 心跳  
+
+### 其他数据  
 
 
 ## Layouter组件操作  
