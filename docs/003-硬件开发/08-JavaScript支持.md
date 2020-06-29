@@ -13,5 +13,35 @@ Linux开发板、树莓派(Raspberry Pi)、香蕉派
 https://github.com/blinker-iot/blinker-js/blob/typescript/example.ts  
 
 ## 设备操作  
+### 实例化设备  
+```js
+import { BlinkerDevice } from './blinker';
+let device = new BlinkerDevice(CONFIG.KEY);
+```
+
 
 ## Layouter组件操作  
+注册组件 
+```js
+import { ButtonWidget, TextWidget, RangeWidget, NumberWidget, RGBWidget, JoystickWidget } from './widget';
+
+let button1: ButtonWidget = device.addWidget(new ButtonWidget('btn-crf'));
+let button2: ButtonWidget = device.addWidget(new ButtonWidget('btn-b9g'));
+let text1: TextWidget = device.addWidget(new TextWidget('tex-pnd'));
+let range1: RangeWidget = device.addWidget(new RangeWidget('ran-i89'));
+let number1: NumberWidget = device.addWidget(new NumberWidget('num-lnw'));
+let colorPicker1: RGBWidget = device.addWidget(new RGBWidget('col-a9t'));
+let joystick1: JoystickWidget = device.addWidget(new JoystickWidget('joy-d32'));
+```
+
+### 文本组件  
+
+### 按键组件  
+
+### 数字组件  
+
+### 滑动条组件  
+
+### 颜色选择组件  
+
+### 摇杆组件  
