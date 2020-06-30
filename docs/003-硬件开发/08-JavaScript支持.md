@@ -1,5 +1,5 @@
 # JavaScript支持模块  
-面向linux设备提供JavaScript模块支持  
+面向linux设备提供JavaScript/TypeScript模块支持  
 目前模块处于调试阶段，没有正式发布，暂时无法通过npm安装  
 你可以通过以下地址下载：  
 https://github.com/blinker-iot/blinker-js  
