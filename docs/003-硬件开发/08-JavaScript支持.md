@@ -117,6 +117,7 @@ colorPicker.listen().subscribe(message => {
     console.log('brightness:', message.data[3]);
 })
 ```
+状态改变
 ```js  
 colorPicker.color(randomColor()).brightness(randomNumber(0, 255)).update()
 ```
@@ -129,4 +130,51 @@ joystick1.listen().subscribe(message => {
     console.log('x:', message.data[0]);
     console.log('y:', message.data[1]);
 })
+```
+
+## 数据存储  
+### 时序数据存储  
+```js
+device.saveTsData({
+    humi: randomNumber(),
+    temp: randomNumber(),
+    pm25: randomNumber(),
+    pm10: randomNumber()
+});
+```
+时序数据存储有如下限制：  
+    1.采集频率最高为5秒1次，上传最高频率为1分钟1次  
+    2.每次上传数据不得超过5kb  
+达到以上限制，则会存储失败，并被broker自动断开  
+#### 时序数据获取  
+待提供  
+
+### 对象存储  
+```js
+device.saveObjectData({
+    key1: 123,
+    key2: 'abc'
+});
+```
+对象数据存储有如下限制：  
+    1.上传最高频率为1分钟1次  
+    2.每次上传数据不得超过5kb  
+达到以上限制，则会存储失败，并被broker自动断开  
+
+#### 对象数据获取  
+```js
+device.loadObjectData('key');
+```
+
+### 文本存储  
+```js
+device.saveTextData('text');
+```
+对象数据存储有如下限制：  
+    1.上传最高频率为1分钟1次  
+    2.每次上传数据不得超过1kb  
+达到以上限制，则会存储失败，并被broker自动断开  
+#### 文本数据获取  
+```js
+device.loadTextData();
 ```
