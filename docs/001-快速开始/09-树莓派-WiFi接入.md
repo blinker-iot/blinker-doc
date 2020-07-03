@@ -80,5 +80,7 @@ if __name__ == '__main__':
 
 [Python3模块](https://github.com/blinker-iot/blinker-py)  
 [Python3接入示例](https://github.com/blinker-iot/blinker-py/tree/master/example)  
-JavaScript模块  
-JavaScript接入示例  
+
+
+## JavaScript支持  
+本示例为Python接入，对于Linux设备，您还可以使用[JavaScript方式接入](https://diandeng.tech/doc/javaScript-support)  

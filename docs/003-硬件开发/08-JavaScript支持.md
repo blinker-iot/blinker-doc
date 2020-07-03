@@ -12,17 +12,21 @@ https://github.com/blinker-iot/blinker-js
 最新nodejs LTS版本  
 ```
 npm i -g ts-node
+git clone https://github.com/blinker-iot/blinker-js.git
 npm i
 ```
 
 ## 示例程序
 https://github.com/blinker-iot/blinker-js/blob/typescript/example.ts  
+```
+ts-node example.ts
+```
 
 ## 设备操作  
 ### 实例化设备  
 ```js
 import { BlinkerDevice } from './blinker';
-let device = new BlinkerDevice(CONFIG.KEY);
+let device = new BlinkerDevice(authkey);
 ```
 ### 心跳  
 ```js
