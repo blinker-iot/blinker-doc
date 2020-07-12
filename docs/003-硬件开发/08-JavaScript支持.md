@@ -53,6 +53,23 @@ device.builtinSwitch.change.subscribe(message => {
 })
 ```
 
+## 其他  
+### 短信通知  
+**仅限专业版用户使用，限制为10条/天, 20字/条**  
+```js
+device.sendSms('text')
+```
+
+### 微信通知
+```js
+device.wechat('text')
+```
+
+### App通知
+```js
+device.push('text')
+```
+
 ## Layouter组件操作  
 使用前请先引入相关组件  
 ```js

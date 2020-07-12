@@ -160,7 +160,7 @@ Blinker.attachHeartbeat(heartbeat_callback)
 == from Blinker import Blinkerxxxx ==
 #### BlinkerButton  
 按键组件在App中可以设置 按键/开关/自定义 三种模式:  
-- **按键** 模式下支持 点按/长按/释放(tap/pre/pup) 三个动作  
+- **按键** 模式下支持 点按/长按/释放(tap/press/pressup) 三个动作  
 - **开关** 模式下支持 打开/关闭(on/off) 两个动作  
 - **自定义** 模式下支持 自定义指令 发送  
 
@@ -208,7 +208,7 @@ Button1.attach(button1_callback)
 ```
 
 > 在回调函数中, **state** 的值为:  
-> - **按键** : "tap"(点按); "pre"(长按); "pup"(释放)  
+> - **按键** : "tap"(点按); "press"(长按); "pressup"(释放)  
 > - **开关** : "on"(打开); "off"(关闭)  
 > - **自定义** : 用户设置的值  
 >   
