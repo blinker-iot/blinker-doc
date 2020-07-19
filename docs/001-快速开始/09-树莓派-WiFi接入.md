@@ -83,4 +83,4 @@ if __name__ == '__main__':
 
 
 ## JavaScript支持  
-本示例为Python接入，对于Linux设备，您还可以使用[JavaScript方式接入](https://diandeng.tech/doc/javaScript-support)  
+本示例为Python接入，对于Linux设备，您还可以使用[JavaScript方式接入](https://diandeng.tech/doc/javascript-support)  

@@ -20,7 +20,7 @@
 "Python支持":"python-support",
 "microPython支持":"mpy-support",
 "ESP_AT模块支持":"at-mode-support",
-"JavaScript支持":"javaScript-support",
+"JavaScript支持":"javascript-support",
 "通信指令":"cmd",
 "接入其他设备":"more-support",
 "开发工具":"dev-tool",
@@ -101,5 +101,6 @@
 "隐私协议":"",
 "气象数据接口":"weather-and-air",
 "图标库":"icon",
-"温湿度计":"temperature-and-humidity-sensor"
+"温湿度计":"temperature-and-humidity-sensor",
+"设备页定制":""
 }
