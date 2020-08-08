@@ -22,10 +22,10 @@
 
 ## 设备上线流程
 ![](assets/003/esp_at.png)  
-**MCU主控** 往 **ESP_AT模块** 发送: ***AT***  
-**ESP_AT模块** 向 **MCU主控** 反馈: ***OK***  
-**MCU主控** 往 **ESP_AT模块** 发送: ***AT+BLINKER_WIFI=1,authKey***  
-**ESP_AT模块** 向 **MCU主控** 反馈: ***+BLINKER_WIFI:deviceName,uuid***  
+**MCU主控** 往 **ESP_AT模块** 发送: **AT**  
+**ESP_AT模块** 向 **MCU主控** 反馈: **OK**  
+**MCU主控** 往 **ESP_AT模块** 发送: **AT+BLINKER_WIFI=1,authKey**  
+**ESP_AT模块** 向 **MCU主控** 反馈: **+BLINKER_WIFI:deviceName,uuid**  
 
 ==设备上线后即可作为透传模块让主控与app进行通信==  
 

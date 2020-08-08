@@ -445,7 +445,7 @@ Blinker.push("Hello blinker! Button pressed!")
 - 2.打开 点灯物联 微信公众号, 点击主页右下角 Blinker  
 - 3.输入账号密码完成绑定  
 
-==建议用户使用微信模板消息==  
+**建议用户使用微信模板消息**  
 发送微信模板消息:
 ```
 Blinker.wechat("Title: button", "State: pressed", "Message: hello blinker")

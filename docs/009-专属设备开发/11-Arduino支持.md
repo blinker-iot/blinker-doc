@@ -228,7 +228,7 @@ Blinker.attachLongPressStop(longPressStop);
 ```
 > 注:此时可以不用注册 **Blinker.attachLongPressStop**  
 
-***Blinker.attachLongPressPowerdown()***  
+**Blinker.attachLongPressPowerdown()**  
 按键长按释放时关机的回调函数
 ```cpp
 /* 
@@ -247,7 +247,7 @@ void longPressPowerdown()
 ```cpp
 Blinker.attachLongPressReset(longPressPowerdown);
 ```
-***Blinker.attachLongPressReset()***  
+**Blinker.attachLongPressReset()**  
 按键长按释放时重置的回调函数
 ```cpp
 /* 
@@ -264,7 +264,7 @@ void longPressReset()
 ```cpp
 Blinker.attachLongPressReset(longPressReset);
 ```
-***Blinker.pressedTime()***
+**Blinker.pressedTime()**
 在长按执行过程中可以返回长按已持续时间, 单位ms, 最大值为10000 ms
 ```cpp
 uint16_t pressed_time = Blinker.pressedTime();

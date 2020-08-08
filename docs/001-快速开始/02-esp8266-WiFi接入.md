@@ -19,10 +19,10 @@ esp8266开发板([查看支持的设备](?file=003-硬件开发/01-设备端支�
 
 #### 下载并安装blinker APP  
 
-***Android下载：***  
+**Android下载：**  
 [点击下载](https://github.com/blinker-iot/app-release/releases)  
 或 在android应用商店搜索“blinker”下载安装  
-***IOS下载：***  
+**IOS下载：**  
 [点击下载](https://itunes.apple.com/cn/app/id1357907814)  
 或 在app store中搜索“blinker”下载  
 
