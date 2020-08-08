@@ -23,8 +23,6 @@ github：https://github.com/blinker-iot/blinker-library
 
 [点此下载，默认路径安装即可](https://pan.baidu.com/s/1Cg3rn0SMh32CDbdAJlDqVg)  
 
-
-
 ## 支持的硬件
 * Arduino boards
     - Arduino Uno, Duemilanove, Leonardo, Nano, Mini, Pro Mini, Pro Micro, zero, Due, Mega  
@@ -50,7 +48,6 @@ Blinker.begin(...);
 ```
 根据你使用的连接方式选择不同的参数用于配置Blinker  
   
-
 BLE:
 ```cpp
 #define BLINKER_BLE  
