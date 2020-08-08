@@ -80,7 +80,7 @@
 "freeRTOS接入":"getting-start-freertos",
 "freeRTOS支持":"freertos-support",
 "App功能":"app",
-"历史数据接口":"storage-api",
+"数据接口":"storage-api",
 "蓝牙BLE接入":"getting-start-bluetooth",
 "配网模式":"config-mode",
 "固件管理":"firmware-manager",
