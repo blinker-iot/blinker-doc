@@ -14,8 +14,8 @@ github：https://github.com/blinker-iot/blinker-library
 
 ## 注意
 **务必更新为最新的ESP8266/ESP32 Arduino package**  
-**使用IDE板卡管理器安装 **2.6.x** release版本的 ESP8266 package**  
-**使用IDE板卡管理器安装 1.0.2 及以上版本的 ESP32 package**  
+**esp8266使用IDE板卡管理器安装 **2.7.4** 或以上release版本的 ESP8266 package**  
+**esp32使用IDE板卡管理器安装 **1.0.4** 及以上版本的 ESP32 package**  
 如果不能使用IDE安装，请到以下路径查询是否有老版本Arduino package，若有老版本将其删除后再安装  
 
 > %USERPROFILE%\\AppData\\Local\\Arduino15  
