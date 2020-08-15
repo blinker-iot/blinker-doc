@@ -1,6 +1,6 @@
 # microPython支持模块
 面向ESP32设备提供microPython模块支持  
-你可以通过以下地址下载：  
+您可以通过以下地址下载：  
 https://github.com/blinker-iot/blinker-mpy  
 
 ## 支持情况  
@@ -24,7 +24,7 @@ ESP32
 ```
 Blinker.begin(...)
 ```
-根据你使用的连接方式选择不同的参数用于配置Blinker  
+根据您使用的连接方式选择不同的参数用于配置Blinker  
     
 WiFi:
 ```
@@ -600,7 +600,7 @@ aqi = Blinker.aqi(location)
 
 
 ### Debug
-如果你想调试输出更多细节信息 :
+如果您想调试输出更多细节信息 :
 ```
 from Blinker.Blinker import *
 

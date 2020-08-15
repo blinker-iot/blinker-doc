@@ -51,22 +51,22 @@ esp8266开发板([查看支持的设备](?file=003-硬件开发/01-设备端支�
 ## 编译并上传示例程序 
 
 打开Arduino IDE，通过 **文件>示例>Blinker>Blinker_Hello/Hello_WiFi** 打开例程  
-在程序中找到如下变量，填入你申请到的Secret Key(auth)和要连接的WiFi热点名(ssid)、密码(pswd)，如： 
+在程序中找到如下变量，填入您申请到的Secret Key(auth)和要连接的WiFi热点名(ssid)、密码(pswd)，如： 
 
 ``` cpp
 char auth[] = "abcdefghijkl"; //上一步中在app中获取到的Secret Key
-char ssid[] = "abcdefg"; //你的WiFi热点名称
-char pswd[] = "123456789"; //你的WiFi密码
+char ssid[] = "abcdefg"; //您的WiFi热点名称
+char pswd[] = "123456789"; //您的WiFi密码
 ```
 
-**例程中宏LED_BUILTIN为开发板厂家定义的连接板载LED的引脚，如果你选择的开发板没有定义LED_BUILTIN，可以自行修改为你要使用的引脚**  
+**例程中宏LED_BUILTIN为开发板厂家定义的连接板载LED的引脚，如果您选择的开发板没有定义LED_BUILTIN，可以自行修改为您要使用的引脚**  
 编译并上传程序到esp8266开发板，打开串口调试器  
 当看到提示“MQTT Connected!”，说明设备已经成功连接到MQTT服务器  
 
 ## 恭喜！一切就绪  
 
-在APP中点击刚才你添加的设备，即可进入控制界面，点点按钮就可以控制Arduino上的LED灯开关  
-另一个按钮也点下试试，放心，你的手机不会爆炸~  
+在APP中点击刚才您添加的设备，即可进入控制界面，点点按钮就可以控制Arduino上的LED灯开关  
+另一个按钮也点下试试，放心，您的手机不会爆炸~  
 
 ## 进一步使用blinker
 

@@ -5,7 +5,7 @@
 其余情况，使用MQTT远程通信  
 
 ## 准备工作
-开始使用前你需要做好如下准备:  
+开始使用前您需要做好如下准备:  
 
 **下载并安装blinker APP**  
 android下载：[点击下载](https://github.com/blinker-iot/app-release/releases)  

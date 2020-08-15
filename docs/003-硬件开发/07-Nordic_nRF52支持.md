@@ -48,7 +48,7 @@
   - 基于BLE MESH加密DFU，可直接全部设备或按设备类型等进行分类DFU更新
 
 ## 准备工作
-使用前你需要做好如下准备:
+使用前您需要做好如下准备:
 * 基于官方开发套件 [SES开发环境配置](https://infocenter.nordicsemi.com/pdf/getting_started_ses.pdf)
 * [SEGGER Embedded Studio](https://www.segger.com/downloads/embedded-studio/)
 * [nRF Command Line Tools](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Command-Line-Tools/Download#infotabs)

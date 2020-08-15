@@ -9,7 +9,7 @@
 * WiFi  
   
 ## 准备工作
-使用前你需要做好如下准备:
+使用前您需要做好如下准备:
 * [Arduino IDE](https://www.arduino.cc/en/Main/Software) 1.6.12或更新版本  
 * 使用 Arduino IDE 的开发板管理器安装 [esp8266/arduino](https://github.com/esp8266/arduino)  
 * 按照 [安装说明](https://github.com/espressif/arduino-esp32#installation-instructions) 安装 [espressif/arduino-esp32](https://github.com/espressif/arduino-esp32)  

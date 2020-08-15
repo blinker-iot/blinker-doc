@@ -58,7 +58,7 @@ void loop() {
 ```cpp
 #define BLINKER_WIFI
 ```
-用于指定设备接入方式，你还可以使用 **BLINKER_BLE**，不同的接入方式对应的Blinker初始化函数也不同：
+用于指定设备接入方式，您还可以使用 **BLINKER_BLE**，不同的接入方式对应的Blinker初始化函数也不同：
 ### 蓝牙接入
 ```cpp
 #define BLINKER_BLE  
@@ -148,7 +148,7 @@ void dataRead(const String & data)
 ```
 可以检测是否收到未解析的数据  
 如果app发送的数据，不是绑定过的组件数据，blinker将不会解析这些数据  
-此时你可以回调函数获取这些未解析的数据。
+此时您可以回调函数获取这些未解析的数据。
 ### 注册该回调函数
 ```
 Blinker.attachData(dataRead);
@@ -186,4 +186,4 @@ blinker app能接收一些特定指令，但设备端调用api发送特定指令
 看看[Arduino实例教程](?file=002-开发入门/003-Arduino实例教程 "Arduino实例教程")  
 
 #### blinker lib Api手册  
-你可以通过 [Arduino支持](?file=003-硬件开发/02-Arduino支持)了解更多blinker api用法  
+您可以通过 [Arduino支持](?file=003-硬件开发/02-Arduino支持)了解更多blinker api用法  

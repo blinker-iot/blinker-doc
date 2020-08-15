@@ -51,7 +51,7 @@ if __name__ == '__main__':
 ```python
 Blinker.mode(BLINKER_WIFI)
 ```
-用于指定设备接入方式，你还可以使用 **BLINKER_BLE**，不同的接入方式对应的Blinker初始化函数也不同：
+用于指定设备接入方式，您还可以使用 **BLINKER_BLE**，不同的接入方式对应的Blinker初始化函数也不同：
 ### 蓝牙接入
 ```python
 Blinker.mode(BLINKER_BLE)
@@ -137,7 +137,7 @@ Blinker.available()
 ```
 available()可以检测是否收到未解析的数据  
 如果app发送的数据，不是绑定过的组件数据，blinker将不会解析这些数据  
-此时你可以使用available()检测是否有未解析的数据，返回为true，则有未解析数据  
+此时您可以使用available()检测是否有未解析的数据，返回为true，则有未解析数据  
 
 ### 读取数据
 ```
@@ -155,7 +155,7 @@ def data_callback(data):
 ```
 可以检测是否收到未解析的数据  
 如果app发送的数据，不是绑定过的组件数据，blinker将不会解析这些数据  
-此时你可以回调函数获取这些未解析的数据。
+此时您可以回调函数获取这些未解析的数据。
 ### 注册该回调函数
 ```
 Blinker.attachData(data_callback)

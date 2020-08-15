@@ -33,7 +33,7 @@ esp32需使用 **1.0.4** 及以上版本的 ESP32 package
 * WiFi  
   
 ## 准备工作
-使用前你需要做好如下准备:
+使用前您需要做好如下准备:
 * [Arduino IDE](https://www.arduino.cc/en/Main/Software) 1.8.7或更新版本  
 * 使用 Arduino IDE 的开发板管理器安装 [esp8266/arduino](https://github.com/esp8266/arduino)  
 * 按照 [安装说明](https://github.com/espressif/arduino-esp32#installation-instructions) 安装 [espressif/arduino-esp32](https://github.com/espressif/arduino-esp32)  
@@ -45,7 +45,7 @@ esp32需使用 **1.0.4** 及以上版本的 ESP32 package
 ```cpp
 Blinker.begin(...);
 ```
-根据你使用的连接方式选择不同的参数用于配置Blinker  
+根据您使用的连接方式选择不同的参数用于配置Blinker  
   
 BLE:
 ```cpp
@@ -1132,7 +1132,7 @@ Blinker.aqi(location);
 | o3 | 臭氧 | 20 |  
 
 ### Debug
-将这行代码添加到你的工程文件第一行, 以启用串口调试输出功能:
+将这行代码添加到您的工程文件第一行, 以启用串口调试输出功能:
 ```
 #define BLINKER_PRINT Serial
 ```
@@ -1142,9 +1142,9 @@ Serial.begin(115200);
 
 BLINKER_DEBUG.stream(BLINKER_PRINT);
 ```
-你可以用额外的硬件串口 (HardWareSerial) 或者软串口 (SoftWareSerial) 来调试输出 (你需要额外的适配器将该串口连接到你的电脑上).  
+您可以用额外的硬件串口 (HardWareSerial) 或者软串口 (SoftWareSerial) 来调试输出 (您需要额外的适配器将该串口连接到您的电脑上).  
   
-如果你想调试输出更多细节信息 :
+如果您想调试输出更多细节信息 :
 ```
 void setup()
 {

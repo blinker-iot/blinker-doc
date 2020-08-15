@@ -2,7 +2,7 @@
 **2.0版本陆续更新中**  
 面向linux设备提供python模块支持  
 目前模块处于调试阶段，没有正式发布，暂时无法通过pip仓库安装  
-你可以通过以下地址下载：  
+您可以通过以下地址下载：  
 https://github.com/blinker-iot/blinker-py  
 
 
@@ -14,7 +14,7 @@ Linux开发板、树莓派(Raspberry Pi)、香蕉派
 * WiFi  
   
 ## 准备工作
-开始使用前你需要做好如下准备:
+开始使用前您需要做好如下准备:
 * [python3.x](https://www.python.org/downloads/)  
 
 * Install the [bluez](http://www.bluez.org/) 5.49 or newer  
@@ -38,7 +38,7 @@ Linux开发板、树莓派(Raspberry Pi)、香蕉派
 ```
 Blinker.begin(...)
 ```
-根据你使用的连接方式选择不同的参数用于配置Blinker  
+根据您使用的连接方式选择不同的参数用于配置Blinker  
   
 
 BLE:
@@ -654,7 +654,7 @@ aqi = Blinker.aqi(location)
 
 
 ### Debug
-如果你想调试输出更多细节信息 :
+如果您想调试输出更多细节信息 :
 ```
 from Blinker import *
 
