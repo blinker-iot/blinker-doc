@@ -20,7 +20,6 @@ esp32需使用 **1.0.4** 及以上版本的 ESP32 package
 > %USERPROFILE%\\AppData\\Local\\Arduino15  
 > %USERPROFILE%\\Documents\\Arduino\\hardware  
 
-[点此下载，默认路径安装即可](https://pan.baidu.com/s/1Cg3rn0SMh32CDbdAJlDqVg)  
 
 ## 支持的硬件
 * Arduino boards
