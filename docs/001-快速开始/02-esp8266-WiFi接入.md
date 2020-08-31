@@ -140,7 +140,7 @@ void loop() {
 }
 ```
 
-WiFi without ssl:
+blinker默认使用加密方式进行远程通信，但通信加密会消耗大量的RAM，如果您对通信安全性无要求，可以添加宏**BLINKER_WITHOUT_SSL**用以获得更多可用RAM  
 ```cpp
 #define BLINKER_WIFI  
 #define BLINKER_WITHOUT_SSL
@@ -151,7 +151,7 @@ void setup() {
 }
 ```  
 
-> WiFi without ssl 主要用于堆栈不足的设备使用非加密方式接入，目前支持的硬件: WiFiduino, ESP8266  
+> **BLINKER_WITHOUT_SSL**目前仅可用于ESP8266，其他设备的RAM足以进行加密通信  
 
 
 ## 为什么设备显示不在线？  
