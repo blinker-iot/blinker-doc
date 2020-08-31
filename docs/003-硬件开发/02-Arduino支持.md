@@ -83,6 +83,19 @@ void setup() {
 
 > WiFi 支持的硬件: WiFiduino, WiFiduino32, ESP8266, ESP32  
 
+WiFi without ssl:
+```cpp
+#define BLINKER_WIFI  
+#define BLINKER_WITHOUT_SSL
+#include <Blinker.h>  
+  
+void setup() {  
+    Blinker.begin(auth, ssid, pswd);  
+}
+```  
+
+> WiFi without ssl 主要用于堆栈不足的设备使用非加密方式接入，目前支持的硬件: WiFiduino, ESP8266  
+
 GPRS:
 ```cpp
 #define BLINKER_GPRS_AIR202  

@@ -140,6 +140,20 @@ void loop() {
 }
 ```
 
+WiFi without ssl:
+```cpp
+#define BLINKER_WIFI  
+#define BLINKER_WITHOUT_SSL
+#include <Blinker.h>  
+  
+void setup() {  
+    Blinker.begin(auth, ssid, pswd);  
+}
+```  
+
+> WiFi without ssl 主要用于堆栈不足的设备使用非加密方式接入，目前支持的硬件: WiFiduino, ESP8266  
+
+
 ## 为什么设备显示不在线？  
 
 0. blinker App如何判断设备是否在线？  
