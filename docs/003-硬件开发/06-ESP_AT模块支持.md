@@ -1,5 +1,6 @@
 # ESP_AT模块支持文档
-==ESP_AT模块指令集文档，需烧录blinker定制的[AT固件](https://github.com/blinker-iot/blinker-library/blob/master/examples/Blinker_AT_Firmware/AT_Firmware_WiFi/AT_Firmware_WiFi.ino)。==  
+ESP_AT模块指令集文档，需烧录blinker定制的[AT固件](https://github.com/blinker-iot/blinker-library/blob/master/examples/Blinker_AT_Firmware/AT_Firmware_WiFi/AT_Firmware_WiFi.ino)。  
+
 固件在安装blinker库后  
 **blinker->examples->Blinker_AT_Firmware->AT_Firmware_WiFi**  
 路径下，使用 arduino IDE 直接编译下载即可。
@@ -18,7 +19,7 @@
 * 使用 Arduino IDE 的开发板管理器安装[esp8266 arduino package](https://github.com/esp8266/arduino)  
 * 按照 [安装说明](https://github.com/espressif/arduino-esp32#installation-instructions) 安装 [espressif/arduino-esp32](https://github.com/espressif/arduino-esp32)  
 
-==注意：blinker AT固件至少需要1MB以上的Flash空间，请自行在**IDE>工具>Flash size**中设置==  
+> 注意：blinker AT固件至少需要1MB以上的Flash空间，请自行在**IDE>工具>Flash size**中设置  
 
 ## 设备上线流程
 ![](assets/003/esp_at.png)  
@@ -27,7 +28,7 @@
 **MCU主控** 往 **ESP_AT模块** 发送: **AT+BLINKER_WIFI=1,authKey**  
 **ESP_AT模块** 向 **MCU主控** 反馈: **+BLINKER_WIFI:deviceName,uuid**  
 
-==设备上线后即可作为透传模块让主控与app进行通信==  
+**设备上线后即可作为透传模块让主控与app进行通信**  
 
 <!-- ```sequence
 participant MCU主控
@@ -40,7 +41,7 @@ ESP_AT模块 ->MCU主控: +BLINKER_WIFI:deviceName,uuid
 ``` -->  
 
 ## Blinker接口函数
-==此处主要针对ESP AT支持使用到的特有接口函数，未提到的接口函数参考[Arduino支持](?file=003-硬件开发/02-Arduino支持 "Blinker接口函数")==  
+此处主要针对ESP AT支持使用到的特有接口函数，未提到的接口函数参考[Arduino支持](?file=003-硬件开发/02-Arduino支持 "Blinker接口函数")  
 
 ### 设备配置  
 #### Blinker.begin()  

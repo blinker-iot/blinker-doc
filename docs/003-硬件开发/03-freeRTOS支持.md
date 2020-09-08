@@ -16,7 +16,7 @@ github：https://github.com/blinker-iot/blinker-freertos
 ## 准备工作
 使用前您需要做好如下准备：
 * 安装 [ESP8266_RTOS_SDK](https://github.com/espressif/ESP8266_RTOS_SDK) 或者 [esp-idf](https://github.com/espressif/esp-idf) 的ESP-IDF  
-* 下载 [blinker-freertos](https://github.com/blinker-iot/blinker-freertos) 将 **blinker** 文件夹放入自己所需项目下的 **conponent** 文件夹中即可  
+* 下载 [blinker-freertos](https://github.com/blinker-iot/blinker-freertos) 将 **blinker** 文件夹放入自己所需项目下的 **component** 文件夹中即可  
 
 ## Blinker接口函数
 ### 设备配置
