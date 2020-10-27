@@ -2,12 +2,27 @@
 
 ## 设备端与APP端  
 blinker SDK和blinker App已集成OTA功能，几乎不用进行其他开发  
+
+### 示例程序  
+**暂时仅支持esp8266/esp32 Arduino lib**
+[设备端示例](https://github.com/blinker-iot/blinker-library/blob/master/examples/Blinker_OTA/OTA_WiFi/OTA_WiFi.ino)  
+
+### 版本号  
+固件版本号以三段式命名，如1.1.1；每段最大为9，不可为两位数；当云端固件版本号高于设备版本时，App即会提示有新固件。  
+
+### 更新固件  
+在APP设备设置界面，点击固件更新，并确认，App即会向设备发送更新指令
+```json
+{"set":{"upgrade":true}}
+```
+设备收到指令即会开始更新  
+
+### 注意事项  
 但您还需要注意以下事项：  
 1.固件大小应小于除开SPIFFS外的Flash空间的一半。
 2.设备更新过程中不能断电，否则会照成设备固件损坏。
 
 ## 固件管理台  
-
 ### 固件上传  
 通过**管理台>固件管理**可上传固件  
 
