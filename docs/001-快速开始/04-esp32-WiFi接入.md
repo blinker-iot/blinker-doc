@@ -13,10 +13,9 @@ esp32开发板([查看支持的设备](?file=003-硬件开发/01-设备端支持
 
 #### Arduino IDE需安装好esp32扩展  
 [Arduino IDE](https://www.arduino.cc/en/Main/Software) 1.8.7或更新版本  
-扩展安装方法1：  
-使用IDE板卡管理器安装 **1.0.4** 及以上release版本的 ESP32 Arduino package  
-扩展安装方法2：  
-[通过github安装](https://github.com/espressif/arduino-esp32)  
+务必使用 **1.0.5** 或以上release版本的 ESP32 Arduino package  
+[常规安装方法](https://github.com/espressif/arduino-esp32)  
+[中国大陆安装方法(windows)](https://www.arduino.cn/thread-81194-1-1.html)  
 
 #### 下载并安装blinker APP  
 
