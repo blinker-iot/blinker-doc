@@ -102,21 +102,23 @@ Customizer?https://192.168.0.100:5500/hello.html
 ```
 
 ## 通信指令  
-### 传输指令  
-
-**页面载入成功**  
+### 初始化完成  
 当设备页载入成功，设备页将向app发送一个空对象，说明设备页面已经成功加载
 ```json
 {}
 ```
 
-### 获取历史数据
+### 获取历史数据  
+设备存储到云端的数据，可以通过以下指令获取
 ```json
 {"get":"history","quickDate":"1h","queryType":"avg"}
 ```  
 关于quickDate和queryType，见[数据接口](https://diandeng.tech/doc/storage-api)
 
 ### 获取设备数据
+在app运行期间，设备数据会暂存在app中，可以通过以下方式获取到数据，如
 ```json
 {"get":"data","prop": ["aaa","bbb"]}
 ```
+将返回设备数据 data.aaa.bbb
+
