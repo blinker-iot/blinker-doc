@@ -103,10 +103,20 @@ Customizer?https://192.168.0.100:5500/hello.html
 
 ## 通信指令  
 ### 传输指令  
-```
+
+**页面载入成功**  
+当设备页载入成功，设备页将向app发送一个空对象，说明设备页面已经成功加载
+```json
+{}
 ```
 
 ### 获取历史数据
-```
-{"get":"history",}
+```json
+{"get":"history","quickDate":"1h","queryType":"avg"}
 ```  
+关于quickDate和queryType，见[数据接口](https://diandeng.tech/doc/storage-api)
+
+### 获取设备数据
+```json
+{"get":"data","prop": ["aaa","bbb"]}
+```
