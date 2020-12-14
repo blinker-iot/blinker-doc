@@ -2,7 +2,7 @@
 
 ## Android  
 release: [点击下载](https://cdn.diandeng.tech/blinker-2.4.7-release.apk)  
-beta: [点击下载](https://cdn.diandeng.tech/blinker-2.4.8-beta2.apk)  
+beta: [点击下载](https://cdn.diandeng.tech/blinker-2.4.8-beta4.apk)  
 
 ## IOS  
 [点击下载](https://apps.apple.com/cn/app/id1498805902)  
