@@ -294,7 +294,7 @@ void setup() {
 void loop() {}
 ```  
 
-### 心跳包
+### 心跳包Heartbeat
 
 app定时向设备发送心跳包, 设备收到心跳包后会返回设备当前状态  
 如果用户有自定义状态需要在收到心跳包时返回, 可调用以下函数:  
@@ -322,7 +322,7 @@ Blinker.attachHeartbeat(heartbeat);
 
 > 设备建立连接后app会立刻发送心跳包, 此后每30s-60会发送一次心跳包  
 
-### 设备简要信息
+### 设备简要信息Summary
 
 **MQTT设备** 在心跳包中可以返回设备的简要信息, 如当前传感器值等。  
 在设备管理页面中会显示设备当前简要信息, 不用进入设备页面查看。  
@@ -970,10 +970,10 @@ time_t run_time = Blinker.runTime();
 Blinker.delay(500);
 ```
 
-> *为了连接设备成功, 需要延时时务必使用该函数; 
+> 为了连接设备成功, 需要延时时务必使用该函数; 
 > 使用此函数可以在延时期间连接设备及接收数据并处理数据, 延时完成后才能执行后面的程序; 
 
-### BlinkerBridge
+### 设备间通信BlinkerBridge
 
 **BlinkerBridge** 功能用于 **WiFi** 设备与设备间的通信(无需使用app进行控制).  
 
@@ -981,12 +981,12 @@ Blinker.delay(500);
 
 * attach()  
 
-    *BlinkerBridge.attach()*  
+    BlinkerBridge.attach()  
     注册bridge的回调函数, 当收到指令时会调用该回调函数  
 
 * print()  
 
-    *BlinkerBridge.print()*    
+    BlinkerBridge.print()    
     发送消息到对应的bridge设备  
 
 初始化, 创建对象
@@ -1031,7 +1031,7 @@ Blinker.configUpdate("Hello blinker!");
 
 #### Blinker.configGet()
 
-##### Blinker.attachConfigGet()
+#### Blinker.attachConfigGet()
 
 注册回调函数，当设备查询到配置信息时会调用对应的回调函数  
 
@@ -1111,7 +1111,7 @@ Blinker.dataStorage("key","value");
 
 #### Blinker.dataGet()
 
-##### Blinker.attachDataGet()
+#### Blinker.attachDataGet()
 
 注册回调函数，当设备查询到云端信息时会调用对应的回调函数  
 
@@ -1329,7 +1329,7 @@ String location = "chengdu"; //传入参数为对应城市拼音/英文
 Blinker.aqi(location); 
 ```
 
-### 调试模式
+### 调试模式Debug
 
 #### 开启调试模式
 
