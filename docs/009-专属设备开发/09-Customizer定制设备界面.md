@@ -122,3 +122,16 @@ Customizer?https://192.168.0.100:5500/hello.html
 ```
 将返回设备数据 data.aaa.bbb
 
+## 使用PWA测试你开发的界面  
+PWA是（Progressive Web App）是google提出的web app技术。微信小程序，可以看做是微信版PWA，PWA最大优势是，不用安装，即开即用。为了方便大家体验blinker最新功能，和开发测试，我们也推出了blinker PWA版本。
+
+### 使用方法：
+1.使用手机浏览器访问  https://pwa.blinker.app
+2.并添加到桌面（一定要添加到桌面！才是PWA模式）
+
+已知的支持PWA的浏览器：
+Chrome、Safari、三星浏览器
+
+存在的问题：
+1.PWA只为让大家更快体验blinker新功能，我还没有时间对PWA版本进行优化。
+2.因PWA本身限制，blinker App中的部分功能无法在PWA上使用。
