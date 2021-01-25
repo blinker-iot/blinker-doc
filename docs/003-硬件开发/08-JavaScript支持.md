@@ -6,20 +6,21 @@ https://github.com/blinker-iot/blinker-js
 
 
 ## 支持情况  
-树莓派(Raspberry Pi)、香蕉派等Linux设备  
+树莓派(Raspberry Pi)、香蕉派等Linux设备、Windows、MAC OS等  
 
 ## 环境/依赖安装  
 最新nodejs LTS版本  
 ```
 npm i -g ts-node
 git clone https://github.com/blinker-iot/blinker-js.git
+cd blinker-js
 npm i
 ```
 
 ## 示例程序
-https://github.com/blinker-iot/blinker-js/blob/typescript/example.ts  
+https://github.com/blinker-iot/blinker-js/blob/typescript/example/example.ts  
 ```
-ts-node example.ts
+ts-node .\example\example.ts
 ```
 
 ## 设备操作  
