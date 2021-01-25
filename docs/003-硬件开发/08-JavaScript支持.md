@@ -91,6 +91,7 @@ let range: RangeWidget = device.addWidget(new RangeWidget('ran-xxx'));
 let number: NumberWidget = device.addWidget(new NumberWidget('num-xxx'));
 let colorPicker: RGBWidget = device.addWidget(new RGBWidget('col-xxx'));
 let joystick: JoystickWidget = device.addWidget(new JoystickWidget('joy-xxx'));
+let image: ImageWidget = device.addWidget(new ImageWidget('img-xxx'));
 ```
 
 ### 文本组件  
@@ -151,6 +152,12 @@ joystick1.listen().subscribe(message => {
     console.log('x:', message.data[0]);
     console.log('y:', message.data[1]);
 })
+```
+
+### 图片组件  
+切换图片  
+```js
+image.show(1).update()
 ```
 
 ## 数据存储  
