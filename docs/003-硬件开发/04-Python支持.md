@@ -532,95 +532,6 @@ weather_beijing = Blinker.weather("beijing")//查询北京市当前时刻的天�
 location = "chengdu"//传入参数为对应城市拼音/英文
 weather = Blinker.weather(location)
 ```
-**返回信息中字段及信息说明**  
-
-| 参数 | 描述 | 示例 
-| - | - | - 
-| fl | 体感温度，默认单位：摄氏度 | 23 
-| tmp | 温度，默认单位：摄氏度 | 21 
-| cond_code | 实况天气状况代码 | 100 
-| cond_txt | 实况天气状况描述 | 晴 
-| wind_deg | 风向360角度 | 305 
-| wind_dir | 风向 | 西北 
-| wind_sc | 风力 | 3 
-| wind_spd | 风速，公里/小时 | 15 
-| hum | 相对湿度 | 40 
-| pcpn | 降水量 | 0 
-| vis | 实况天气状况代码 | 100 
-| cloud | 云量 | 23 
-
-**天气代码对照表**  
-
-| 代码 | 中文 | 英文 | 
-| - | - | - | 
-| 100 | 晴 | Sunny/Clear | 
-| 101 | 多云 | Cloudy | 
-| 102 | 少云 | Few Clouds |
-| 103 | 晴间多云 | Partly Cloudy |
-| 104 | 阴 | Overcast |
-| 200 | 有风 | Windy |
-| 201 | 平静 | Calm |
-| 202 | 微风 | Light Breeze 
-| 203 | 和风 | Moderate/Gentle Breeze |
-| 204 | 清风 | Fresh Breeze |
-| 205 | 强风/劲风 | Strong Breeze |
-| 206 | 疾风 | High Wind, Near Gale |
-| 207 | 大风 | Gale |
-| 208 | 烈风 | Strong Gale |
-| 209 | 风暴 | Storm |
-| 210 | 狂爆风 | Violent Storm |
-| 211 | 飓风 | Hurricane |
-| 212 | 龙卷风 | Tornado |
-| 213 | 热带风暴 | Tropical Storm |
-| 300 | 阵雨 | Shower Rain |
-| 301 | 强阵雨 | Heavy Shower Rain |
-| 302 | 雷阵雨 | Thundershower |
-| 303 | 强雷阵雨 | Heavy Thunderstorm |
-| 304 | 雷阵雨伴有冰雹 | Thundershower with hail |
-| 305 | 小雨 | Light Rain |
-| 306 | 中雨 | Moderate Rain |
-| 307 | 大雨 | Heavy Rain |
-| 308 | 极端降雨 | Extreme Rain |
-| 309 | 毛毛雨/细雨 | Drizzle Rain |
-| 310 | 暴雨 | Storm |
-| 311 | 大暴雨 | Heavy Storm |
-| 312 | 特大暴雨 | Severe Storm |
-| 313 | 冻雨 | Freezing Rain |
-| 314 | 小到中雨 | Light to moderate rain |
-| 315 | 中到大雨 | Moderate to heavy rain |
-| 316 | 大到暴雨 | Heavy rain to storm |
-| 317 | 暴雨到大暴雨 | Storm to heavy storm |
-| 318 | 大暴雨到特大暴雨 | Heavy to severe storm |
-| 399 | 雨 | Rain |
-| 400 | 小雪 | Light Snow |
-| 401 | 中雪 | Moderate Snow |
-| 402 | 大雪 | Heavy Snow |
-| 403 | 暴雪 | Snowstorm |
-| 404 | 雨夹雪 | Sleet |
-| 405 | 雨雪天气 | Rain And Snow |
-| 406 | 阵雨夹雪 | Shower Snow |
-| 407 | 阵雪 | Snow Flurry |
-| 408 | 小到中雪 | Light to moderate snow |
-| 409 | 中到大雪 | Moderate to heavy snow |
-| 410 | 大到暴雪 | Heavy snow to snowstorm |
-| 499 | 雪 | Snow |
-| 500 | 薄雾 | Mist |
-| 501 | 雾 | Foggy |
-| 502 | 霾 | Haze |
-| 503 | 扬沙 | Sand |
-| 504 | 浮尘 | Dust |
-| 507 | 沙尘暴 | Duststorm |
-| 508 | 强沙尘暴 | Sandstorm |
-| 509 | 浓雾 | Dense fog |
-| 510 | 强浓雾 | Strong fog |
-| 511 | 中度霾 | Moderate haze |
-| 512 | 重度霾 | Heavy haze |
-| 513 | 严重霾 | Severe haze |
-| 514 | 大雾 | Heavy fog |
-| 515 | 特强浓雾 | Extra heavy fog |
-| 900 | 热 | Hot |
-| 901 | 冷 | Cold |
-| 999 | 未知 | Unknown |
 
 ### AQI查询
 设备通过 **WiFi** 接入时可以使用 **Blinker.aqi()** 查询空气质量情况.
@@ -637,21 +548,6 @@ aqi_beijing = Blinker.aqi("beijing")//查询北京市当前时刻的空气质量
 location = "chengdu"//传入参数为对应城市拼音/英文
 aqi = Blinker.aqi(location)
 ```
-**返回信息中字段及信息说明**  
-
-| 参数 | 描述 | 示例 | 
-| - | - | - | 
-|pub_time | 数据发布时间,格式yyyy-MM-dd HH:mm | 2017-03-20 12:30 |
-| aqi | 空气质量指数，[AQI和PM25的关系](https://zh.wikipedia.org/wiki/%E7%A9%BA%E6%B0%94%E8%B4%A8%E9%87%8F%E6%8C%87%E6%95%B0) | 74 | 
-| main | 主要污染物 | pm25 | 
-| qlty | 空气质量，取值范围:优，良，轻度污染，中度污染，重度污染，严重污染，[查看计算方式](https://zh.wikipedia.org/wiki/%E7%A9%BA%E6%B0%94%E8%B4%A8%E9%87%8F%E6%8C%87%E6%95%B0) | 良 |
-| pm10 | pm10 | 78 |
-| pm25 | pm25 | 66 |
-| no2 | 二氧化氮 | 40 |
-| so2 | 二氧化硫 | 30 |
-| co | 一氧化碳 | 15 |
-| o3 | 臭氧 | 20 |  
-
 
 ### Debug
 如果您想调试输出更多细节信息 :
