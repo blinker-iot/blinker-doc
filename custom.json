@@ -114,5 +114,8 @@
 "数据接口(文本时序)":"api-storage-log",
 "数据接口(文本、对象)":"api-storage-object",
 "其他设备接入":"getting-start-others",
-"语音接口":""
+"语音接口":"api-voice",
+"Nodejs开发入门":"",
+"概述":"white-paper",
+"配网方式":"network-config"
 }
