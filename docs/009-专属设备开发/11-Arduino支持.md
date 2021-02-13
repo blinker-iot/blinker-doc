@@ -349,5 +349,3 @@ Blinker.attachParse(dataParse);
 [WebSockets](https://github.com/Links2004/arduinoWebSockets) - Blinker 用这个库建立了一个 websocket 服务器  
 [Adafruit_MQTT_Library](https://github.com/adafruit/Adafruit_MQTT_Library) - Blinker 用这个库建立了一个 MQTT 客户端
 [ArduinoJson](https://github.com/bblanchon/ArduinoJson) - Blinker 用这个库解析Json数据  
-
-==文档待更新==  
