@@ -22,7 +22,7 @@ let joystick1: JoystickWidget = device.addWidget(new JoystickWidget('joy-d32'));
 let chart1: ChartWidget = device.addWidget(new JoystickWidget('cha-t12'));
 let image1: ImageWidget = device.addWidget(new ImageWidget('img-abc'));
 
-// 
+// 未解析的数据读取
 device.dataRead.subscribe(message => {
     console.log('otherData:', message);
 })
@@ -38,6 +38,7 @@ device.heartbeat.subscribe(message => {
     //device.vibrate();
 })
 
+// app内置按键状态改变订阅
 device.builtinSwitch.change.subscribe(message => {
     console.log('builtinSwitch:', message);
     device.builtinSwitch.setState(turnSwitch()).update();
