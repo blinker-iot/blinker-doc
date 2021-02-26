@@ -1,4 +1,5 @@
-# blinker PRO Arduino支持库
+# blinker PRO Arduino支持库  
+**专业版功能**  
 针对嵌入式设备的blinker库，需配合arduino sdk使用。 
   
 ## 支持的硬件

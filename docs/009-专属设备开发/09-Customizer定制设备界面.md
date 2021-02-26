@@ -1,5 +1,5 @@
 # blinker-Customizer定制设备界面  
-
+**专业版功能**  
 ## 原理
 
 blinker-Customizer借鉴了微前端的思想，允许开发者使用iframe方式嵌入自定义的HTML页面/web app到blinker app中。
