@@ -6,7 +6,7 @@ https://github.com/blinker-iot/blinker-js
 
 
 ## 支持情况  
-树莓派(Raspberry Pi)、香蕉派等Linux设备、Windows、MAC OS等  
+树莓派(Raspberry Pi)、香蕉派等Linux设备、Windows、MacOS等  
 
 ## 环境/依赖安装  
 最新nodejs LTS版本  
@@ -207,3 +207,12 @@ device.saveTextData('text');
 ```js
 device.loadTextData();
 ```
+
+## 语音助手接入  
+小度示例程序：
+[小度插座](https://github.com/blinker-iot/blinker-js/blob/typescript/example/example_dueros_outlet.ts)  
+[小度多孔插座](https://github.com/blinker-iot/blinker-js/blob/typescript/example/example_dueros_multi_outlet.ts)   
+[小度灯](https://github.com/blinker-iot/blinker-js/blob/typescript/example/example_dueros_light.ts)  
+[小度传感器](https://github.com/blinker-iot/blinker-js/blob/typescript/example/example_dueros_sensor.ts)  
+
+**注意事项：**开发过程中，如果改变了设备类型，需要在小度音箱App中解绑再重新绑定才能正常同步出设备。  
