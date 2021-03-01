@@ -92,6 +92,19 @@ void setup() {
 ```  
 
 > WiFi without ssl 主要用于堆栈不足的设备使用非加密方式接入，目前支持的硬件: WiFiduino, ESP8266  
+> 目前8266的设备都默认开启了非ssl接入  
+
+WiFi with ssl:
+```cpp
+#define BLINKER_WIFI  
+#define BLINKER_WITH_SSL
+#include <Blinker.h>  
+  
+void setup() {  
+    Blinker.begin(auth, ssid, pswd);  
+}
+```  
+> 如上代码即可开启ssl接入  
 
 GPRS:
 ```cpp
@@ -348,6 +361,12 @@ String summary()
 Blinker.attachSummary(summary); 
 
 ``` 
+
+### 重置设备并清除配网信息  
+#### Blinker.reset()  
+重置设备并清除设备上储存的配网信息，适用于ESPTOUCH/APCONFIG配网的设备。  
+调用该函数后设备将重新启动。  
+
 
 ### App组件
 
@@ -1153,6 +1172,14 @@ bool delete = Blinker.dataDelete();
 > Blinker.dataDelete("key"); // 删除云端数据对应的key及数据  
 > *限制 1次/分钟  
 
+#### Blinker.log()  
+  
+上传log信息到云端  
+
+```
+Blinker.log("string data");
+```
+  
 ### 通知消息
 
 #### 短信通知 Blinker.sms
