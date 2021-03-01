@@ -140,10 +140,10 @@ void loop() {
 }
 ```
 
-blinker默认使用加密方式进行远程通信，但通信加密会消耗大量的RAM，如果您对通信安全性无要求，可以添加宏**BLINKER_WITHOUT_SSL**用以获得更多可用RAM  
+由于esp8266资源有限，通信加密会消耗大量的RAM，blinker默认使用非加密方式进行远程通信，如果您对通信安全性有要求，可以添加宏`BLINKER_WITH_SSL`启用esp8266加密通信。  
 ```cpp
 #define BLINKER_WIFI  
-#define BLINKER_WITHOUT_SSL
+#define BLINKER_WITH_SSL
 #include <Blinker.h>  
   
 void setup() {  
@@ -151,7 +151,7 @@ void setup() {
 }
 ```  
 
-> **BLINKER_WITHOUT_SSL**目前仅可用于ESP8266，其他设备的RAM足以进行加密通信  
+> **BLINKER_WITH_SSL**目前仅可用于ESP8266，其他设备的RAM足以进行加密通信，默认使用加密通信。    
 
 
 ## 为什么设备显示不在线？  
