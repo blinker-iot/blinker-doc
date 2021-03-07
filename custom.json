@@ -15,7 +15,6 @@
 "Arduino开发入门":"getting-start-arduino",
 "Arduino实例教程":"arduino-course",
 "Python开发入门":"getting-start-python",
-"设备端支持":"device-support",
 "Arduino支持":"arduino-support",
 "Python支持":"python-support",
 "microPython支持":"mpy-support",
@@ -117,5 +116,7 @@
 "语音接口":"api-voice",
 "Nodejs开发入门":"",
 "概述":"white-paper",
-"配网与设备注册":"network-config"
+"配网与设备注册":"network-config",
+"设备端支持情况":"device-support",
+"云日志":"cloud-log"
 }
