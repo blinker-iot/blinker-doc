@@ -41,7 +41,7 @@ ESP_AT模块 ->MCU主控: +BLINKER_WIFI:deviceName,uuid
 ``` -->  
 
 ## Blinker接口函数
-此处主要针对ESP AT支持使用到的特有接口函数，未提到的接口函数参考[Arduino支持](?file=003-硬件开发/02-Arduino支持 "Blinker接口函数")  
+此处主要针对ESP AT支持使用到的特有接口函数，未提到的接口函数参考[Arduino支持](https://diandeng.tech/doc/arduino-support "Blinker接口函数")  
 
 ### 设备配置  
 #### Blinker.begin()  

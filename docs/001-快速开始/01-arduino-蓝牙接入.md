@@ -10,7 +10,7 @@ HM10 / HM11 （默认波特率9600）
 JDY08 / JDY10 （默认波特率115200）  
 JDY18/JDY09 （默认波特率9600）  
 以上均为蓝牙4.x模块  
-[点击查看blinker设备端支持](?file=003-硬件开发/01-设备端支持 "设备端支持")  
+[点击查看blinker设备端支持](https://diandeng.tech/doc/device-support)  
 
 **特别提醒：**蓝牙2.0是已淘汰的技术，新手机已经不支持蓝牙2.0，blinker也不支持  
 
@@ -67,9 +67,9 @@ Blinker.begin(19, 20, 115200); //使用Serial1
 #### 想深入理解以上例程？  
 看看[Arduino开发入门](?file=002-开发入门/002-Arduino开发入门 "Arduino开发入门")  
 #### 更多实例？
-看看[Arduino实例教程](?file=002-开发入门/003-Arduino实例教程 "Arduino实例教程")  
+看看[Arduino实例教程](https://diandeng.tech/doc/arduino-course)  
 #### 想制作与众不同的物联网设备？  
-看看[自定义界面](?file=005-App使用/02-自定义布局 "自定义布局") 和 [Arduino 支持库](?file=003-硬件开发/02-Arduino支持 "Arduino支持")  
+看看[自定义界面](?file=005-App使用/02-自定义布局 "自定义布局") 和 [Arduino 支持库](https://diandeng.tech/doc/arduino-support "Arduino支持")  
 
 ## 完整示例程序
 ```cpp
@@ -125,7 +125,7 @@ void loop() {
 解决办法：开启手机定位服务  
 
 1. 使用了蓝牙2.0设备或者其他blinker不支持的蓝牙设备  
-解决办法：[点击查看blinker设备端支持](?file=003-硬件开发/01-设备端支持 "设备端支持")  
+解决办法：[点击查看blinker设备端支持](https://diandeng.tech/doc/device-support)  
 
 ## 其他注释事项  
 使用Arduino MEGA时，仅以下IO可以设置为软串口RX: 10, 11, 12, 13, 50, 51, 52, 53, 62, 63, 64, 65, 66, 67, 68, 69  

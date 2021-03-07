@@ -4,7 +4,7 @@ MicroPython解释器需要消耗大量的资源，因此在esp8266上无法很�
 ## 准备工作
 ### 硬件准备  
 ESP32开发板  
-[点击查看blinker设备端支持](?file=003-硬件开发/01-设备端支持 "设备端支持")  
+[点击查看blinker设备端支持](https://diandeng.tech/doc/device-support)  
 ### 软件准备  
 预先为ESP32开发板烧录[MicroPython固件](https://micropython.org/download#esp32)
  

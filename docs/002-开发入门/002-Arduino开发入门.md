@@ -133,7 +133,7 @@ void button1_callback(const String & state) {
 }
 ```
 触发该组件注册的回调函数时，可获取到该组件对应的状态值  
-其他组件操作可见 [Arduino支持](?file=003-硬件开发/02-Arduino支持)  
+其他组件操作可见 [Arduino支持](https://diandeng.tech/doc/arduino-support)  
 
 
 ## 数据管理  
@@ -178,12 +178,9 @@ blinker app能接收一些特定指令，但设备端调用api发送特定指令
 如使用Blinker.vibrate()即会让手机震动。  
 
 
-
-
-
 ---  
 #### 更多实例  
-看看[Arduino实例教程](?file=002-开发入门/003-Arduino实例教程 "Arduino实例教程")  
+看看[Arduino实例教程](https://diandeng.tech/doc/arduino-course)  
 
 #### blinker lib Api手册  
-您可以通过 [Arduino支持](?file=003-硬件开发/02-Arduino支持)了解更多blinker api用法  
+您可以通过 [Arduino支持](https://diandeng.tech/doc/arduino-support)了解更多blinker api用法  

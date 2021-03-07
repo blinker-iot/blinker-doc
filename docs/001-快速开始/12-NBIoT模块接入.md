@@ -72,11 +72,11 @@ Blinker.begin(auth, 4, 5, 9600); // 设置数字IO 4(RX) 5(TX) 及波特率 9600
 
 #### 更多实例？
 
-看看[Arduino实例教程](?file=002-开发入门/003-Arduino实例教程 "Arduino实例教程")  
+看看[Arduino实例教程](https://diandeng.tech/doc/arduino-course)  
 
 #### 想制作与众不同的物联网设备？  
 
-看看[自定义界面](?file=005-App使用/02-自定义布局 "自定义布局") 和 [Arduino 支持库函数参考](?file=003-硬件开发/02-Arduino支持 "Arduino支持")  
+看看[自定义界面](?file=005-App使用/02-自定义布局 "自定义布局") 和 [Arduino 支持库函数参考](https://diandeng.tech/doc/arduino-support "Arduino支持")  
 
 ## 完整示例程序
 

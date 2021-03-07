@@ -1,6 +1,6 @@
 # JavaScript支持模块  
-面向linux设备提供JavaScript/TypeScript模块支持  
-目前模块处于调试阶段，没有正式发布，暂时无法通过npm安装  
+blinker JavaScript/TypeScript模块支持  
+目前模块处于测试阶段，没有正式发布，暂时无法通过npm安装  
 您可以通过以下地址下载：  
 https://github.com/blinker-iot/blinker-js  
 
@@ -29,6 +29,14 @@ ts-node .\example\example.ts
 import { BlinkerDevice } from './blinker';
 let device = new BlinkerDevice(authkey);
 ```
+
+### 等待设备初始化完成
+```js
+device.ready().then(() => {
+    //初始化完成后进行的操作
+})
+```
+
 ### 心跳  
 ```js
 device.heartbeat.subscribe(message => {
