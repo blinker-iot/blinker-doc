@@ -114,7 +114,7 @@
 "数据接口(文本、对象)":"api-storage-object",
 "其他设备接入":"getting-start-others",
 "语音接口":"api-voice",
-"Nodejs开发入门":"",
+"Nodejs开发入门":"getting-start-nodejs",
 "概述":"white-paper",
 "配网与设备注册":"network-config",
 "设备端支持情况":"device-support",
