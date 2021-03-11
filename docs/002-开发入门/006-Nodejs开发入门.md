@@ -21,7 +21,7 @@ let joystick1: JoystickWidget = device.addWidget(new JoystickWidget('joy-d32'));
 let chart1: ChartWidget = device.addWidget(new JoystickWidget('cha-t12'));
 let image1: ImageWidget = device.addWidget(new ImageWidget('img-abc'));
 
-
+// 等待设备完成初始化，再执行相关程序
 device.ready().then(() => {
 
     device.dataRead.subscribe(message => {
