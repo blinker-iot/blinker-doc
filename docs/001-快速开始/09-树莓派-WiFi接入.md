@@ -47,7 +47,7 @@ ts-node .\example\example_hello.ts
 在APP中点击刚才您添加的设备，即可进入控制界面，点点按钮就可以控制设备了  
 另一个按钮也点下试试，放心，您的手机不会爆炸~  
 
-## 进一步使用blinker
+## 进一步使用blinker  
 
 #### 想了解各接入方式的区别？  
 看看[添加设备](?file=002-开发入门/001-添加设备 "添加设备")  
@@ -56,7 +56,7 @@ ts-node .\example\example_hello.ts
 
 看看[Nodejs开发入门](https://diandeng.tech/doc/getting-start-nodejs "Nodejs开发入门")  
 
-#### 更多示例程序？
+#### 更多示例程序？  
 
 看看[Github](https://github.com/blinker-iot/blinker-js/tree/typescript/example)  
 
@@ -64,7 +64,10 @@ ts-node .\example\example_hello.ts
 
 看看[自定义界面](?file=005-App使用/02-自定义布局 "自定义布局") 和 [JavaScript 支持库函数参考](https://diandeng.tech/doc/javascript-support))  
 
-## 完整示例程序
+#### 树莓派GPIO控制？  
+看看[pigpio](https://github.com/fivdi/pigpio)  
+
+## 完整示例程序  
 
 
 ```javascript
