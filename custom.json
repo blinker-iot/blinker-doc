@@ -118,5 +118,6 @@
 "概述":"white-paper",
 "配网与设备注册":"network-config",
 "设备端支持情况":"device-support",
-"云日志":"cloud-log"
+"云日志":"cloud-log",
+"Linux-Windows-MacOS接入":"getting-start-os"
 }

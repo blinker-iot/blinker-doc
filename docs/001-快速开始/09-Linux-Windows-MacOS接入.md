@@ -1,5 +1,5 @@
-# 树莓派/Windows/Linux设备 MQTT接入  
-**自blinker App 2.1.1起，原WiFi接入和MQTT已经合并为新WiFi接入**  
+# Linux/Windows/MacOS MQTT接入  
+**本文档亦适用于树莓派等带操作系统的嵌入式开发板**  
 
 使用WiFi接入，当设备和手机在同一个局域网中，为局域网通信  
 其余情况，使用MQTT远程通信  
@@ -42,12 +42,14 @@ let device = new BlinkerDevice('xxxxxxxxxxxx');
 ts-node .\example\example_hello.ts
 ```
 
+> blinker在局域网通信时会使用到81端口，如遇到权限报错，请使用sudo等方式提权运行  
+
 ## 恭喜！一切就绪  
 
 在APP中点击刚才您添加的设备，即可进入控制界面，点点按钮就可以控制设备了  
 另一个按钮也点下试试，放心，您的手机不会爆炸~  
 
-## 进一步使用blinker
+## 进一步使用blinker  
 
 #### 想了解各接入方式的区别？  
 看看[添加设备](?file=002-开发入门/001-添加设备 "添加设备")  
@@ -56,7 +58,7 @@ ts-node .\example\example_hello.ts
 
 看看[Nodejs开发入门](https://diandeng.tech/doc/getting-start-nodejs "Nodejs开发入门")  
 
-#### 更多示例程序？
+#### 更多示例程序？  
 
 看看[Github](https://github.com/blinker-iot/blinker-js/tree/typescript/example)  
 
@@ -64,7 +66,10 @@ ts-node .\example\example_hello.ts
 
 看看[自定义界面](?file=005-App使用/02-自定义布局 "自定义布局") 和 [JavaScript 支持库函数参考](https://diandeng.tech/doc/javascript-support))  
 
-## 完整示例程序
+#### 树莓派GPIO控制？  
+看看[pigpio](https://github.com/fivdi/pigpio)  
+
+## 完整示例程序  
 
 
 ```javascript
