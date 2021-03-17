@@ -3,8 +3,9 @@
 ## Arduino(C++) SDK  
 [下载](https://github.com/blinker-iot/blinker-library/archive/master.zip)  
 [Github](https://github.com/blinker-iot/blinker-library)  
-
 [开发中版本](https://github.com/blinker-iot/blinker-library/tree/dev_3.0)  
+
+[Gitee备用下载地址](https://gitee.com/mirrors/blinker-library/) 如果Github无法访问，可通过此下载，但需要注册登录  
 
 ## NodeJs(JavaScript/TypeScript) SDK  
 [下载](https://github.com/blinker-iot/blinker-js/archive/master.zip)  
