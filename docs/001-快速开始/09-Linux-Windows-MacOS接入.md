@@ -1,5 +1,5 @@
-# 树莓派/Windows/Linux设备 MQTT接入  
-**自blinker App 2.1.1起，原WiFi接入和MQTT已经合并为新WiFi接入**  
+# Linux/Windows/MacOS MQTT接入  
+**本文档亦适用于树莓派等带操作系统的嵌入式开发板**  
 
 使用WiFi接入，当设备和手机在同一个局域网中，为局域网通信  
 其余情况，使用MQTT远程通信  
@@ -41,6 +41,8 @@ let device = new BlinkerDevice('xxxxxxxxxxxx');
 ```
 ts-node .\example\example_hello.ts
 ```
+
+> blinker在局域网通信时会使用到81端口，如遇到权限报错，请使用sudo等方式提权运行  
 
 ## 恭喜！一切就绪  
 
