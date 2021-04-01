@@ -363,10 +363,11 @@ Blinker.attachSummary(summary);
 ``` 
 
 ### 重置设备并清除配网信息  
+
 #### Blinker.reset()  
+
 重置设备并清除设备上储存的配网信息，适用于ESPTOUCH/APCONFIG配网的设备。  
 调用该函数后设备将重新启动。  
-
 
 ### App组件
 
@@ -1173,13 +1174,17 @@ bool delete = Blinker.dataDelete();
 > *限制 1次/分钟  
 
 #### Blinker.log()  
+
   
 上传log信息到云端  
 
-```
+``` 
+
 Blinker.log("string data");
 ```
+
   
+
 ### 通知消息
 
 #### 短信通知 Blinker.sms
@@ -1272,88 +1277,102 @@ Blinker.wechat("hello blinker");
 > - 营销推广短信除上述禁止内容外，另不支持：保险、房地产、教育、培训、游戏、美容、医疗、会所、酒吧、足浴、助考、商标注册、装修、建材、家私、会展、车展、房展等信息的短信  
 > - 如出现违法违规或者损害到相关他人权益的, 平台将保留最终追究的权利！请各会员严格遵守规范要求，加强自身业务安全，健康发送短信  
 
-### 天气空气
+### 气象数据
 
-#### 当日天气
+气象数据接口，默认使用IP定位返回当前位置的气象数据，也可以通过参数cityCode（[国家行政区编码](http://preview.www.mca.gov.cn/article/sj/xzqh/2020/2020/202101041104.html)）来获取指定位置的数据。  
+更多说明可见[气象数据接口](https://diandeng.tech/doc/weather-and-air)  
+
+#### 天气
 
 注册回调函数，当设备查询到天气数据时会调用对应的回调函数  
 
-回调函数：
+回调函数：  
 
-```c++ 
+```c++
 void weatherData(const String & data) {
-
     BLINKER_LOG("weather: ", data);
-
 }
+```
 
-``` 
+注册回调函数：  
 
-注册回调函数：
-
-```c++ 
+```c++
 Blinker.attachWeather(weatherData);
 ```
 
-设备通过 **WiFi** 接入时可以使用 **Blinker.weather()** 查询天气情况.
+获取天气数据：  
 
-```c++ 
-Blinker.weather(); //默认查询设备ip所属地区的当前时刻的天气情况
-Blinker.weather("chengdu"); //查询成都市当前时刻的天气情况
-Blinker.weather("beijing"); //查询北京市当前时刻的天气情况
-
-``` 
-
-> *限制 1次/分钟  
-
-```c++ 
-String location = "chengdu";//传入参数为对应城市拼音/英文
-Blinker.weather(location);
+```c++  
+Blinker.weather(citycode); //传入参数为对应城市编码
 ```
-#### 天气预报
+
+调用示例：
+
+```c++
+Blinker.weather(); //默认查询设备ip所属地区的当前时刻的天气情况
+Blinker.weather(510100); //查询成都市当前时刻的天气情况
+```
+
+#### 天气预报  
+
 注册回调函数，当设备查询到天气预报数据时会调用对应的回调函数  
 
+回调函数：  
 
-#### 当日空气
+```c++
+void weatherForecastData(const String & data) {
+    BLINKER_LOG("weatherForecast: ", data);
+}
+```
+
+注册回调函数：  
+
+```c++
+Blinker.attachWeatherForecast(weatherForecastData);
+```
+
+获取天气数据：  
+
+```c++  
+Blinker.weatherForecast(citycode); //传入参数为对应城市编码
+```
+
+调用示例：
+
+```c++
+Blinker.weatherForecast(); //默认查询设备ip所属地区的当前时刻的天气情况
+Blinker.weatherForecast(510100); //查询成都市当前时刻的天气情况
+```
+
+#### 当日空气  
 
 注册回调函数，当设备查询到AQI数据时会调用对应的回调函数  
 
-回调函数：
+回调函数：  
 
-``` c++ 
-void aqiData(const String & data) {
-
-    BLINKER_LOG("AQI: ", data);
-
+``` c++
+void airData(const String & data) {
+    BLINKER_LOG("air: ", data);
 }
-
-``` 
+```
 
 注册回调函数：
 
-``` c++ 
-
-Blinker.attachAQI(aqiData); 
+``` c++
+Blinker.attachAir(airData);
 ```
 
-设备通过 **WiFi** 接入时可以使用 **Blinker.aqi()** 查询空气质量情况.
+获取天气数据：  
 
-``` c++ 
+```c++  
+Blinker.air(citycode); //传入参数为对应城市编码
+```
 
-Blinker.aqi(); //默认查询设备ip所属地区的当前时刻的空气质量情况
+调用示例：
 
-Blinker.aqi("chengdu"); //查询成都市当前时刻的空气质量情况
-
-Blinker.aqi("beijing"); //查询北京市当前时刻的空气质量情况
-
-``` 
-
-> *限制 1次/分钟  
-
-``` c++ 
-
-String location = "chengdu"; //传入参数为对应城市拼音/英文
-Blinker.aqi(location); 
+``` c++
+Blinker.air(); //默认查询设备ip所属地区的当前时刻的空气质量情况
+Blinker.air(510100); //查询成都市当前时刻的空气质量情况
 ```
 
 ### 调试模式Debug
