@@ -2,8 +2,7 @@
 
 blinker JavaScript/TypeScript模块支持  
 目前模块处于测试阶段，没有正式发布，暂时无法通过npm安装  
-您可以通过以下地址下载：  
-https://github.com/blinker-iot/blinker-js  
+[Github](https://github.com/blinker-iot/blinker-js)  
 
 ## 支持情况  
 
@@ -22,8 +21,9 @@ npm i
 
 ## 示例程序  
 
-https://github.com/blinker-iot/blinker-js/blob/typescript/example/example.ts  
-```
+[基础示例程序](https://github.com/blinker-iot/blinker-js/blob/typescript/example/example.ts)  
+
+```shell
 ts-node .\example\example.ts
 ```
 
@@ -236,6 +236,7 @@ device.saveObjectData({
     key2: 'abc'
 });
 ```
+
 免费版、专业版对象数据存储有如下限制：  
     1.上传最高频率为1分钟1次  
     2.每次上传数据不得超过5kb  
@@ -287,10 +288,8 @@ let weatherForecast = await device.getWeatherForecast()
 
 ## 语音助手接入  
 
-小度示例程序：
-[小度插座](https://github.com/blinker-iot/blinker-js/blob/typescript/example/example_dueros_outlet.ts)  
-[小度多孔插座](https://github.com/blinker-iot/blinker-js/blob/typescript/example/example_dueros_multi_outlet.ts)  
-[小度灯](https://github.com/blinker-iot/blinker-js/blob/typescript/example/example_dueros_light.ts)  
-[小度传感器](https://github.com/blinker-iot/blinker-js/blob/typescript/example/example_dueros_sensor.ts)  
+[小度示例](https://github.com/blinker-iot/blinker-js/tree/typescript/example/dueros)  
+[天猫精灵示例](https://github.com/blinker-iot/blinker-js/tree/typescript/example/aligenie)  
+[小爱示例](https://github.com/blinker-iot/blinker-js/tree/typescript/example/miot)  
 
 **注意事项：**开发过程中，如果改变了设备类型，需要在小度音箱App中解绑再重新绑定才能正常同步出设备。  
