@@ -993,7 +993,8 @@ Blinker.delay(500);
 > 为了连接设备成功, 需要延时时务必使用该函数; 
 > 使用此函数可以在延时期间连接设备及接收数据并处理数据, 延时完成后才能执行后面的程序; 
 
-### 设备间通信BlinkerBridge
+### 设备间通信BlinkerBridge  
+> 即将废弃不再支持该功能  
 
 **BlinkerBridge** 功能用于 **WiFi** 设备与设备间的通信(无需使用app进行控制).  
 
@@ -1050,8 +1051,10 @@ Blinker.configUpdate("Hello blinker!");
 > *限制 1次/分钟  
 
 #### Blinker.configGet()
+> 即将废弃不再支持该功能  
 
 #### Blinker.attachConfigGet()
+> 即将废弃不再支持该功能  
 
 注册回调函数，当设备查询到配置信息时会调用对应的回调函数  
 
@@ -1081,6 +1084,7 @@ Blinker.configGet();
 > *限制 1次/分钟  
 
 #### Blinker.configDelete()
+> 即将废弃不再支持该功能  
 
 删除云端的配置信息
 
@@ -1130,8 +1134,10 @@ Blinker.dataStorage("key","value");
 > 最多可以同时缓存 6 个不同的key  
 
 #### Blinker.dataGet()
+> 即将废弃不再支持该功能  
 
 #### Blinker.attachDataGet()
+> 即将废弃不再支持该功能  
 
 注册回调函数，当设备查询到云端信息时会调用对应的回调函数  
 
@@ -1161,6 +1167,7 @@ Blinker.dataGet();
 > *限制 1次/分钟  
 
 #### Blinker.dataDelete()
+> 即将废弃不再支持该功能  
 
 删除云端储存的数据信息
 
