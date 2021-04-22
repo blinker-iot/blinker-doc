@@ -76,8 +76,7 @@ device.builtinSwitch.change.subscribe(message => {
 ## 其他  
 
 ### 短信通知  
-
-**仅限专业版用户使用，限制为10条/天, 20字/条**  
+**该功能仅限专业版用户使用 10条/天/人, 20字/条，1次/分钟，只能向注册手机号发送短信通知**  
 
 ```js
 device.sendSms('text')
