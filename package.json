@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/blinker-iot/blinker-doc#readme",
   "devDependencies": {
-    "transliteration": "^2.1.11"
+    "transliteration": "^2.2.0"
   }
 }
