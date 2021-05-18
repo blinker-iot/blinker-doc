@@ -38,14 +38,11 @@ void otaStatus(uint32_t load_size, uint32_t total_size) {
 
 
 ### 设备配置  
-**由于 ESP-Arduino SDK 中 **EEPROM** 设置在 **SPIFFS** 分区后**  
-**编译固件前务必将 **Flash Size** 选择为有 SPIFFS 分区的模式**  
-**OTA 更新信息储存在 EEPROM 中, 设备完成 OTA 重启后需要检测 EEPROM 后上报是否更新成功**  
-最新版本的库可以不再设置SPIFFS  
-设置例:
+以最新package版本为例    
+设置ESP8266例:
 ```
 开发板:"WiFiduino"
-Flash Size:"4M (3M SPIFFS)"
+Flash Size:"4M (FS:2MB OTA:~1019KB)"
 Debug port:"Disabled"
 Debug Level:"无"
 lwIp Variant:"v2 Lower Memory"
@@ -54,8 +51,14 @@ CPU Frequency:"80 MHz"
 Upload Speed:"921600"
 Erase Flash:"Only Sketch"
 ```
-> 注: 建议 Flash Size 设置为 4M (2M SPIFFS), 以免OTA空间不够  
-> 
+> 注: 建议 Flash Size 设置为 OTA:~1019KB的选项, 以免OTA空间不够  
+>   
+设置ESP32例:
+```
+开发板:"WiFiduino32"
+Partition Scheme:"Minimal SPIFFS(Large APPS with OTA)"
+FLASH Frequency:"80 MHz"
+```
   
 ### 固件获取  
 通过 **Arduino IDE菜单 > 项目 > 导出已编译的二进制文件** 即可导出固件，导出的固件在当前项目的项目文件夹中。  
