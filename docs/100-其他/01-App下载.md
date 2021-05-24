@@ -17,7 +17,7 @@ beta: [点击下载](http://ccdn.diandeng.tech/apk/blinker-2.5.2-beta.apk)
 
 ## 系统支持与测试  
 release app发布默认只测试最近的3个大版本，当前为：  
-android 10 9 8  
+android 11 10 9  
 理论支持的最低android版本 android 6  
 ios 13 12 11  
 理论支持的最低ios版本 ios 11  
