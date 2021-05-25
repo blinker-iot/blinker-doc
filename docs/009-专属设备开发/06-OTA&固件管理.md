@@ -38,8 +38,8 @@ void otaStatus(uint32_t load_size, uint32_t total_size) {
 
 
 ### 设备配置  
-以最新package版本为例    
-设置ESP8266例:
+以最新package版本为例  
+**ESP8266推荐配置：**  
 ```
 开发板:"WiFiduino"
 Flash Size:"4M (FS:2MB OTA:~1019KB)"
@@ -52,8 +52,8 @@ Upload Speed:"921600"
 Erase Flash:"Only Sketch"
 ```
 > 注: 建议 Flash Size 设置为 OTA:~1019KB的选项, 以免OTA空间不够  
->   
-设置ESP32例:
+
+**ESP32推荐配置：**  
 ```
 开发板:"WiFiduino32"
 Partition Scheme:"Minimal SPIFFS(Large APPS with OTA)"
