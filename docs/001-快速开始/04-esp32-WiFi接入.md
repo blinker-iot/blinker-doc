@@ -27,8 +27,7 @@ esp32开发板([查看支持的设备](?file=003-硬件开发/01-设备端支持
 或 在app store中搜索“blinker”下载  
 
 #### 下载并安装blinker Arduino库  
-
-[点击下载](https://github.com/blinker-iot/blinker-library/archive/master.zip)  
+[点击下载](https://diandeng.tech/dev)  
 **Windows：**将下载好的blinker库解压到 **我的电脑>文档>Arduino>libraries** 文件夹中  
 **Mac OS：**将下载好的blinker库解压到 **文稿>Arduino>libraries** 文件夹中  
   
