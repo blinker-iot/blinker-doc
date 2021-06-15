@@ -4,7 +4,7 @@
 ## 准备工作
 
 ### 硬件准备  
-arduino开发板([查看支持的设备](?file=003-硬件开发/01-设备端支持 "支持的设备"))  
+arduino开发板([查看支持的设备](https://diandeng.tech/doc/device-support))  
 SIM7020C模块(支持NBIoT的物理网卡等)  
 
 ### 软件准备  
