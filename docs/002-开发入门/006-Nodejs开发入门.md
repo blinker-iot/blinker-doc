@@ -4,12 +4,14 @@
 
 ## 接入示例  
 
-```typescript
+```javascript
 import { BlinkerDevice } from '../lib/blinker';
 import { ButtonWidget, TextWidget, RangeWidget, NumberWidget, RGBWidget, JoystickWidget, ChartWidget, ImageWidget } from '../lib/widget';
 
 let device = new BlinkerDevice(/*您申请到的authkey*/);
+```
 
+```javascript
 // 注册组件
 let button1: ButtonWidget = device.addWidget(new ButtonWidget('btn-crf'));
 let button2: ButtonWidget = device.addWidget(new ButtonWidget('btn-b9g'));
@@ -162,4 +164,4 @@ function turnSwitch() {
 见[示例程序](https://github.com/blinker-iot/blinker-js/tree/typescript/example)  
 
 #### blinker lib Api手册  
-您可以通过 [JavaScript支持](https://diandeng.tech/doc/javascript-support)了解更多blinker api用法  
+您可以通过 [NodeJs支持](https://diandeng.tech/doc/javascript-support)了解更多blinker api用法  
