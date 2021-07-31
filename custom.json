@@ -19,7 +19,6 @@
 "Python支持":"python-support",
 "microPython支持":"mpy-support",
 "ESP_AT模块支持":"at-mode-support",
-"JavaScript支持":"javascript-support",
 "通信指令":"cmd",
 "接入其他设备":"more-support",
 "开发工具":"dev-tool",
@@ -107,6 +106,7 @@
 "数据接口(数值时序)":"api-storage-ts-num",
 "数据接口(文本时序)":"api-storage-ts-text",
 "数据接口(设备影子)":"api-storage-shadow",
+"数据接口(地理信息)":"api-storage-gis",
 "语音接口":"api-voice",
 "Nodejs开发入门":"getting-start-nodejs",
 "概述":"white-paper",
@@ -117,5 +117,6 @@
 "App端":"white-paper-app",
 "服务器端":"white-paper-server",
 "App打包上架服务":"app-release",
-"独立app开发":""
+"独立app开发":"app-dev",
+"NodeJs支持":"javascript-support"
 }
