@@ -1,8 +1,8 @@
 # App下载
 
 ## Android  
-beta: [点击下载](http://ccdn.diandeng.tech/apk/blinker-2.5.2-beta.apk)  
-alpha: [点击下载](http://ccdn.diandeng.tech/apk/blinker-2.5.6-alpha4.apk)  
+2.5.2-beta: [点击下载](http://ccdn.diandeng.tech/apk/blinker-2.5.2-beta.apk)  
+2.5.7-alpha: [点击下载](http://ccdn.diandeng.tech/apk/blinker-2.5.7-alpha.apk)  
 
 ### 开发中/历史版本
 这里通常有比上面更新的版本，不建议非开发者使用  
