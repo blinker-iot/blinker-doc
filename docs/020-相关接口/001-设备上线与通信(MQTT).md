@@ -90,3 +90,15 @@ TOPIC /group/groupName/r
 
 fromDevice：来源设备  
 data：承载数据  
+
+## MQTT SDK
+我们建议项目中使用以下推荐SDK：    
+
+| C（Linux/windows/MacOS使用） | [Paho C SDK](https://github.com/eclipse/paho.mqtt.c)         |
+| ---------------------------- | ------------------------------------------------------------ |
+| C（MCU使用）                 | [Paho embedded-C SDK](https://github.com/eclipse/paho.mqtt.embedded-c) |
+| Python                       | [Paho Python SDK](https://github.com/eclipse/paho.mqtt.python) |
+| JavaScript                   | [mqtt.js](https://github.com/mqttjs/MQTT.js)                 |
+| Java                         | [Paho Java SDK](https://github.com/eclipse/paho.mqtt.java)   |
+| Golang                       | [Paho Golang SDK](https://github.com/eclipse/paho.mqtt.golang) |
+
