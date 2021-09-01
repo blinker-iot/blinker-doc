@@ -44,7 +44,7 @@ device.ready().then(() => {
 })
 ```
 
-### 心跳  
+### 心跳 反馈 
 
 ```js
 device.heartbeat.subscribe(message => {
@@ -54,9 +54,11 @@ console.log('heartbeat:', message);
 
 ### 其他数据  
 
+```javascript
 device.dataRead.subscribe(message => {
     console.log('otherData:', message);
 })
+```
 
 ### 震动  
 
@@ -72,6 +74,28 @@ device.builtinSwitch.change.subscribe(message => {
     device.builtinSwitch.setState("on/off").update();
 })
 ```
+
+
+
+## MQTT相关
+
+用户可通过 BlinkerDevice.mqttClient 直接操作mqtt客户端，相关API见[mqtt.js Github](https://github.com/mqttjs/MQTT.js)
+
+```javascript
+let mqttClient = device.mqttClient 
+```
+
+### 发送消息
+
+向指定设备发送数据
+
+```javascript
+let message = {"abc" : 123}
+let toDevice = 'ABCDEFGHIJ' // 设备识别码
+device.sendMessage(message, toDevice)
+```
+
+
 
 ## 其他  
 
