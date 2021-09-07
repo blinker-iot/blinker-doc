@@ -118,5 +118,8 @@
 "服务器端":"white-paper-server",
 "App打包上架服务":"app-release",
 "独立app开发":"app-dev",
-"NodeJs支持":"javascript-support"
+"NodeJs支持":"javascript-support",
+"配网工具":"config-tool",
+"调试工具":"debug-tool",
+"社区版安装部署":"deploy"
 }
