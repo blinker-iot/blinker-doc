@@ -22,7 +22,7 @@ ESP_AT模块指令集文档，需烧录blinker定制的[AT固件](https://github
 > 注意：blinker AT固件至少需要1MB以上的Flash空间，请自行在**IDE>工具>Flash size**中设置  
 
 ## 设备上线流程
-![](assets/003/esp_at.png)  
+![](../img/003/esp_at.png)  
 **MCU主控** 往 **ESP_AT模块** 发送: **AT**  
 **ESP_AT模块** 向 **MCU主控** 反馈: **OK**  
 **MCU主控** 往 **ESP_AT模块** 发送: **AT+BLINKER_WIFI=1,authKey**  
