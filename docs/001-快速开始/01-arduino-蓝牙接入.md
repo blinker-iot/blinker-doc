@@ -27,10 +27,11 @@ JDY18/JDY09 （默认波特率9600）
 **IOS下载：**  
 [点击下载](https://itunes.apple.com/cn/app/id1357907814)  
 或 在app store中搜索“blinker”下载  
+
 #### 下载并安装blinker Arduino库  
-[点击下载](https://diandeng.tech/dev)  
-**Windows：**将下载好的blinker库解压到 **我的电脑>文档>Arduino>libraries** 文件夹中  
-**Mac OS：**将下载好的blinker库解压到 **文稿>Arduino>libraries** 文件夹中  
+1. [点击下载](https://diandeng.tech/dev)  
+2. 通过Arduino IDE **菜单>项目>加载库>添加.ZIP库** 导入到库，如图：  
+![](../img/001/import-lib.png)
 
 ## 在app中添加设备  
 1. 确保蓝牙模块已通电  

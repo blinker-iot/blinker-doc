@@ -13,9 +13,9 @@ esp8266开发板([查看支持的设备](https://diandeng.tech/doc/device-suppor
 
 #### Arduino IDE需安装好esp8266扩展  
 [Arduino IDE](https://www.arduino.cc/en/Main/Software) 1.8.7或更新版本  
-务必使用 **2.7.4** 或以上release版本的 ESP8266 Arduino package  
-[常规安装方法](https://github.com/esp8266/Arduino)  
+务必使用 **3.0.0** 或以上release版本的 ESP8266 Arduino package  
 [中国大陆安装方法(windows)](https://www.arduino.cn/thread-76029-1-1.html)  
+[常规安装方法](https://github.com/esp8266/Arduino)  
 
 #### 下载并安装blinker APP  
 
@@ -27,10 +27,9 @@ esp8266开发板([查看支持的设备](https://diandeng.tech/doc/device-suppor
 或 在app store中搜索“blinker”下载  
 
 #### 下载并安装blinker Arduino库  
-
-[点击下载](https://diandeng.tech/dev)  
-**Windows：**将下载好的blinker库解压到 **我的电脑>文档>Arduino>libraries** 文件夹中  
-**Mac OS：**将下载好的blinker库解压到 **文稿>Arduino>libraries** 文件夹中  
+1. [点击下载](https://diandeng.tech/dev)  
+2. 通过Arduino IDE **菜单>项目>加载库>添加.ZIP库** 导入到库，如图：  
+![](../img/001/import-lib.png)
   
 
 ## 在app中添加设备，获取Secret Key  
