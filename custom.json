@@ -89,7 +89,7 @@
 "Customizer定制设备界面":"customizer",
 "Nordic_nRF52支持":"nordic-support",
 "服务类型":"service",
-"设备上线与通信":"",
+"设备上线与通信":"device-online-communication",
 "开发者协议":"developer-agreement",
 "用户协议":"user-agreement",
 "隐私协议":"privacy-agreement",
@@ -121,5 +121,9 @@
 "NodeJs支持":"javascript-support",
 "配网工具":"config-tool",
 "调试工具":"debug-tool",
-"社区版安装部署":"deploy"
+"社区版安装部署":"deploy",
+"实时数据传输":"realtime",
+"商业版安装部署":"biz-deploy",
+"独立部署SDK配置":"biz-sdk-config",
+"独立部署APP配置":"biz-app-config"
 }
