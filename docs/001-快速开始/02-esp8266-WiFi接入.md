@@ -52,6 +52,8 @@ esp8266开发板([查看支持的设备](https://diandeng.tech/doc/device-suppor
 打开Arduino IDE，通过 **文件>示例>Blinker>Blinker_Hello/Hello_WiFi** 打开例程  
 在程序中找到如下变量，填入您申请到的Secret Key(auth)和要连接的WiFi热点名(ssid)、密码(pswd)，如： 
 
+> 注意：esp系列芯片只能连接2.4G WiFi热点  
+
 ``` cpp
 char auth[] = "abcdefghijkl"; //上一步中在app中获取到的Secret Key
 char ssid[] = "abcdefg"; //您的WiFi热点名称
