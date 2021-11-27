@@ -20,11 +20,9 @@ esp8266开发板([查看支持的设备](https://diandeng.tech/doc/device-suppor
 #### 下载并安装blinker APP  
 
 **Android下载：**  
-[点击下载](https://github.com/blinker-iot/app-release/releases)  
-或 在android应用商店搜索“blinker”下载安装  
+[点击下载](https://github.com/blinker-iot/app-release/releases) 或 在android应用商店搜索“blinker”下载安装  
 **IOS下载：**  
-[点击下载](https://itunes.apple.com/cn/app/id1357907814)  
-或 在app store中搜索“blinker”下载  
+[点击下载](https://itunes.apple.com/cn/app/id1357907814) 或 在app store中搜索“blinker”下载  
 
 #### 下载并安装blinker Arduino库  
 1. [点击下载](https://diandeng.tech/dev)  
@@ -36,8 +34,7 @@ esp8266开发板([查看支持的设备](https://diandeng.tech/doc/device-suppor
 
 1. 进入App，点击右上角的“+”号，然后选择 **添加设备**    
 2. 点击选择**Arduino** > **WiFi接入**  
-3. 选择要接入的服务商  
-4. 复制申请到的**Secret Key**  
+3. 复制申请到的**Secret Key**  
 
 ## DIY界面  
 

@@ -8,8 +8,11 @@
 开始使用前您需要做好如下准备:  
 
 **下载并安装blinker APP**  
-android下载：[点击下载](https://github.com/blinker-iot/app-release/releases)  
-IOS下载：app store中搜索“blinker”下载  
+**Android下载：**  
+[点击下载](https://github.com/blinker-iot/app-release/releases) 或 在android应用商店搜索“blinker”下载安装  
+**IOS下载：**  
+[点击下载](https://itunes.apple.com/cn/app/id1357907814) 或 在app store中搜索“blinker”下载  
+
 
 ## 环境/依赖安装  
 运行blinker程序需要最新nodejs LTS版本及Ts-Node支持  
@@ -23,8 +26,7 @@ npm i
 ## 在app中添加设备，获取Secret Key  
 1. 进入App，点击右上角的“+”号，然后选择 **添加设备**    
 2. 点击选择**Arduino > WiFi接入**  
-3. 选择要接入的服务商  
-4. 复制申请到的**Secret Key**  
+3. 复制申请到的**Secret Key**  
 
 ## DIY界面  
 1. 在设备列表页，点击设备图标，进入设备控制面板  
