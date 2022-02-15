@@ -13,11 +13,11 @@ Arduino boards(Uno, Leonardo, Nano, Mini, Pro Mini, Pro Micro, zero, Due, Mega..
 
 ESP8266
 
-* 需配合使用 **2.7.4** 或以上release版本的 ESP8266 package
+* 需配合使用 **3.0.0** 或以上release版本的 ESP8266 package
 
 ESP32
 
-* 需配合使用 **1.0.5-rc4** 及以上版本的 ESP32 package  
+* 需配合使用 **2.0.0** 及以上版本的 ESP32 package  
 
   
 
