@@ -4,7 +4,7 @@ github：https://github.com/blinker-iot/blinker-freertos
 
 ## 支持的硬件
 * 使用 [ESP8266_RTOS_SDK](https://github.com/espressif/ESP8266_RTOS_SDK) 的ESP8266  
-* 使用 [esp-idf](https://github.com/espressif/esp-idf) 的ESP8266  
+* 使用 [esp-idf](https://github.com/espressif/esp-idf) 的ESP32  
 
 ## 注意事项
 * SSL 使用的 wolfssl  

@@ -9,7 +9,7 @@ openjumper ble串口模块 （默认波特率9600）
 HM10 / HM11 （默认波特率9600）  
 JDY08 / JDY10 （默认波特率115200）  
 JDY18/JDY09 （默认波特率9600）  
-以上均为蓝牙4.x模块  
+以上均为蓝牙BLE模块  
 [点击查看blinker设备端支持](https://diandeng.tech/doc/device-support)  
 
 **特别提醒：**蓝牙2.0是已淘汰的技术，新手机已经不支持蓝牙2.0，blinker也不支持  
