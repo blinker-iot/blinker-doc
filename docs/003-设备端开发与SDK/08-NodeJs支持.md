@@ -1,7 +1,5 @@
 # JavaScript支持模块  
-
 blinker JavaScript/TypeScript模块支持  
-目前模块处于测试阶段，没有正式发布，暂时无法通过npm安装  
 [Github](https://github.com/blinker-iot/blinker-js)  
 
 ## 支持情况  
@@ -9,8 +7,8 @@ blinker JavaScript/TypeScript模块支持
 树莓派(Raspberry Pi)、香蕉派等Linux设备、Windows、MacOS等  
 
 ## 环境/依赖安装  
-
-最新nodejs LTS版本  
+模块暂时无法通过npm安装  
+使用blinker nodejs SDK前请先安装最新的nodejs LTS版本及TypeScript  
 
 ```shell
 npm i -g ts-node
