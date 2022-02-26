@@ -37,7 +37,7 @@ let device = new BlinkerDevice(authkey);
 ```
 
 ### 等待设备初始化完成  
-
+设备在连接到broker并加载完配置后，将进入ready状态，建议设备相关操作都在ready后进行。  
 ```js
 device.ready().then(() => {
     //初始化完成后进行的操作
@@ -316,3 +316,6 @@ let weatherForecast = await device.getWeatherForecast()
 [小爱示例](https://github.com/blinker-iot/blinker-js/tree/typescript/example/miot)  
 
 **注意事项：**开发过程中，如果改变了设备类型，需要在小度音箱App中解绑再重新绑定才能正常同步出设备。  
+
+# 部署  
+blinker的nodejs程序和常见nodejs程序无异，推荐使用pm2部署。  
