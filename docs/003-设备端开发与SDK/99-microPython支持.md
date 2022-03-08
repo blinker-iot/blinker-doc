@@ -1,5 +1,5 @@
 # microPython支持模块  
-**已弃用**  
+**已弃用，不建议使用**  
 面向ESP32设备提供microPython模块支持  
 您可以通过以下地址下载：  
 https://github.com/blinker-iot/blinker-mpy  

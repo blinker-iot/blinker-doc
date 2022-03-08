@@ -3,12 +3,11 @@ blinker JavaScript/TypeScript模块支持
 [Github](https://github.com/blinker-iot/blinker-js)  
 
 ## 支持情况  
-
 树莓派(Raspberry Pi)、香蕉派等Linux设备、Windows、MacOS等  
 
 ## 环境/依赖安装  
 模块暂时无法通过npm安装  
-使用blinker nodejs SDK前请先安装最新的nodejs LTS版本及TypeScript  
+使用blinker Nodejs SDK前请先安装最新的nodejs LTS版本及TypeScript  
 
 ```shell
 npm i -g ts-node
@@ -33,6 +32,22 @@ ts-node .\example\example.ts
 import { BlinkerDevice } from './blinker';
 let device = new BlinkerDevice(authkey);
 ```
+
+## 可用配置项  
+
+```js
+let device = new BlinkerDevice('authkey',{
+    protocol: 'mqtts', // 可选协议mqtt/mqtts/ws/wss
+    webSocket: true, // 是否开启本地webSocket，默认开启
+    sourceCheck: true, // 是否开启来源检查，默认开启
+});
+```
+protocol: 指定设备连接协议，可选mqtt/mqtts/ws/wss。默认为mqtts。  
+webSocket：开启后，会占用设备81端口，用于局域网中设备直接通信。如有安全性要求请关闭该功能。  
+sourceCheck：开启后，会检查消息来源，设备只会处理所属用户发来的消息。如需设备间通信，请关闭该功能。  
+
+
+
 
 ### 等待设备初始化完成  
 设备在连接到broker并加载完配置后，将进入ready状态，建议设备相关操作都在ready后进行。  
@@ -317,3 +332,36 @@ let weatherForecast = await device.getWeatherForecast()
 
 # 部署  
 blinker的nodejs程序和常见nodejs程序无异，推荐使用pm2部署。  
+
+# 企业版  
+服务独立部署后，可通过修改 /lib/server.config.ts 修改服务器地址  
+
+# 支持情况   
+ButtonWidget  
+TextWidget  
+NumberWidget  
+RangeWidget  
+RGBWidget  
+JoystickWidget  
+
+## 已支持  
+基本MQTT通信  
+Layouter组件  
+时序数据存储(仅限blinker broker)    
+文本数据存储(仅限blinker broker)    
+对象数据存储(仅限blinker broker)  
+倒计时  
+定时  
+短信通知  
+微信通知  
+App推送  
+局域网ws通信  
+设备分享  
+天气/天气预报/空气 数据获取  
+语音助手（小度/天猫精灵/小爱）  
+
+## 即将支持  
+APCONFIG(AP配网)  
+QRCONFIG(扫码配置)   
+专属设备  
+更多组件支持  
