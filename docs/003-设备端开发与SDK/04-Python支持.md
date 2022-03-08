@@ -1,578 +1,380 @@
-# Python支持模块  
-**当然版本为beta版**  
-面向linux设备提供python模块支持  
-目前模块处于调试阶段，没有正式发布，暂时无法通过pip仓库安装  
-您可以通过以下地址下载：  
-https://github.com/blinker-iot/blinker-py  
+# Python支持模块
+
+Blinker Python模块支持
+[Github](https://github.com/blinker-iot/blinker-py)
 
 
-## 支持情况  
-Linux开发板、树莓派(Raspberry Pi)、香蕉派
-  
-## 连接类型
-* Bluetooth 4.x(BLE)  
-* WiFi  
-  
-## 准备工作
-开始使用前您需要做好如下准备:
-* [python3.x](https://www.python.org/downloads/)  
 
-* Install the [bluez](http://www.bluez.org/) 5.49 or newer  
-[Adafruit install-bluez-on-the-raspberry-pi](https://learn.adafruit.com/install-bluez-on-the-raspberry-pi/installation)  
-* Install the [blinker-py](https://github.com/blinker-iot/blinker-py)  
-`git clone https://github.com/blinker-iot/blinker-py`  
-`cd blinker-py`  
-`sudo python3 setup.py install`  
-`sudo pip3 install -r requirements.txt`  
+## 环境/依赖安装
 
->注:
->- 务必安装的模块 [blinker-py](https://github.com/blinker-iot/blinker-py)
->- BLE接入必需安装模块 [bluez](http://www.bluez.org/) / [dbus-python](https://pypi.org/project/dbus-python/#description) / [PyGobject](https://pygobject.readthedocs.io/en/latest/)  
->- WiFi接入必需安装模块 [simple-websocket-server](https://github.com/dpallot/simple-websocket-server) / [python-zeroconf](https://github.com/jstasiak/python-zeroconf) / [python-zeroconf](https://github.com/jstasiak/python-zeroconf) / [paho.mqtt.python](https://github.com/eclipse/paho.mqtt.python) / [requests](https://github.com/requests/requests)  
+python版本仅支持 `3.7+`
 
-  
-## Blinker接口函数
-### 设备配置
-#### Blinker.begin()
-使用 **Blinker.begin()** 来配置 Blinker:
-```
-Blinker.begin(...)
-```
-根据您使用的连接方式选择不同的参数用于配置Blinker  
-  
+模块暂时无法通过 `pip` 安装，可使用如下方式或别的python包安装方式
 
-BLE:
-```
-from Blinker import *  
-  
-Blinker.mode("BLINKER_BLE")  
-Blinker.begin()
-```  
-
-  
-WiFi:
-```
-from Blinker import *  
-
-auth = 'Your Device Secret Key'
-  
-Blinker.mode("BLINKER_WIFI")  
-Blinker.begin(auth)
-```  
-
-**begin()** 主要完成以下配置:  
-1.初始化硬件设置;  
-2.连接网络并广播设备信息等待app连接;
-### 连接管理
-#### Blinker.connect()
-建立 **Blinker** 设备间连接并返回连接状态, 默认超时时间为10秒
-```
-result = Blinker.connect()  
-  
-
-timeout = 30000 # ms  
-result = Blinker.connect(timeout)
-```
-#### Blinker.disconnect()
-断开 **Blinker** 设备间连接
-```
-Blinker.disconnect()
-```
-#### Blinker.connected()
-返回 **Blinker** 设备间连接状态
-```
-result = Blinker.connected()
-```  
-#### Blinker.run()
-此函数需要频繁调用以保持设备间连接及处理收到的数据, 建议放在 **main** 函数中
-```
-if __name__ == '__main__':  
-    while True:  
-        Blinker.run()
+```shell
+git clone https://github.com/blinker-iot/blinker-py.git
+cd blinker-py
+pip3 install --upgrade pip
+pip3 install --upgrade .
 ```
 
-### 数据管理
-#### Blinker.attachData()
-注册回调函数，当有设备收到APP发来的数据时会调用对应的回调函数  
 
-回调函数:
-```
-def data_callback(data):
-    BLINKER_LOG("Blinker readString: ", data)
-```
-注册回调函数:
-```
-Blinker.attachData(data_callback)
-```
 
-#### Blinker.print()
-发送数据
-```
-Blinker.print(data)
+## 示例程序
+
+[示例程序](https://github.com/blinker-iot/blinker-py/tree/dev_3.0/example)
+
+
+
+## 设备操作
+
+### 实例化设备
+
+```py
+from blinker import Device
+device = Device("authKey")
 ```
 
-```
-*发送数据最大为 128 字节  
-*MQTT方式接入时, print需间隔1s以上  
-例:  
-Blinker.print("hello")  
-Blinker.delay(1000)  
-Blinker.print("world)  
-```  
+### 设备初始化完成回调设置
 
-#### Blinker.notify()
-使用 **notify** 时, 发送数据以感叹号开始, 将会发送消息通知到app, 否则将会发送Json数据到app  
+可设置初始化完成回调函数，在设备连接broker并加载完配置后执行相关动作
 
-发送通知
-```
-Blinker.notify("!notify")
-```
-发送Json数据, 如 {"notice":"notify"}
-```
-Blinker.notify("notify")
-```  
+```python
+from blinker import Device
 
-### 心跳包
-app定时向设备发送心跳包, 设备收到心跳包后会返回设备当前状态  
-如果用户有自定义状态需要在收到心跳包时返回, 可调用以下函数:  
+async def ready_func():
+  # 初始化完成后进行的操作
+  pass
 
-**Blinker.attachHeartbeat()**  
-用户自定义状态返回的回调函数:
+# 方式一
+device = Device("authKey", ready_func=ready_func)
+
+# 方式二
+device = Device("authKey")
+device.ready_callback = ready_func
+
+if __name__ == "main":
+  device.run()
 ```
-def heartbeat_callback():
-    global counter
+
+### 心跳反馈回调设置
+
+```python
+from blinker import Device
+
+async def heartbeat_func(msg):
+    print("Heartbeat received msg: {0}".format(msg))
     
-    button1.icon('icon_1')
-    button1.color('#FFFFFF')
-    button1.text('Your button name or describe')
-    button1.print("on")
+device = Device("authKey", heartbeat_func=heartbeat_func)
 
-    number1.print(counter)
-```
-注册回调函数:
-```
-Blinker.attachHeartbeat(heartbeat_callback)
-```
-> 设备建立连接后app会立刻发送心跳包, 此后每30s-60会发送一次心跳包  
-
-### 组件控制
-== 使用组件前需要引用对应的组件 ==  
-== from Blinker import Blinkerxxxx ==
-#### BlinkerButton  
-按键组件在App中可以设置 按键/开关/自定义 三种模式:  
-- **按键** 模式下支持 点按/长按/释放(tap/press/pressup) 三个动作  
-- **开关** 模式下支持 打开/关闭(on/off) 两个动作  
-- **自定义** 模式下支持 自定义指令 发送  
-
-**函数** :
-- attach()  
-    *BlinkerButton.attach()*  
-    注册按键的回调函数, 当收到指令时会调用该回调函数
-- icon()  
-    *BlinkerButton.icon()*  
-    设置按键中显示的图标(icon), [图标列表及对应图标名称见](https://fontawesome.com/)
-- color()  
-    *BlinkerButton.color()*  
-    设置按键中显示图标的颜色, [HTML颜色表](http://www.w3school.com.cn/tags/html_ref_colornames.asp)  
-- text()  
-    *BlinkerButton.text()*  
-    设置按键中显示的名字或者描述  
-    *BlinkerButton.text(text1)*  
-    一段描述文字  
-    *BlinkerButton.text(text1, text2)*  
-    两段描述文字  
-- print()  
-    *BlinkerButton.print()*  
-    发送按键当前的状态(多用于开关模式下反馈开关状态), 并将以上设置一并发送到APP
+if __name__ == '__main__':
+    device.run()
   
-初始化, 创建对象
-```
-BlinkerButton Button1("ButtonKey")
-```
-用于处理 **button** 收到数据的回调函数
-```cpp
-void button1_callback(state)
-{
-    BLINKER_LOG("get button state: ", state)
-
-    Button1.icon("icon_1")
-    Button1.color("#FFFFFF")
-    Button1.text("Your button name or describe")
-    Button1.print("on")
-}
 ```
 
-在 **setup()** 中注册回调函数
-```
-Button1.attach(button1_callback)
+### 其它数据
+
+```python
+from blinker import Device
+
+async def ready_func():
+    print(device.data_reader.get())
+
+device = Device("authKey", ready_func=ready_func)
+
+if __name__ == '__main__':
+    device.run()
 ```
 
-> 在回调函数中, **state** 的值为:  
-> - **按键** : "tap"(点按); "press"(长按); "pressup"(释放)  
-> - **开关** : "on"(打开); "off"(关闭)  
-> - **自定义** : 用户设置的值  
->   
-> *也可以在创建对象时注册回调函数:
->> Button1 = BlinkerButton(BUTTON_1, button1_callback)  
+### 震动
 
-#### BlinkerRGB  
-颜色组件, 用于读取/设置RGB及亮度值  
+```python
+from blinker import Device
 
-**函数** :
-- attach()  
-    *BlinkerRGB.attach()*  
-    设置颜色组件的回调函数, 当收到指令时会调用该回调函数
-- brightness()  
-    *BlinkerRGB.brightness()*  
-    设置颜色组件的亮度值
-- print()  
-    *BlinkerRGB.print()*  
-    发送用户需要的RGB数值及亮度值到APP  
-    *BlinkerRGB.print(R, G, B)*  
-    发送RGB及前一次设置的亮度值  
-    *BlinkerRGB.print(R, G, B, Brightness)*  
-    发送RGB及亮度值
+async def ready_func():
+    device.vibrate()
 
-初始化, 创建对象
-```
-BlinkerRGB RGB1("RGBKey")
-```
-用于处理 **RGB** 收到数据的回调函数
-```
-void rgb1_callback(r_value, g_value, b_value, bright_value)
-{
-    BLINKER_LOG("R value: ", r_value)
-    BLINKER_LOG("G value: ", g_value)
-    BLINKER_LOG("B value: ", b_value)
-    BLINKER_LOG("Rrightness value: ", bright_value)
-}
+device = Device("authKey", ready_func=ready_func)
+
+if __name__ == '__main__':
+    device.run()
 ```
 
-在 **setup()** 中注册回调函数
-```
-RGB1.attach(rgb1_callback)
-```
-> *也可以在创建对象时注册回调函数:
->> RGB1 = BlinkerRGB(RGB_1, rgb1_callback)   
+### 开关
 
-#### BlinkerSlider
-滑动条组件, 用于读取/设置滑动条  
+```python
+from blinker import Device
 
-**函数** :  
-- attach()  
-    *BlinkerSlider.attach()*  
-    设置滑动条组件的回调函数, 当收到指令时会调用该回调函数  
-- color()  
-    *BlinkerSlider.color()*  
-    设置滑动条组件的颜色 
-- print()  
-    *BlinkerSlider.print()*  
-    发送用户需要的滑动条数值及设置的颜色到APP
+async def builtin_switch_func(msg):
+    print("builtinSwitch: {0}".format(msg))
+    if msg["switch"] == "on":
+        await (await device.builtinSwitch.set_state("on")).update()
+    else:
+        await (await device.builtinSwitch.set_state("off")).update()
 
-初始化, 创建对象
-```
-BlinkerSlider Slider1("SliderKey")
-```
-用于处理 **Slider** 收到数据的回调函数
-```
-void slider1_callback(value)
-{
-    BLINKER_LOG("get slider value: ", value)
-}
+device = Device("authKey", builtin_switch_func=builtin_switch_func)
+
+if __name__ == '__main__':
+    device.run()
 ```
 
-在 **setup()** 中注册回调函数
-```
-Slider1.attach(slider1_callback)
-```
-> *也可以在创建对象时注册回调函数:
->> Slider1 = BlinkerSlider(Slider_1, slider1_callback) 
 
-#### BlinkerNumber
-数字组件, 用于发送数据到APP, 显示数字数据  
 
-**函数** :
-- icon()  
-    *BlinkerNumber.icon()*  
-    设置数字组件中显示的图标(icon), [图标列表及对应图标名称见](https://fontawesome.com/)
-- color()  
-    *BlinkerNumber.color()*  
-    设置数字组件的颜色, [HTML颜色表](http://www.w3school.com.cn/tags/html_ref_colornames.asp)
-- unit()  
-    *BlinkerNumber.unit()*  
-    设置数字组件中显示的数值的单位  
-- print()  
-    *BlinkerNumber.print()*  
-    发送数字组件当前的数值, 并将以上设置一并发送到APP  
+## MQTT相关
 
-初始化, 创建对象
-```
-BlinkerNumber NUM1("NUMKey")
+### 向指定设备发送数据
+
+```python
+from blinker import Device
+
+async def ready_func():
+    msg = {"abc": 123}
+    to_device = "设备名"
+    await device.sendMessage(msg, to_device)
+
+device = Device("authKey", protocol="mqtts", ready_func=ready_func)
+
+if __name__ == '__main__':
+    device.run()
 ```
 
-#### BlinkerText
-文字组件, 用于发送数据到APP, 显示文字数据  
 
-**函数** :
-- print()  
-    *BlinkerText.print()*  
-    发送文字到APP  
-    *BlinkerText.print(text1)*  
-    发送一段文字  
-    *BlinkerText.print(text1, text2)*  
-    发送两段文字  
 
-初始化, 创建对象
-```
-BlinkerText Text1("TextKey")
-```
+## 其他
 
-#### BlinkerJoystick
-摇杆组件, 读取摇杆X Y 轴的数据  
+### 短信通知
 
-**函数** :
-- attach()  
-    *BlinkerJoystick.attach()*  
-    设置摇杆组件的回调函数, 当收到指令时会调用该回调函数  
+> 往注册手机号发送短信通知，该功能仅限专业版用户使用 10条/天/人, 20字/条，1次/分钟，
 
-初始化, 创建对象
-```
-BlinkerJoystick JOY1("JOYKey")
-```  
+```python
+from blinker import Device
 
-用于处理 **BlinkerJoystick** 收到数据的回调函数
-```
-void joystick1_callback(xAxis, yAxis)
-{
-    BLINKER_LOG("Joystick1 X axis: ", xAxis)
-    BLINKER_LOG("Joystick1 Y axis: ", yAxis)
-}
+async def ready_func():
+    await device.sendSms("test")
+
+device = Device("authKey", protocol="mqtts", ready_func=ready_func)
+
+if __name__ == '__main__':
+    device.run()
 ```
 
-在 **setup()** 中注册回调函数
-```
-JOY1.attach(joystick1_callback)
-```
-> *也可以在创建对象时注册回调函数:
->> JOY1 = BlinkerJoystick(JOY_1, joystick1_callback)  
 
-#### BUILTIN_SWITCH
-开关组件, 读取/设置默认开关的状态
 
-**函数** :
-- attach()  
-    *BUILTIN_SWITCH.attach()*  
-    设置开关的回调函数, 当收到指令时会调用该回调函数  
-- print()  
-    *BUILTIN_SWITCH.print()*
-    发送开关当前的状态(多用于反馈开关状态)到APP  
+### 微信通知
 
-用于处理 **BUILTIN_SWITCH** 收到数据的回调函数
-```
-void switch_callback(state)
-{
-    BLINKER_LOG("get switch state: ", state)
+```python
+from blinker import Device
 
-    BUILTIN_SWITCH.print("on")
-}
+async def ready_func():
+    await device.wechat(title="消息测试", state="异常", text="设备1出现异常")
+
+device = Device("authKey", protocol="mqtts", ready_func=ready_func)
+
+if __name__ == '__main__':
+    device.run()
 ```
 
-在 **setup()** 中注册回调函数
-```
-BUILTIN_SWITCH.attach(switch_callback)
+
+
+## Layouter组建操作
+
+### 组件引入并实例化
+
+```python
+from blinker import (
+  	Device,
+    ButtonWidget, 
+    TextWidget, 
+    RangeWidget, 
+    NumberWidget, 
+    RGBWidget, 
+    JoystickWidget 
+)
+
+device = Deivce("authKey")
+
+button: ButtonWidget = device.addWidget(ButtonWidget('btn-xxx'))
+text: TextWidget = device.addWidget(TextWidget('tex-xxx'))
+range1: RangeWidget = device.addWidget(RangeWidget('ran-xxx'))
+number: NumberWidget = device.addWidget(NumberWidget('num-xxx'))
+color_picker: RGBWidget = device.addWidget(RGBWidget('col-xxx'))
+joystick: JoystickWidget = device.addWidget(JoystickWidget('joy-xxx'))
+image: ImageWidget = device.addWidget(ImageWidget('img-xxx'))
 ```
 
-#### Blinker.ahrs() 即将废弃
-开启手机 **AHRS** 功能
-```
-Blinker.attachAhrs()
-```
-读取 **AHRS** 数据
-```
-result_Yaw = Blinker.ahrs(Yaw)  
-result_Roll = Blinker.ahrs(Roll)  
-result_Pitch = Blinker.ahrs(Pitch)
-```
-关闭手机 **AHRS** 功能
-```
-Blinker.dettachAhrs()
-```
-#### Blinker.gps() 即将废弃
-读取 **GPS** 数据
-```
-result_LONG = Blinker.gps(LONG)  
-result_LAT = Blinker.gps(LAT)
-```
-> LONG 经度  
-> LAT 维度  
 
-#### Blinker.vibrate()
-发送手机振动指令, 震动时间, 单位ms 毫秒, 数值范围0-1000, 默认为500
-```
-Blinker.vibrate()
-Blinker.vibrate(255)  
-```
-### NTP时间  
-> NTP 目前仅试用于WiFi接入  
 
-#### Blinker.time()
-获取当前ntp时间, 单位为秒(s)
-```
-times = Blinker.time()
-```
-#### Blinker.second()
-获取当前时间秒数, 单位为秒(s), 获取成功时值: 0-59
-```
-sec = Blinker.second()
-```
-#### Blinker.minute()
-获取当前时间分钟数, 单位为分(m), 获取成功时值: 0-59
-```
-min = Blinker.minute()
-```
-#### Blinker.hour()
-获取当前时间小时数, 单位为小时(h), 获取成功时值: 0-23
-```
-hour = Blinker.hour()
-```
-#### Blinker.wday()
-获取当前时间为当周的日期, 单位为天(d), 获取成功时值: 0-6(依次为周日/一/二/三/四/五/六)
-```
-wday = Blinker.wday()
-```
-#### Blinker.mday()
-获取当前时间为当月第几天, 单位为天(d), 获取成功时值: 1-31
-```
-mday = Blinker.mday()
-```
-#### Blinker.yday()
-获取当前时间为当年第几天, 单位为天(d), 获取成功时值: 1-366
-```
-yday = Blinker.yday()
-```
-#### Blinker.month()
-获取当前时间为当年第几月, 单位为月(mon), 获取成功时值: 1-12
-```
-month = Blinker.month()
-```
-#### Blinker.year()
-获取当前时间对应年, 单位为年(y), 获取成功时值: 201x
-```
-year = Blinker.year()
-```
-### 设备延时
-#### Blinker.delay()
-延时函数, 在延时过程中仍保持设备间连接及数据接收处理
-```
-Blinker.delay(500)
-```
->*为了连接设备成功, 需要延时时务必使用该函数;  
->使用此函数可以在延时期间连接设备及接收数据并处理数据, 延时完成后才能执行后面的程序; 
+### 文本组件
 
-### 短信通知  
-**该功能仅限专业版用户使用 10条/天/人, 20字/条，1次/分钟，只能向注册手机号发送短信通知**  
-设备通过WiFi接入时可以使用 **Blinker.sms()** 默认向该设备所属用户注册对应的手机发送一条短信.
+```python
+await text.text('要显示的文本内容').text1('要显示的文本内容').icon('fad fa-sun').color('#FFFFFF').update();
 ```
-Blinker.sms("Hello blinker!")
+
+### 数字组件
+
+```python
+await number.value(123).unit('单位').text('文字说明').color('#FFFFFF').update()
 ```
+
+### 按键组件
+
+#### 动作监听
+
+```python
+async def button_callback(msg):
+  print("Button received: {0}".format(msg))
   
-后期将增加功能，专业版用户可以在app端设置10个短信接收手机号, 对其中一个手机号发送一条信息
-```
-phone = "18712345678";
-Blinker.sms("Hello blinker!", phone)
+button.func = button_callback
 ```
 
-### 通知推送
-设备通过 **WiFi** 接入时可以使用 **Blinker.push()** 默认向该设备所属用户登陆App的手机发送一条通知.
-```
-Blinker.push("Hello blinker! Button pressed!")
-```
->注: 每个用户通知推送使用限制为 5条/天/人  
-> *限制 1次/分钟  
+#### 状态改变
 
-### 微信推送
-设备通过 **WiFi** 接入时可以使用 **Blinker.wechat()** 默认向该设备所属用户绑定的微信发送一条消息.   
-
-**绑定流程:**  
-- 1.关注 点灯物联 微信公众号  
-- 2.打开 点灯物联 微信公众号, 点击主页右下角 Blinker  
-- 3.输入账号密码完成绑定  
-
-==建议用户使用微信模板消息==  
-发送微信模板消息:
-```
-Blinker.wechat("Title: button", "State: pressed", "Message: hello blinker")
-```
-> 模板消息中依次为标题, 状态, 消息内容  
-
-> 注: 每个用户微信推送使用限制为 10条/天/人  
-> *限制 1次/分钟    
-
-
->**注意**  
->- 禁止发送互联网金融相关的所有内容，包括验证码、系统通知和营销推广短信  
->- 系统通知类短信不支持营销内容  
->- 禁止发送涉及：色情、赌博、毒品、党政、维权、众筹、慈善募捐、宗教、迷信、股票、移民、面试招聘、博彩、贷款、催款、信用卡提额、投资理财、中奖、抽奖、一元夺宝、一元秒杀、A货、整形、烟酒、交友、暴力、恐吓、皮草、返利、代开发票、代理注册、代办证件、加群、加QQ或者加微信、贩卖个人信息、运营商策反、流量营销等信息的短信  
->- 营销推广短信除上述禁止内容外，另不支持：保险、房地产、教育、培训、游戏、美容、医疗、会所、酒吧、足浴、助考、商标注册、装修、建材、家私、会展、车展、房展等信息的短信  
->- 如出现违法违规或者损害到相关他人权益的,平台将保留最终追究的权利！请各会员严格遵守规范要求，加强自身业务安全，健康发送短信  
-
-### 天气查询
-设备通过 **WiFi** 接入时可以使用 **Blinker.weather()** 查询天气情况.
-```
-weather_default = Blinker.weather()//默认查询设备ip所属地区的当前时刻的天气情况
-
-weather_chengdu = Blinker.weather("chengdu")//查询成都市当前时刻的天气情况
-
-weather_beijing = Blinker.weather("beijing")//查询北京市当前时刻的天气情况
-```
-> *限制 1次/分钟  
-
-```
-location = "chengdu"//传入参数为对应城市拼音/英文
-weather = Blinker.weather(location)
+```python
+await button.turn('on/off').color('#FFFFFF').icon('fad fa-sun').text('文字说明').update()
 ```
 
-### AQI查询
-设备通过 **WiFi** 接入时可以使用 **Blinker.aqi()** 查询空气质量情况.
-```
-aqi_default = Blinker.aqi()//默认查询设备ip所属地区的当前时刻的空气质量情况
+### 滑动条组件
 
-aqi_chengdu = Blinker.aqi("chengdu")//查询成都市当前时刻的空气质量情况
+#### 动作监听
 
-aqi_beijing = Blinker.aqi("beijing")//查询北京市当前时刻的空气质量情况
-```
-> *限制 1次/分钟  
+```python
+async range_callback(msg):
+  print("Range received: {0}".format(msg))
 
-```
-location = "chengdu"//传入参数为对应城市拼音/英文
-aqi = Blinker.aqi(location)
+range1.func = range_callback
 ```
 
-### Debug
-如果您想调试输出更多细节信息 :
-```
-from Blinker import *
+#### 状态改变
 
-BLINKER_DEBUG.debugAll()
-
-Blinker.mode(BLINKER_WIFI)
-Blinker.begin(auth)
+```python
+await range1.value(123).max(300).color('#FFFFFF').text('文字说明').update();
 ```
 
-### LOG
-开启调试输出 (Debug) 后可以使用 **BLINKER_LOG()** 打印输出调试信息:
-```
-BLINKER_LOG("detail message 1")  
-BLINKER_LOG("detail message 1", " 2")    
+### 颜色选择组件
+
+#### 动作监听
+
+```python
+async color_picker_callback(msg):
+  print('color: ', message.data)
+  print('red:', message.data[0])
+  print('green:', message.data[1])
+  print('blue:', message.data[2])
+  print('brightness:', message.data[3])
+
+color_picker.func = color_picker_callback
 ```
 
-## 感谢
-[simple-websocket-server](https://github.com/dpallot/simple-websocket-server) - Blinker 用这个库建立了一个 websocket 服务器  
-[python-zeroconf](https://github.com/jstasiak/python-zeroconf) - Blinker 用这个库建立了一个 mDNS 服务  
-[paho.mqtt.python](https://github.com/eclipse/paho.mqtt.python) - Blinker 用这个库建立了一个 MQTT Client  
-[requests](https://github.com/requests/requests) - Blinker 用这个库发送网络请求  
-[bluez](http://www.bluez.org/)  
-[dbus-python](https://pypi.org/project/dbus-python/#description)  
-[PyGobject](https://pygobject.readthedocs.io/en/latest/)  - Blinker 用这些库建立BLE服务  
+#### 状态改变
 
+```python
+await colorPicker.color(randomColor()).brightness(randomNumber(0, 255)).update()
+```
+
+### 摇杆组件
+
+#### 动作监听
+
+```python
+async joystick_callback(msg):
+  print('joystick:', message.data)
+  print('x:', message.data[0])
+  print('y:', message.data[1])
+```
+
+### 图片组件
+
+#### 切换图片
+
+```python
+await image.show(1).update()
+```
+
+
+
+## 存储
+
+### 时序数据存储
+
+```python
+await device.saveTsData({
+    "humi": randomNumber(),
+    "temp": randomNumber(),
+    "pm25": randomNumber(),
+    "pm10": randomNumber()
+})
+```
+
+### 对象存储
+
+#### 存储
+
+```python
+await device.saveObjectData({"hello": "blinker"})
+```
+
+#### 获取
+
+```python
+TODO
+```
+
+### 文本存储
+
+#### 存储
+
+```python
+await device.saveTextData("Helo, blinker")
+```
+
+#### 获取
+
+```python
+TODO
+```
+
+### 日志存储
+
+#### 存储
+
+```python
+await device.saveLogData("This is log test")
+```
+
+
+
+## 气象数据  
+
+气象数据接口，默认使用IP定位返回当前位置的气象数据，也可以通过参数cityCode（[国家行政区编码](http://preview.www.mca.gov.cn/article/sj/xzqh/2020/2020/202101041104.html)）来获取指定位置的数据。  
+更多说明可见[气象数据接口](https://diandeng.tech/doc/weather-and-air)  
+
+通过ip定位获取：  
+
+```python
+air = await device.getAir()
+weather = await device.getWeather()
+weatherForecast = await device.getWeatherForecast()
+```
+
+通过cityCode指定位置获取：  
+
+```python
+air = await device.getAir(510100)
+weather = await device.getWeather(510100)
+weatherForecast = await device.getWeatherForecast(510100)
+```
+
+
+
+## 语音助手接入  
+
+[接入示例](https://github.com/blinker-iot/blinker-py/blob/dev_3.0/example/voice_assistant.py)
+
+**注意事项：**开发过程中，如果改变了设备类型，需要在小度音箱App中解绑再重新绑定才能正常同步出设备。  
+
+
+
+# 部署  
+
+可使用[supervisor](http://supervisord.org/installing.html)来部署
 
