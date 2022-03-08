@@ -35,6 +35,31 @@ from blinker import Device
 device = Device("authKey")
 ```
 
+
+
+### 可用配置项
+
+```python
+from blinker import Device
+device = Device(auth_key, protocol: str = "mqtt", websocket: bool = True, source_check: bool = False,
+                 version: str = "1.0", ali_type: str = None, duer_type: str = None, mi_type: str = None,
+                 heartbeat_func=None, realtime_func=None, ready_func=None, builtin_switch_func=None)
+```
+
+- `protocol`  指定设备连接协议，可选`mqtt/mqtts/ws/wss`
+- `websocket` 开启后，会占用`81`端口，用于局域网中设备直接通信，如有安全性要求请关闭该功能
+- `source_check` 开启后，会检查信息来源，设备只会处理所属用户发来的信息，如需设备间通信，请关闭该功能
+- `version` 指定当前设备固件版本
+- `ali_type` 指定在天猫精灵中模拟的设备类型
+- `duer_type` 指定在小度中模拟的设备类型
+- `mi_type` 指定在小爱中模拟的设备类型
+- `heartbeat_func` 指定在APP与设备心跳反馈过程中执行的相关动作
+- `realtime_func` 指定在收到实时数据请求时执行的相关动作
+- `ready_func` 指定在设别连接上broker并加载完成配置后执行的相关动作
+- `builtin_switch_func` 指定内置开关"switch"收到消息后执行的相关动作
+
+
+
 ### 设备初始化完成回调设置
 
 可设置初始化完成回调函数，在设备连接broker并加载完配置后执行相关动作
