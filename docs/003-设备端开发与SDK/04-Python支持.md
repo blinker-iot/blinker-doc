@@ -1,15 +1,13 @@
-# Python支持模块
+# Python支持模块  
+Blinker Python模块支持  
+[Github](https://github.com/blinker-iot/blinker-py)  
 
-Blinker Python模块支持
-[Github](https://github.com/blinker-iot/blinker-py)
+## 支持情况  
+树莓派(Raspberry Pi)、香蕉派等Linux设备、Windows、MacOS等  
 
-
-
-## 环境/依赖安装
-
-python版本仅支持 `3.7+`
-
-模块暂时无法通过 `pip` 安装，可使用如下方式或别的python包安装方式
+## 环境/依赖安装  
+模块暂时无法通过pip安装  
+使用blinker Python SDK前请先安装Python `3.7+`版本  
 
 ```shell
 git clone https://github.com/blinker-iot/blinker-py.git
@@ -23,7 +21,6 @@ pip3 install --upgrade .
 ## 示例程序
 
 [示例程序](https://github.com/blinker-iot/blinker-py/tree/dev_3.0/example)
-
 
 
 ## 设备操作
