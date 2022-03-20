@@ -18,7 +18,7 @@ GET https://iot.diandeng.tech/api/v1/user/device/diy/auth?authKey={authKey}
     detail: {
         broker: 'blinker',
         deviceName: 'BDB1C0D8PS3Rxxxxxxxxxxxx',
-        host:'mqtt://broker.xxx.com',
+        host:'mqtt://broker.diandeng.tech',
         port:'1883'
         iotId: 'xxxxxxxxJLSBnI13000xxx',
         iotToken: 'xxxxxxxxxx468856x4f15936243c64fd',
@@ -29,7 +29,7 @@ GET https://iot.diandeng.tech/api/v1/user/device/diy/auth?authKey={authKey}
 
 ### 指定连接协议
 ```
-GET https://iot.diandeng.tech/api/v1/user/device/diy/auth?authKey={authKey}&protocol={protocol}
+GET https://iot.diandeng.tech/api/v1/user/device/diy/auth?authKey=<authKey>&protocol=<protocol>
 ```
 添加参数protocol可指定连接协议，目前支持的协议有：mqtt、mqtts、ws、wss  
 
@@ -38,7 +38,7 @@ GET https://iot.diandeng.tech/api/v1/user/device/diy/auth?authKey={authKey}&prot
 使用以上连接信息，即可连接MQTT Broker  
 
 ``` js
-mqtt.connect('mqtts://hub.diandeng.tech', {
+mqtt.connect('mqtts://broker.diandeng.tech:1883', {
     clientId: deviceName,
     username: iotId,
     password: iotToken
