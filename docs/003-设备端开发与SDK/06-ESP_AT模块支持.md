@@ -1,4 +1,5 @@
 # ESP_AT模块支持文档
+**当前AT固件仅支持阿里broker，点灯broker待支持**  
 ESP_AT模块指令集文档，需烧录blinker定制的[AT固件](https://github.com/blinker-iot/blinker-library/blob/master/examples/Blinker_AT_Firmware/AT_Firmware_WiFi/AT_Firmware_WiFi.ino)。  
 
 固件在安装blinker库后  
