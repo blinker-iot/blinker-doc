@@ -140,7 +140,7 @@ Blinker.attachHeartbeat(heartbeat_callback)
     注册按键的回调函数, 当收到指令时会调用该回调函数
 - icon()  
     *BlinkerButton.icon()*  
-    设置按键中显示的图标(icon), [图标列表及对应图标名称见](https://fontawesome.com/)
+    设置按键中显示的图标(icon), [图标列表及对应图标名称见](https://fontawesome.com/v5/search)
 - color()  
     *BlinkerButton.color()*  
     设置按键中显示图标的颜色, [HTML颜色表](http://www.w3school.com.cn/tags/html_ref_colornames.asp)  
@@ -265,7 +265,7 @@ Slider1.attach(slider1_callback)
 **函数** :
 - icon()  
     *BlinkerNumber.icon()*  
-    设置数字组件中显示的图标(icon), [图标列表及对应图标名称见](https://fontawesome.com/)
+    设置数字组件中显示的图标(icon), [图标列表及对应图标名称见](https://fontawesome.com/v5/search)
 - color()  
     *BlinkerNumber.color()*  
     设置数字组件的颜色, [HTML颜色表](http://www.w3school.com.cn/tags/html_ref_colornames.asp)

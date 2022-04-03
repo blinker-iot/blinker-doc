@@ -389,7 +389,7 @@ Blinker.attachSummary(summary);
 * icon()  
 
     *BlinkerButton.icon()*  
-    设置按键中显示的图标(icon), [图标列表及对应图标名称见](https://fontawesome.com/)
+    设置按键中显示的图标(icon), [图标列表及对应图标名称见](https://fontawesome.com/v5/search)
 
 * color()  
 
@@ -559,7 +559,7 @@ Slider1.attach(slider1_callback);
 * icon()  
 
     *BlinkerNumber.icon()*  
-    设置数字组件中显示的图标(icon), [图标列表及对应图标名称见](https://fontawesome.com/)
+    设置数字组件中显示的图标(icon), [图标列表及对应图标名称见](https://fontawesome.com/v5/search)
 
 * color()  
 
@@ -594,7 +594,7 @@ BlinkerNumber NUM1(NUM_1);
     - icon()  
 
     *BlinkerText.icon()*  
-    设置数字组件中显示的图标(icon), [图标列表及对应图标名称见](https://fontawesome.com/)  
+    设置数字组件中显示的图标(icon), [图标列表及对应图标名称见](https://fontawesome.com/v5/search)  
     *BlinkerText.print()*  
     发送文字到APP  
     *BlinkerText.print(text1)*  
