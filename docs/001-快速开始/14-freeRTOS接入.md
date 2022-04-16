@@ -6,8 +6,8 @@ SDK已支持esp8266、esp32，其他芯片可基于本SDK适配
 ## Github 
 [GITHUB](https://github.com/blinker-iot/blinker-freertos)  
 
-## 更多
-可见[freeRTOS支持](https://diandeng.tech/doc/freertos-support)
+## ESP-IDF环境安装  
+[乐鑫官网](https://idf.espressif.com/zh-cn/index.html)  
 
 ## 示例  
 Hello blinker示例：
@@ -72,3 +72,6 @@ void app_main()
     Blinker.begin(auth, ssid, pswd);
 }
 ```
+
+## 更多
+可见[freeRTOS支持](https://diandeng.tech/doc/freertos-support)
