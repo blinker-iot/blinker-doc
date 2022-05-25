@@ -14,9 +14,9 @@ from blinker import Device, ButtonWidget, NumberWidget
 
 device = Device("authKey")
 
-button1 = device.add_widget(ButtonWidget('btn-123'))
-button2 = device.add_widget(ButtonWidget('btn-abc'))
-number1 = device.add_widget(NumberWidget('num-abc'))
+button1 = device.addWidget(ButtonWidget('btn-123'))
+button2 = device.addWidget(ButtonWidget('btn-abc'))
+number1 = device.addWidget(NumberWidget('num-abc'))
 
 num = 0
 
@@ -61,9 +61,9 @@ device = Device("authKey")
 
 ## 新建组件对象/绑定组件  
 ```python
-button1 = device.add_widget(ButtonWidget('btn-123'))
-button2 = device.add_widget(ButtonWidget('btn-abc'))
-number1 = device.add_widget(NumberWidget('num-abc'))
+button1 = device.addWidget(ButtonWidget('btn-123'))
+button2 = device.addWidget(ButtonWidget('btn-abc'))
+number1 = device.addWidget(NumberWidget('num-abc'))
 ```
 使用组件的键名创建对应的对象可以将设备与blinker app界面上的UI组件进行绑定。  
 key为组件的键名，在app中切换到编辑模式可以看到；  
