@@ -1,7 +1,7 @@
 # App下载
 
 ## Android  
-[点击下载](https://update.diandeng.tech/blinker-2.6.5-alpha2.apk)  
+[点击下载](https://update.diandeng.tech/blinker-2.6.5.apk)  
 
 ### 开发中/历史版本
 这里通常有比上面更新的版本，不建议非开发者使用  
