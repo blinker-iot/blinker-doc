@@ -13,7 +13,10 @@ Github：https://github.com/blinker-iot/blinker-library/tree/dev_4.0
 **ESP32, ESP32-S2, ESP32-S3 and ESP32-C3**  
 需配合使用 **2.0.0** 及以上版本的 ESP32 package  
 
-  
+## 相对于上一代的改变  
+1. 重新设计的api  
+2. 移除esp8266支持  
+3. 优化精简log信息    
 
 ## 支持的接入方式
 
