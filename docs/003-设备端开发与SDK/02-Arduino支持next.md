@@ -1,5 +1,5 @@
 # blinker Arduino支持库  
-
+**这是我们正在重构的下一代支持库的文档，目前不建议一般用户使用**  
 针对嵌入式设备的blinker库，需配合arduino sdk使用  
 Github：https://github.com/blinker-iot/blinker-library/tree/dev_4.0  
 
