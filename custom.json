@@ -129,5 +129,6 @@
 "实时数据":"realtime",
 "密钥管理":"secret-key",
 "运营功能":"dashboard-operation",
-"固件升级":"dashboard-ota"
+"固件升级":"dashboard-ota",
+"Arduino支持next":"arduino-support-next"
 }
