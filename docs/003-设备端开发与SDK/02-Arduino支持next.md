@@ -6,10 +6,8 @@ Github：https://github.com/blinker-iot/blinker-library/tree/dev_4.0
 [开发注意事项](?file=020-Q%26A及开发常见问题/02-开发注意事项 "Arduino支持")  
 
 ## 硬件支持&依赖  
-
 **Arduino boards(Uno, Leonardo, Nano, Mini, Pro Mini, Pro Micro, zero, Due, Mega...)**  
 1.8.19及以上版本 Arduino IDE  
-
 **ESP32, ESP32-S2, ESP32-S3 and ESP32-C3**  
 需配合使用 **2.0.0** 及以上版本的 ESP32 package  
 
@@ -18,12 +16,43 @@ Github：https://github.com/blinker-iot/blinker-library/tree/dev_4.0
 2. 移除esp8266支持  
 3. 优化精简log信息    
 
-## 支持的接入方式
+## 支持的接入方式  
+WiFi、蓝牙(BLE)   
 
-* 蓝牙(BLE)  
-* WiFi  
+## 基本使用
+```c++
+#define BLINKER_WIFI
+#define BLINKER_WIDGET
 
-  
+#include <Blinker.h>
+
+char auth[] = "Your Device Secret Key";
+char ssid[] = "Your WiFi network SSID or name";
+char pswd[] = "Your WiFi network WPA password or WEP key";
+
+BlinkerWiFi                 Blinker(WiFiESP);
+BlinkerButton<BlinkerWiFi>  Button1(Blinker, "btn-abc");
+
+// 按下按键即会执行该函数
+void button1_callback(const String & state) {
+    BLINKER_LOG("get button state: ", state);
+}
+
+// 如果未绑定的组件被触发，则会执行其中内容
+void dataRead(const String & data) {
+    BLINKER_LOG("Blinker readString: ", data);
+}
+
+void setup() {
+    Blinker.begin(auth, ssid, pswd);
+    Blinker.attachData(dataRead);
+    Button1.attach(button1_callback);
+}
+
+void loop() {
+    Blinker.run();
+}
+```
 
 ## Blinker Arduino支持函数参考    
 
