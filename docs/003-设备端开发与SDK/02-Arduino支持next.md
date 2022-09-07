@@ -9,7 +9,7 @@ Github：https://github.com/blinker-iot/blinker-library/tree/dev_4.0
 **Arduino boards(Uno, Leonardo, Nano, Mini, Pro Mini, Pro Micro, zero, Due, Mega...)**  
 1.8.19及以上版本 Arduino IDE  
 **ESP32, ESP32-S2, ESP32-S3 and ESP32-C3**  
-需配合使用 **2.0.0** 及以上版本的 ESP32 package  
+需配合使用 **2.0.4** 及以上版本的 ESP32 package  
 
 ## 相对于上一代的改变  
 1. 重新设计的api  
