@@ -73,6 +73,12 @@ BLE:
 ``` cpp
 #define BLINKER_BLE  
 #include <Blinker.h>  
+
+#if defined(ESP32)  
+BlinkerBLE                  Blinker(BLEESP);  
+#else  
+BlinkerBLE                  Blinker(BLESerial);  
+#endif  
   
 void setup() {  
     Blinker.begin();  
@@ -98,6 +104,8 @@ WiFi:
 ```cpp
 #define BLINKER_WIFI  
 #include <Blinker.h>  
+
+BlinkerWiFi                 Blinker(WiFiESP);  
   
 void setup() {  
     Blinker.begin(auth, ssid, pswd);  
@@ -111,6 +119,8 @@ WiFi without ssl:
 #define BLINKER_WIFI  
 #define BLINKER_WITHOUT_SSL
 #include <Blinker.h>  
+
+BlinkerWiFi                 Blinker(WiFiESP);  
   
 void setup() {  
     Blinker.begin(auth, ssid, pswd);  
@@ -125,63 +135,14 @@ WiFi with ssl:
 #define BLINKER_WIFI  
 #define BLINKER_WITH_SSL
 #include <Blinker.h>  
+
+BlinkerWiFi                 Blinker(WiFiESP);  
   
 void setup() {  
     Blinker.begin(auth, ssid, pswd);  
 }
 ```  
 > 如上代码即可开启ssl接入  
-
-GPRS:
-```cpp
-#define BLINKER_GPRS_AIR202  
-#include <Blinker.h>  
-  
-void setup() {  
-    Blinker.begin(auth);  
-}
-```  
-
->GPRS AT模块 AIR202:  
->**Blinker.begin()** 将使用默认设置配置 Serial(默认使用软串口)   
->  
->Blinker.begin(auth);// 默认设置: 数字IO 2(RX) 3(TX), 波特率 9600 bps  
->Blinker.begin(auth, 4, 5);// 设置数字IO 4(RX) 5(TX), 默认波特率 9600 bps  
->Blinker.begin(auth, 4, 5, 115200);// 设置数字IO 4(RX) 5(TX) 及波特率 115200 bps  
->  
->若配置时Blinker.begin(auth, 0, 1);  
->0 1对应硬串口的RX TX, 库会默认使用硬串口与BLE模块进行通信  
->Blinker.begin(auth, 15, 14);//Arduino MEGA中如15, 14对应硬串口Serial3  
->  
->注意使用软串口时:  
->使用Arduino MEGA时以下IO可以设置为RX: 10, 11, 12, 13, 50, 51, 52, 53, 62, 63, 64, 65, 66, 67, 68, 69  
->使用Arduino Leonardo时以下IO可以设置为RX: 8, 9, 10, 11, 14, 15, 16  
-  
-NBIoT:
-```cpp
-#define BLINKER_NBIOT_SIM7020  
-#include <Blinker.h>  
-  
-void setup() {  
-    Blinker.begin(auth);  
-}
-```  
-
->NBIoT AT模块 SIM7020C:  
->**Blinker.begin()** 将使用默认设置配置 Serial(默认使用软串口)   
->  
->Blinker.begin(auth);// 默认设置: 数字IO 2(RX) 3(TX), 波特率 9600 bps  
->Blinker.begin(auth, 4, 5);// 设置数字IO 4(RX) 5(TX), 默认波特率 9600 bps  
->Blinker.begin(auth, 4, 5, 115200);// 设置数字IO 4(RX) 5(TX) 及波特率 115200 bps  
->  
->若配置时Blinker.begin(auth, 0, 1);  
->0 1对应硬串口的RX TX, 库会默认使用硬串口与BLE模块进行通信  
->Blinker.begin(auth, 15, 14);//Arduino MEGA中如15, 14对应硬串口Serial3  
->  
->注意使用软串口时:  
->使用Arduino MEGA时以下IO可以设置为RX: 10, 11, 12, 13, 50, 51, 52, 53, 62, 63, 64, 65, 66, 67, 68, 69  
->使用Arduino Leonardo时以下IO可以设置为RX: 8, 9, 10, 11, 14, 15, 16  
-  
 
 **begin()** 主要完成以下配置:  
 1.初始化硬件设置;  
@@ -295,9 +256,7 @@ Blinker.print("hello","print");
 
 ### ESP多任务
 
-**ESP8266/ESP32** 中启用多任务, 将 **blinker** 相关的设备连接、数据处理等放入单独任务中, 用户代码在 **loop()** 任务中进行, 互不干涉  
-
-**目前ESP8266多任务支持还有点问题, 暂不支持使用**  
+**ESP32** 中启用多任务, 将 **blinker** 相关的设备连接、数据处理等放入单独任务中, 用户代码在 **loop()** 任务中进行, 互不干涉  
 
 #### 设备配置  
 
@@ -397,6 +356,13 @@ Blinker.attachSummary(summary);
 
 ### App组件
 
+``` cpp
+#define BLINKER_WIDGET
+
+#include <Blinker.h>
+```
+> 启用组件功能  
+
 #### BlinkerButton  
 
 按键组件在App中可以设置 按键/开关/自定义 三种模式:  
@@ -440,8 +406,9 @@ Blinker.attachSummary(summary);
 ```cpp
 #define BUTTON_1 "ButtonKey"
 
-BlinkerButton Button1(BUTTON_1);
-```
+BlinkerButton<BlinkerClass>   Button1(Blinker, BUTTON_1);
+```  
+> BlinkerClass, BLE模式下则为BlinkerBLE, WiFi模式下则为BlinkerWiFi  
 
 用于处理 **button** 收到数据的回调函数
 
@@ -502,8 +469,9 @@ Button1.attach(button1_callback);
 ``` cpp
 #define RGB_1 "RGBKey"
 
-BlinkerRGB RGB1(RGB_1);
-```
+BlinkerRGB<BlinkerClass>   RGB1(Blinker, RGB_1);
+```  
+> BlinkerClass, BLE模式下则为BlinkerBLE, WiFi模式下则为BlinkerWiFi  
 
 用于处理 **RGB** 收到数据的回调函数
 
@@ -554,8 +522,9 @@ RGB1.attach(rgb1_callback);
 ``` cpp
 #define Slider_1 "SliderKey"
 
-BlinkerSlider Slider1(Slider_1);
-```
+BlinkerSlider<BlinkerClass>   Slider1(Blinker, Slider_1);
+```  
+> BlinkerClass, BLE模式下则为BlinkerBLE, WiFi模式下则为BlinkerWiFi  
 
 用于处理 **Slider** 收到数据的回调函数
 
@@ -607,8 +576,9 @@ Slider1.attach(slider1_callback);
 ``` cpp
 #define NUM_1 "NUMKey"
 
-BlinkerNumber NUM1(NUM_1);
-```
+BlinkerNumber<BlinkerClass>    NUM1(Blinker, NUM_1);
+```  
+> BlinkerClass, BLE模式下则为BlinkerBLE, WiFi模式下则为BlinkerWiFi  
 
 #### BlinkerText
 
@@ -633,8 +603,9 @@ BlinkerNumber NUM1(NUM_1);
 ``` cpp
 #define TEXTE_1 "TextKey"
 
-BlinkerText Text1(TEXTE_1);
-```
+BlinkerText<BlinkerClass>   Text1(Blinker, TEXTE_1);
+```  
+> BlinkerClass, BLE模式下则为BlinkerBLE, WiFi模式下则为BlinkerWiFi  
 
 #### BlinkerJoystick
 
@@ -652,8 +623,9 @@ BlinkerText Text1(TEXTE_1);
 ``` cpp
 #define JOY_1 "JOYKey"
 
-BlinkerJoystick JOY1(JOY_1);
+BlinkerJoystick<BlinkerClass>   JOY1(Blinker, JOY_1);
 ```  
+> BlinkerClass, BLE模式下则为BlinkerBLE, WiFi模式下则为BlinkerWiFi  
 
 用于处理 **BlinkerJoystick** 收到数据的回调函数
 ```cpp
@@ -706,44 +678,6 @@ void switch_callback(const String & state)
 ``` cpp
 BUILTIN_SWITCH.attach(switch_callback);
 ```
-
-#### Blinker.ahrs() 即将废弃  
-
-开启手机 **AHRS** 功能
-
-``` 
-
-Blinker.attachAhrs();
-```
-
-读取 **AHRS** 数据
-
-``` 
-
-int16_t result_Yaw = Blinker.ahrs(Yaw);
-int16_t result_Roll = Blinker.ahrs(Roll);
-int16_t result_Pitch = Blinker.ahrs(Pitch);
-```
-
-关闭手机 **AHRS** 功能
-
-``` 
-
-Blinker.detachAhrs();
-```
-
-#### Blinker.gps() 即将废弃
-
-读取 **GPS** 数据
-
-``` 
-
-String result_LONG = Blinker.gps(LONG);  
-String result_LAT = Blinker.gps(LAT);
-```
-
-> LONG 经度  
-> LAT 维度  
 
 #### Blinker.vibrate()
 
@@ -832,8 +766,9 @@ bool state = Blinker.countdownState();
 ``` cpp
 #define Tab_1 "TabKey"
 
-BlinkerTab Tab1(Tab_1);
+BlinkerTab<BlinkerClass>   Tab1(Blinker, Tab_1);
 ```
+> BlinkerClass, BLE模式下则为BlinkerBLE, WiFi模式下则为BlinkerWiFi  
 
 用于处理 **tab** 收到数据的回调函数
 
@@ -1018,49 +953,6 @@ Blinker.delay(500);
 
 > 为了连接设备成功, 需要延时时务必使用该函数; 
 > 使用此函数可以在延时期间连接设备及接收数据并处理数据, 延时完成后才能执行后面的程序; 
-
-### 设备间通信BlinkerBridge  
-> 即将废弃不再支持该功能  
-
-**BlinkerBridge** 功能用于 **WiFi** 设备与设备间的通信(无需使用app进行控制).  
-
-**函数** :
-
-* attach()  
-
-    BlinkerBridge.attach()  
-    注册bridge的回调函数, 当收到指令时会调用该回调函数  
-
-* print()  
-
-    BlinkerBridge.print()    
-    发送消息到对应的bridge设备  
-
-初始化, 创建对象
-
-``` cpp
-#define BRIDGE_1 "Your Device Secret Key of bridge to device"
-
-BlinkerBridge BridgeDevice1(BRIDGE_1);
-```
-
-用于处理 **BlinkerBridge** 收到数据的回调函数
-
-``` cpp
-void bridge1Read(const String & data)
-{
-    BLINKER_LOG("BridgeDevice1 readString: ", data);
-
-    // must print Json data
-    BridgeDevice1.print("{\"hello\":\"bridge\"}");
-}
-```
-
-在 **setup()** 中注册回调函数
-
-``` cpp
-BridgeDevice1.attach(bridge1Read);
-```
 
 ### 图表-历史数据
 
