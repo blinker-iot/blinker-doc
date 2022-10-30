@@ -1,10 +1,10 @@
 # blinker freeRTOS支持库
 针对ESP8266/ESP32设备的blinker库，需配合ESP-IDF使用。  
-github：https://github.com/blinker-iot/blinker-freertos  
+github：https://github.com/blinker-iot/blinker-esp-idf
 
 ## 支持的硬件
-* 使用 [ESP8266_RTOS_SDK](https://github.com/espressif/ESP8266_RTOS_SDK) 的ESP8266  
-* 使用 [esp-idf](https://github.com/espressif/esp-idf) 的ESP32  
+* 使用 [ESP8266_RTOS_SDK v3.4](https://github.com/espressif/ESP8266_RTOS_SDK/releases/tag/v3.4) 的ESP8266  
+* 使用 [esp-idf v4.3](https://github.com/espressif/esp-idf/releases/v4.3) 的ESP32  
 
 ## 注意事项
 * SSL 使用的 wolfssl  
@@ -16,7 +16,34 @@ github：https://github.com/blinker-iot/blinker-freertos
 ## 准备工作
 使用前您需要做好如下准备：
 * 安装 [ESP8266_RTOS_SDK](https://github.com/espressif/ESP8266_RTOS_SDK) 或者 [esp-idf](https://github.com/espressif/esp-idf) 的ESP-IDF  
-* 下载 [blinker-freertos](https://github.com/blinker-iot/blinker-freertos) 将 **blinker** 文件夹放入自己所需项目下的 **component** 文件夹中即可  
+* 下载 [blinker-freertos](https://github.com/blinker-iot/blinker-esp-idf) 将 **blinker** 文件夹放入自己所需项目下的 **component** 文件夹中即可  
+
+> 注：1. ESP32及ESP8266的components文件夹下分别有**blinker**及**esp_http_server**两个文件夹  
+> 将**esp_http_server**剪切并到**sdk安装目录下的components内**并覆盖原来的esp_http_server文件  
+> 如 C:\Espressif\frameworks\esp-idf-v4.3.4\components  
+> 2. 新建项目后将**blinker**复制到项目的**components**目录下, 目录如下：  
+> blinker_example  
+> |__components  
+> |  |__blinker  
+> |__main  
+
+按如上方法配置好使用环境后输入  
+> idf.py menuconfig  
+
+可进入idf配置页面 在菜单主页中可以看到blinker配置选项, 选中blinker进入并配置相关参数  
+> set BLINKER DEVICE TYPE  
+> set BLINKER AUTH KEY  
+> set Provisioning Type  
+
+依次设置设备类型、设备auth key、配网方式, 设置完成后保存并退出blinker配置页面
+进入**components**配置页面  
+> enable mDNS  
+> disable Newlib  
+> enable webSocket server support(http_server)  
+
+依次设置如上三个component, 设置完成后保存并退出即可开始编译测试  
+
+
 
 ## Blinker接口函数
 ### 设备配置
