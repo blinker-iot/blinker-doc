@@ -47,44 +47,36 @@ github：https://github.com/blinker-iot/blinker-esp-idf
 
 ## Blinker接口函数
 ### 设备配置
-使用 **Blinker.begin()** 来配置Blinker: 
-```cpp
-Blinker.begin(...);
-```
-根据您使用的连接方式选择不同的参数用于配置Blinker  
+使用 **blinker_init()** 来配置Blinker:  
+> 主要参数配置在idf中配置  
 
 WiFi:
 ```cpp  
 #include <Blinker.h>  
   
-void setup() {
+void app_main() {
     blinker_init(); 
 }
 ```  
 
-**setup()** 主要完成以下配置:  
-1.初始化硬件设置;  
-2.连接网络并广播设备信息等待app连接;  
-
 #### blinker_init()
 完成设备功能初始化函数  
 **注：设备WIFI/PRO 接入类型及语音助手等设置在IDF中设置**  
-**make menuconfig->Compontent conifg->Blinker**
 
 ### 数据管理
-#### blinker_attach_data()
+#### blinker_data_handler()
 注册回调函数，当有设备收到APP发来的数据时会调用对应的回调函数  
 
 回调函数：
 ```cpp
-void data_callback(const cJSON *data)
+static void data_callback(const char *data)
 {
-    BLINKER_LOG(TAG, "get json data");
+    ESP_LOGI(TAG, "data: %s", data);
 }
 ```
 注册回调函数：
 ```cpp
-blinker_attach_data(data_callback);
+blinker_data_handler(data_callback);
 ```
 
 ### App组件
