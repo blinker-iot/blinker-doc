@@ -12,9 +12,9 @@ esp8266开发板([查看支持的设备](https://diandeng.tech/doc/device-suppor
 ### 软件准备  
 
 #### Arduino IDE需安装好esp8266扩展  
-[Arduino IDE](https://www.arduino.cc/en/Main/Software) 1.8.7或更新版本  
+[Arduino IDE](https://arduino.me/download) 1.8.7或更新版本  
 务必使用 **3.0.0** 或以上release版本的 ESP8266 Arduino package  
-[中国大陆安装方法(windows)](https://www.arduino.cn/thread-76029-1-1.html)  
+[中国大陆安装方法(windows)](https://arduino.me/a/esp8266)  
 [常规安装方法](https://github.com/esp8266/Arduino)  
 
 #### 下载并安装blinker APP  

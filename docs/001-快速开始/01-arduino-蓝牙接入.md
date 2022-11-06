@@ -18,8 +18,8 @@ JDY18/JDY09 （默认波特率9600）
 
 ### 软件准备  
 **下载并安装Arduino IDE**  
-[点击去下载](https://www.arduino.cn/thread-5838-1-1.html)  
-[Arduino IDE](https://www.arduino.cc/en/Main/Software) 1.8.7或更新版本  
+[点击去下载](https://arduino.me/download)  
+[Arduino IDE](https://arduino.me/download) 1.8.7或更新版本  
 #### 下载并安装blinker APP  
 **Android下载：**  
 [点击下载](https://github.com/blinker-iot/app-release/releases) 或 在android应用商店搜索“blinker”下载安装  
