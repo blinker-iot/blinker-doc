@@ -20,7 +20,7 @@ Github：https://github.com/blinker-iot/blinker-library/tree/dev_4.0
 WiFi、蓝牙(BLE)   
 
 ## 基本使用
-```c++
+```cpp
 #define BLINKER_WIFI
 #define BLINKER_WIDGET
 
