@@ -1,5 +1,4 @@
 # 使用esp32 & WiFi接入  
-**自blinker App 2.1.1起，原WiFi接入和MQTT已经合并为新WiFi接入**  
 
 使用WiFi接入，当设备和手机在同一个局域网中，为局域网通信  
 其余情况，使用MQTT远程通信  
