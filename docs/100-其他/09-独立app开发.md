@@ -46,7 +46,6 @@ jarsigner -verbose -keystore <name>.keystore -signedjar <apkfilename>_signed.apk
 ## 企业版  
 企业版可使用现blinker app的所有功能，可定制，亦可二次开发。  
 企业用户可联系：  
-![](../img/099/dongbo.png)  
 
 ## 开源版本  
 [历史版本](https://github.com/blinker-iot/blinker-app)  
