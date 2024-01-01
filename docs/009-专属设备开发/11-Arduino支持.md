@@ -1,4 +1,5 @@
 # blinker PRO Arduino支持库  
+**本功能自2024年1月1日起下线** 
 **专业版功能**  
 针对嵌入式设备的blinker库，需配合arduino sdk使用。 
   
