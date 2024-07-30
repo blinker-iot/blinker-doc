@@ -76,7 +76,7 @@ char pswd[] = "123456789"; //您的WiFi密码
 
 #### 更多实例？
 
-看看[Arduino实例教程](https://diandeng.tech/doc/arduino-course)  
+看看[Arduino实例教程](https://arduino.me/s/blinker-arduino)  
 
 #### 想制作与众不同的物联网设备？  
 

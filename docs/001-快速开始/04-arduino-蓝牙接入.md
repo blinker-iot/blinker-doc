@@ -66,7 +66,7 @@ Blinker.begin(19, 20, 115200); //使用Serial1
 #### 想深入理解以上例程？  
 看看[Arduino开发入门](?file=002-开发入门/002-Arduino开发入门 "Arduino开发入门")  
 #### 更多实例？
-看看[Arduino实例教程](https://diandeng.tech/doc/arduino-course)  
+看看[Arduino实例教程](https://arduino.me/s/blinker-arduino)  
 #### 想制作与众不同的物联网设备？  
 看看[自定义界面](?file=005-App使用/02-自定义布局 "自定义布局") 和 [Arduino 支持库](https://diandeng.tech/doc/arduino-support "Arduino支持")  
 

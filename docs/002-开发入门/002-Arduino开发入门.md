@@ -180,7 +180,7 @@ blinker app能接收一些特定指令，但设备端调用api发送特定指令
 
 ---  
 #### 更多实例  
-看看[Arduino实例教程](https://diandeng.tech/doc/arduino-course)  
+看看[Arduino实例教程](https://arduino.me/s/blinker-arduino)  
 
 #### blinker lib Api手册  
 您可以通过 [Arduino支持](https://diandeng.tech/doc/arduino-support)了解更多blinker api用法  

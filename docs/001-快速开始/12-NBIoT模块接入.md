@@ -70,7 +70,7 @@ Blinker.begin(auth, 4, 5, 9600); // 设置数字IO 4(RX) 5(TX) 及波特率 9600
 
 #### 更多实例？
 
-看看[Arduino实例教程](https://diandeng.tech/doc/arduino-course)  
+看看[Arduino实例教程](https://arduino.me/s/blinker-arduino)  
 
 #### 想制作与众不同的物联网设备？  
 
