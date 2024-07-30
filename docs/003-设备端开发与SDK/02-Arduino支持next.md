@@ -1122,14 +1122,6 @@ Blinker.sms("Hello blinker! Button pressed!");
 
 ``` 
 
-  
-后期将增加功能，专业版用户可以在app端设置10个短信接收手机号, 对其中一个手机号发送一条信息
-
-```c++ 
-char phone[] = "18712345678";
-Blinker.sms("Hello blinker! Button pressed!", phone);
-```  
-
 #### 消息推送Blinker.push
 
 设备通过 **WiFi** 接入时可以使用 **Blinker.push()** 默认向该设备所属用户登陆App的手机发送一条通知.
