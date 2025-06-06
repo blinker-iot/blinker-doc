@@ -3,7 +3,7 @@
 针对嵌入式设备的blinker库，需配合arduino sdk使用  
 Github：https://github.com/blinker-iot/blinker-library/tree/dev_4.0  
 
-[开发注意事项](?file=020-Q%26A及开发常见问题/02-开发注意事项 "Arduino支持")  
+[开发注意事项](https://diandeng.tech/doc/matters-need "Arduino支持")  
 
 ## 硬件支持&依赖  
 **Arduino boards(Uno, Leonardo, Nano, Mini, Pro Mini, Pro Micro, zero, Due, Mega...)**  
@@ -681,7 +681,7 @@ BUILTIN_SWITCH.attach(switch_callback);
 
 #### Blinker.vibrate()
 
-发送手机振动指令, 震动时间, 单位ms 毫秒, 数值范围0-1000, 默认为500
+发送手机振动指令, 震动时间, 单位ms 毫秒, 数值范围0-1000, 默认为200
 
 ``` 
 
