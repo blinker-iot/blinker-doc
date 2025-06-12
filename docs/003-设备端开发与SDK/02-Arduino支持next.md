@@ -5,7 +5,36 @@ Github：https://github.com/blinker-iot/blinker-library/tree/dev_edu
 
 **教育版特色**: 本版本专为教学设计，提供简洁直观的API，让学生和初学者能够快速上手物联网开发。
 
-[开发注意事项](?file=020-Q%26A及开发常见问题/02-开发注意事项 "Arduino支持")  
+## 教育版本亮点
+
+### 🎯 简化的Widget架构
+- **统一父类**: 所有Widget组件都继承自BlinkerWidget基类
+- **方法链模式**: 支持链式调用，一行代码设置多个属性
+- **类型安全**: 消除复杂的模板参数，提高代码可读性
+
+### 📚 教育友好的设计
+- **清晰的继承关系**: 便于理解面向对象编程概念
+- **统一的API**: 所有组件使用相同的方法名（icon, color, text等）
+- **智能内存管理**: 自动处理内存分配和释放
+
+### 🔗 方法链示例
+```cpp
+// 旧方式（仍然支持）
+Number1.icon("fa-thermometer");
+Number1.color("#00AA00");
+Number1.unit("°C");
+Number1.print(25.6);
+
+// 新方式 - 方法链（推荐）
+Number1.icon("fa-thermometer")
+       .color("#00AA00")
+       .unit("°C")
+       .text("室温")
+       .value(25.6)
+       .print();
+```
+
+[开发注意事项](?file=020-Q%26A及开发常见问题/02-开发注意事项 "Arduino支持")
 
 ## 硬件支持&依赖  
 
@@ -205,11 +234,21 @@ BlinkerButton Button1("btn-123");
 
 * text()  
     设置按键中显示的名字或者描述  
-    *BlinkerButton.text(text1)*  一段描述文字  
-    *BlinkerButton.text(text1, text2)*  两段描述文字  
+    *Button1.text(text1)*  一段描述文字  
+    *Button1.text(text1, text2)*  两段描述文字  
 
 * print()  
     发送按键当前的状态, 并将以上设置一并发送到APP
+
+**教育版特色 - 方法链调用**:
+
+```cpp
+// 方法链模式 - 一行代码设置多个属性
+Button1.icon("far fa-lightbulb")
+       .color("#FFAA00")  
+       .text("LED ON")
+       .print();
+```
 
 **完整示例**:
 
@@ -222,19 +261,42 @@ char auth[] = "Your Device Secret Key";
 char ssid[] = "Your WiFi network SSID or name";
 char pswd[] = "Your WiFi network WPA password or WEP key";
 
-// 组件初始化
 BlinkerButton Button1("btn-abc");
+BlinkerNumber Number1("num-abc");
+
+int counter = 0;
 
 void button1_callback(const String & state)
 {
     BLINKER_LOG("get button state: ", state);
     digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
+    
+    // 根据LED状态动态更新按钮样式
+    if (digitalRead(LED_BUILTIN)) {
+        Button1.icon("far fa-lightbulb")
+               .color("#FFAA00")
+               .text("LED ON")
+               .print();
+    }
+    else {
+        Button1.icon("far fa-lightbulb")
+               .color("#000000")
+               .text("LED OFF")
+               .print();
+    }
 }
 
 void dataRead(const String & data) {
     BLINKER_LOG("Blinker readString: ", data);
     counter++;
-    Number1.print(counter);
+    
+    // 使用方法链更新数字显示
+    Number1.icon("far fa-swords")
+           .color("#0066FF")
+           .unit("次")
+           .text("计数器")
+           .value(counter)
+           .print();
 }
 
 void setup() {
@@ -253,6 +315,101 @@ void setup() {
 }
 
 void loop() {
+    Blinker.run();
+}
+```
+
+#### BlinkerNumber
+
+数字显示组件，用于在App中显示数值数据，支持图标、颜色、单位等自定义属性。
+
+**初始化方式**:
+
+```cpp
+// 直接使用组件名称初始化
+BlinkerNumber Number1("num-123");
+```
+
+**函数** :
+
+* icon()  
+    设置数字组件显示的图标, [图标列表及对应图标名称见](https://fontawesome.com/v5/search)
+
+* color()  
+    设置数字显示的颜色, [HTML颜色表](http://www.w3school.com.cn/tags/html_ref_colornames.asp)
+
+* unit()  
+    设置数值的单位, 如 "°C", "%" 等
+
+* text()  
+    设置数字组件的描述文字
+
+* value()  
+    设置要显示的数值
+
+* print()  
+    发送数字当前的状态和数值到APP
+
+**教育版特色 - 方法链调用**:
+
+```cpp
+// 方法链模式 - 一行代码设置多个属性
+Number1.icon("far fa-thermometer")
+       .color("#00AA00")
+       .unit("°C")
+       .text("温度")
+       .value(25.6)
+       .print();
+```
+
+**完整示例**:
+
+```cpp
+#define BLINKER_WIFI
+#define BLINKER_WIDGET
+#include <Blinker.h>
+
+char auth[] = "Your Device Secret Key";
+char ssid[] = "Your WiFi network SSID or name";
+char pswd[] = "Your WiFi network WPA password or WEP key";
+
+#define Number_1 "NUMKey"
+
+BlinkerNumber Number1(Number_1);
+
+void dataRead(const String & data)
+{
+    BLINKER_LOG("Blinker readString: ", data);
+    Blinker.vibrate();
+    
+    uint32_t BlinkerTime = millis();
+    Blinker.print("millis", BlinkerTime);
+
+    // 使用新的方法链API显示运行时间
+    Number1.icon("far fa-clock")
+           .color("#00AA00")
+           .unit("ms")
+           .text("运行时间")
+           .value(BlinkerTime)
+           .print();
+
+    digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
+}
+
+void setup()
+{
+    Serial.begin(115200);
+    BLINKER_DEBUG.stream(Serial);
+    
+    pinMode(LED_BUILTIN, OUTPUT);
+    digitalWrite(LED_BUILTIN, LOW);
+    
+    Blinker.begin(auth, ssid, pswd);
+    Blinker.attachData(dataRead);
+}
+
+void loop()
+{
     Blinker.run();
 }
 ```
@@ -690,6 +847,81 @@ BLINKER_LOG("detail message 1");
 BLINKER_LOG("detail message 1", " 2"); 
 BLINKER_LOG("detail message 1", " 2", " 3"); 
 ```
+
+## 教育版本学习指南
+
+### 🎓 学习目标
+
+通过使用Blinker教育版，学生将掌握：
+
+1. **面向对象编程**: 理解继承、多态的实际应用
+2. **方法链模式**: 学习流畅接口的设计思想  
+3. **IoT编程基础**: 物联网设备开发的核心概念
+4. **内存管理**: C++中动态内存的分配和释放
+
+### 📝 最佳实践
+
+```cpp
+// 推荐的代码结构
+void setup() {
+    // 1. 初始化串口和调试
+    Serial.begin(115200);
+    BLINKER_DEBUG.stream(Serial);
+    
+    // 2. 初始化硬件
+    pinMode(LED_BUILTIN, OUTPUT);
+    
+    // 3. 初始化Blinker
+    Blinker.begin(auth, ssid, pswd);
+    
+    // 4. 注册回调函数
+    Button1.attach(button_callback);
+    Blinker.attachData(dataRead);
+}
+
+void loop() {
+    // 保持Blinker运行
+    Blinker.run();
+    
+    // 定期更新传感器数据
+    static unsigned long lastUpdate = 0;
+    if (millis() - lastUpdate > 2000) {
+        lastUpdate = millis();
+        updateSensorData();
+    }
+}
+
+void updateSensorData() {
+    float temperature = readTemperature();
+    
+    // 使用方法链更新显示
+    Number1.icon("far fa-thermometer")
+           .color(temperature > 30 ? "#FF0000" : "#00AA00")
+           .unit("°C")
+           .text("温度")
+           .value(temperature)
+           .print();
+}
+```
+
+### 🔍 常见问题解答
+
+**Q: 为什么使用方法链？**  
+A: 方法链让代码更简洁、更易读，一行代码就能设置多个属性，减少重复代码。
+
+**Q: 如何选择合适的图标？**  
+A: 访问 [FontAwesome图标库](https://fontawesome.com/v5/search) 查找合适的图标名称。
+
+**Q: 颜色代码怎么写？**  
+A: 支持十六进制颜色代码（如#FF0000）和HTML颜色名称（如red）。
+
+### 📚 推荐学习路径
+
+1. **基础入门**: 从Hello示例开始，理解基本的连接和通信
+2. **组件学习**: 逐个学习Button、Number、Text等组件的使用
+3. **传感器项目**: 结合实际传感器制作监控项目
+4. **智能控制**: 实现远程控制LED、继电器等执行器
+5. **综合项目**: 制作完整的智能家居或环境监测系统
 
 ## 感谢
 
