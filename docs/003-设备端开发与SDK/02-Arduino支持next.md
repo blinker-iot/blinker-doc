@@ -1,7 +1,7 @@
 # blinker Arduino支持库 - 教育版
 
 针对嵌入式设备的blinker库，需配合arduino sdk使用。  
-Github：https://github.com/blinker-iot/blinker-library  
+Github：https://github.com/blinker-iot/blinker-library/tree/dev_edu
 
 **教育版特色**: 本版本专为教学设计，提供简洁直观的API，让学生和初学者能够快速上手物联网开发。
 
@@ -215,6 +215,7 @@ BlinkerButton Button1("btn-123");
 
 ```cpp
 #define BLINKER_WIFI
+#define BLINKER_WIDGET
 #include <Blinker.h>
 
 char auth[] = "Your Device Secret Key";
